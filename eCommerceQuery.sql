@@ -123,3 +123,5 @@ create table FormaPago(
 	ID tinyint not null primary key identity (1,1),
 	nombre varchar(100) not null
 )
+Alter Table Articulo
+ADD urlImagen varchar(1000) null
