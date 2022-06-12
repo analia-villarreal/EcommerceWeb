@@ -98,6 +98,8 @@ Create table Pedido(
 	idFormaPago tinyint not null foreign key references FormaPago(ID),
 	retiraPorSucursal bit not null,
 	pagoConfirmado bit not null,
+	fechaInicioPedido datetime not null,
+	fechaPago datetime null,
 	idEnvio bigint not null foreign key references Envio(ID),
 	estado bit not null
 )
@@ -107,7 +109,9 @@ create table Envios(
 	idUsuario bigint not null foreign key references Usuario(ID),
 	idFormaEnvio tinyint not null foreign key references FormaEnvio(ID),
 	envioConfirmado bit not null,
-	estado bit not null
+	estado bit not null,
+	fechaEnvioVendedor datetime not null,
+	fechaEntrega datetime null
 )
 go
 create table FormaEnvio(
