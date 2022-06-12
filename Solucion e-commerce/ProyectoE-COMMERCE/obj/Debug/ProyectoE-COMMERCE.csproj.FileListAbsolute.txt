@@ -1,0 +1,2 @@
+C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\ProyectoE-COMMERCE\obj\Debug\ProyectoE-COMMERCE.csproj.AssemblyReference.cache
+C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\ProyectoE-COMMERCE\obj\Debug\ProyectoE-COMMERCE.csproj.CoreCompileInputs.cache
