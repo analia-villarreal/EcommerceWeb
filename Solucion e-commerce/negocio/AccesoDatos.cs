@@ -19,7 +19,7 @@ namespace negocio
         }
         public AccesoDatos()
         {
-            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=eCommerce; integrated security=true");
+            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=eCommerce_DB; integrated security=true");
             comando = new SqlCommand();
         }
 

@@ -48,7 +48,8 @@ namespace negocio
                     aux.Brand.ID = (int)datos.Lector["idMarca"];
                     aux.Brand.Nombre = (string)datos.Lector["nombre"];
 
-                    aux.Season.ID = (int)datos.Lector["temporada"];
+                    aux.Season = new Temporada();
+                    aux.Season.ID = (int)datos.Lector["idtemporada"];
                     aux.Season.Nombre = (string)datos.Lector["nombre"];
                     
                     aux.Descuento = (int)datos.Lector["descuento"];
