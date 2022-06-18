@@ -5,14 +5,14 @@ using System.Web;
 
 namespace dominio
 {
-    public class SubCategoria
+    public class Talle
     {
         public int ID { get; set; }
-        public int Talle { get; set; }
-        public string Descripcion { get; set; }
+        public string Nombre { get; set; }
+
         public override string ToString()
         {
-            return Descripcion;
+            return Nombre;
         }
     }
 }

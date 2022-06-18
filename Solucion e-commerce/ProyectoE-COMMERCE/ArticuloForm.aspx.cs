@@ -15,24 +15,31 @@ namespace ProyectoE_COMMERCE
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*
+            
             CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
 
             try
             {
                 ddlCategoria.DataSource = categoriaNegocio.Listar();
+                ddlCategoria.DataBind();
+                ddlCategoria.DataValueField = "ID";
+                ddlCategoria.DataTextField = "Nombre";
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show("ex.ToString()");
             }
-            */
-            
+          
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
+            Articulo art = new Articulo();
+            art.ID = int.Parse(textID.Text);
+            art.Nombre = textNombre.Text;
+
+
 
         }
     }

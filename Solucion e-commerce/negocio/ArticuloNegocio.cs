@@ -32,25 +32,25 @@ namespace negocio
                     if (!(datos.Lector["UrlImagen"] is DBNull))
                         aux.URLImagen = (string)datos.Lector["UrlImagen"];
                   
-                    aux.Tag = new Estado();
-                    aux.Tag.ID = (int)datos.Lector["estado"];
-                    aux.Tag.Nombre = (string)datos.Lector["nombre"];
+                    aux.Estado = new Estado();
+                    aux.Estado.ID = (int)datos.Lector["estado"];
+                    aux.Estado.Nombre = (string)datos.Lector["nombre"];
 
-                    aux.IDCategoria = new Categoria();
-                    aux.IDCategoria.ID = (int)datos.Lector["idCategoria"];
-                    aux.IDCategoria.Nombre = (string)datos.Lector["nombre"];
+                    aux.Categoria = new Categoria();
+                    aux.Categoria.ID = (int)datos.Lector["idCategoria"];
+                    aux.Categoria.Nombre = (string)datos.Lector["nombre"];
 
-                    aux.IDSubcategoria = new SubCategoria();
-                    aux.IDSubcategoria.ID = (int)datos.Lector["idSubCategoria"];
-                    aux.IDSubcategoria.Talle = (int)datos.Lector["talle"];
+                    aux.Talle = new Talle();
+                    aux.Talle.ID = (int)datos.Lector["idSubCategoria"];
+                    aux.Talle.Nombre = (string)datos.Lector["talle"];
 
-                    aux.Brand = new Marca();
-                    aux.Brand.ID = (int)datos.Lector["idMarca"];
-                    aux.Brand.Nombre = (string)datos.Lector["nombre"];
+                    aux.Marca = new Marca();
+                    aux.Marca.ID = (int)datos.Lector["idMarca"];
+                    aux.Marca.Nombre = (string)datos.Lector["nombre"];
 
-                    aux.Season = new Temporada();
-                    aux.Season.ID = (int)datos.Lector["idtemporada"];
-                    aux.Season.Nombre = (string)datos.Lector["nombre"];
+                    aux.Temporada = new Temporada();
+                    aux.Temporada.ID = (int)datos.Lector["idtemporada"];
+                    aux.Temporada.Nombre = (string)datos.Lector["nombre"];
                     
                     aux.Descuento = (int)datos.Lector["descuento"];
                     
