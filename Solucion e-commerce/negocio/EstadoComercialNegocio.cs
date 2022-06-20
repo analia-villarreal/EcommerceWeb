@@ -8,9 +8,9 @@ namespace negocio
 {
     public class EstadoComercialNegocio
     {
-        public List<Estado> Listar()
+        public List<EstadoComercial> Listar()
         {
-            List<Estado> lista = new List<Estado>();
+            List<EstadoComercial> lista = new List<EstadoComercial>();
             AccesoDatos datos = new AccesoDatos();
 
 
@@ -23,7 +23,7 @@ namespace negocio
                 while (datos.Lector.Read())
                 {
 
-                    Estado aux = new Estado();
+                    EstadoComercial aux = new EstadoComercial();
 
                     aux.ID = (int)datos.Lector["ID"];
                     aux.Nombre = (string)datos.Lector["nombre"];
@@ -45,5 +45,5 @@ namespace negocio
             }
         }
     }
-}
+
 }
