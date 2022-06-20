@@ -8,14 +8,13 @@ namespace negocio
 {
     public class Diccionario
     {
-        public static string CONEXION_SERVER = "server=.\\SQLEXPRESS; database=eCOMMERCE_DB_; integrated security=true";
+        public static string CONEXION_SERVER = "server=.\\SQLEXPRESS; database=eCOMMERCE_DB2; integrated security=true";
 
         public static string LISTAR_MARCAS = "select id, descripcion as nombreMarca from MARCAS";
 
         public static string LISTAR_CATEGORIAS = "select id, descripcion as nombreCategoria from CATEGORIAS";
 
         public static string LISTAR_ARTICULOS = "SELECT A.ID, A.nombre, A.codigo, A.descripcion, A.URLImagen, A.precio, A.idMarca, M.nombre as Marca, a.idCategoria, C.nombre as Categoria, A.idTipo, T.nombre as Tipo, A.idColor, CO.nombre as Color, A.idTalle, TA.nombre as Talle, A.idTemporada, TE.nombre as Temporada, A.descuento, A.idEstadoComercial, EC.nombre as Estado_Comercial, A.estadoActivo FROM Articulo A, Marca M, Categoria C, EstadoComercial EC, Tipo T, Color CO, Talle TA, Temporada TE WHERE M.ID = A.idMarca AND C.ID = A.idCategoria and EC.ID = A.idEstadoComercial and CO.ID = A.idColor and TA.ID = A.idTalle and TE.ID = A.idTemporada and T.ID = A.idTipo";
-
 
         public static string IMAGE_NOTFOUND = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXJq6u65-ZDLDMCQMHejY3TGV5Vbj-O343pyR1KoVE8lvmTet4TG319R9tPMgSgxKFgjY&usqp=CAU";
 
