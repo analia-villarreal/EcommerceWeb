@@ -8,7 +8,7 @@ namespace negocio
 {
     public class ArticuloNegocio
     {
-        public List<Articulo> Listar()
+        public List<Articulo> Listar(bool estado = true)
         {
             List<Articulo> lista = new List<Articulo>();
             AccesoDatos datos = new AccesoDatos();
@@ -16,16 +16,17 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("SELECT a.nombre, codigo, a.descripcion, urlImagen, Precio, a.IdMarca, m.nombre as Marca ,a.IdCategoria, c.nombre as Categoria, a.idTipo, t.nombre as Tipo, a.idColor, co.nombre as Color,a.idTalle, talle.nombre as Talle, a.idTemporada, temp.nombre as Temporada, descuento, a.estado, e.nombre as Estado  FROM Articulo a, Marca m, Categoria c, Estado e, Tipo t ,Color co, Talle talle, Temporada temp WHERE m.Id = a.IdMarca and c.Id = a.IdCategoria and e.Id = a.estado and co.Id = a.idColor and talle.id = a.idTalle and temp.Id = a.idTemporada and t.Id = a.idTipo");
+                datos.setearConsulta(Diccionario.LISTAR_ARTICULOS);
 
                 datos.ejecutarLectura();
-
+                int ide = 0;
                 while (datos.Lector.Read())
                 {
-
+                    ide++;
                     Articulo aux = new Articulo();
 
-                    //aux.ID = (int)datos.Lector["ID"];
+                    aux.ID = ide; //hay que corregir esto, se deberia utilizar aux.ID = (int)datos.Lector["Id"];
+                                  //pero por alguna razon crashea el sistema
                     aux.Nombre = (string)datos.Lector["nombre"];
 
                     aux.Descripcion = (string)datos.Lector["descripcion"];
@@ -61,12 +62,16 @@ namespace negocio
                     aux.Temporada.ID = (int)datos.Lector["idtemporada"];
                     aux.Temporada.Nombre = (string)datos.Lector["nombre"];
 
-                    aux.Estado = new Estado();
-                    aux.Estado.ID = (int)datos.Lector["estado"];
-                    aux.Estado.Nombre = (string)datos.Lector["nombre"];
+                    aux.EstadoComercial = new EstadoComercial();
+                    aux.EstadoComercial.ID = (int)datos.Lector["idEstadoComercial"];
+                    aux.EstadoComercial.Nombre = (string)datos.Lector["nombre"];
                     
                     aux.Descuento = (int)datos.Lector["descuento"];
-                    
+
+                    if (estado == false && aux.EstadoNegocios == false) lista.Add(aux);
+                    if (estado == true && aux.EstadoNegocios == true) lista.Add(aux);
+
+
                     lista.Add(aux);
 
 
