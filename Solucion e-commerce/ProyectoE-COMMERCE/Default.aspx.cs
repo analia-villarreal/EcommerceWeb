@@ -20,6 +20,7 @@ namespace ProyectoE_COMMERCE
             ArticuloNegocio negocio = new ArticuloNegocio();
             listaArticulos = negocio.Listar();
 
+            Session.Add("catalogo", listaArticulos);
         }
     }
 }

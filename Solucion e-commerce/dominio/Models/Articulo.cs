@@ -20,8 +20,19 @@ namespace dominio
         public Temporada Temporada { get; set; }      
         public int Descuento { get; set; }      
         public decimal Precio { get; set; }
-        public Estado Estado { get; set; }
-
-
+        public EstadoComercial EstadoComercial { get; set; }
+        public bool EstadoNegocios { get; set; }
     }
+    public class cantArticulo
+    {
+        public int id { get; set; }
+        public int cant { get; set; }
+
+        public cantArticulo(int a, int b)
+        {
+            id = a;
+            cant = b;
+        }
+    }
+
 }

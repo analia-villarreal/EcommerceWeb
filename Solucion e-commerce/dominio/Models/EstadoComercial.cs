@@ -5,7 +5,7 @@ using System.Web;
 
 namespace dominio
 {
-    public class Estado
+    public class EstadoComercial
     {
         public int ID { get; set; }
         public string Nombre { get; set; }
