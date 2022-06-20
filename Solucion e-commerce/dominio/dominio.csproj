@@ -71,10 +71,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\EstadoComercial.cs" />
     <Compile Include="Models\Color.cs" />
     <Compile Include="Models\Marca.cs" />
     <Compile Include="Models\Categoria.cs" />
-    <Compile Include="Models\EstadoComercial.cs" />
+    <Compile Include="Models\Estado.cs" />
     <Compile Include="Models\Articulo.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Global.asax.cs">

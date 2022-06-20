@@ -76,7 +76,7 @@
     <Compile Include="CategoriaNegocio.cs" />
     <Compile Include="ColorNegocio.cs" />
     <Compile Include="Diccionario.cs" />
-    <Compile Include="EstadoNegocio.cs" />
+    <Compile Include="EstadoComercialNegocio.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

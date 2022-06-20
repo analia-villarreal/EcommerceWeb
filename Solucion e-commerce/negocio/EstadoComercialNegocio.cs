@@ -6,7 +6,7 @@ using dominio;
 
 namespace negocio
 {
-    public class EstadoNegocio
+    public class EstadoComercialNegocio
     {
         public List<Estado> Listar()
         {

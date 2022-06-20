@@ -44,7 +44,6 @@ namespace ProyectoE_COMMERCE
                     ddlColor.DataValueField = "ID";
                     ddlColor.DataTextField = "Nombre";
                     ddlColor.DataBind();
-
                 }
              
             }
@@ -92,7 +91,7 @@ namespace ProyectoE_COMMERCE
                 Session.Add("error", ex);
             }
 
-            EstadoNegocio estadoNegocio = new EstadoNegocio();
+            EstadoComercialNegocio estadoNegocio = new EstadoComercialNegocio();
 
             try
             {
@@ -146,9 +145,9 @@ namespace ProyectoE_COMMERCE
             art.Codigo = textCodigo.Text;
             art.Descripcion = textDescripcion.Text;
             art.URLImagen = textURLImagen.Text;
-            art.Tipo = (Tipo)ddlTipo.SelectedItem;
-            art.Color = (Color)ddlColor.SelectedItem;
-            art.Categoria = (Categoria)ddlCategoria.SelectedItem;
+            //art.Tipo = (Tipo)ddlTipo.SelectedItem;
+            //art.Color = (Color)ddlColor.SelectedItem;
+            //art.Categoria = (Categoria)ddlCategoria.SelectedItem;
 
 
 
