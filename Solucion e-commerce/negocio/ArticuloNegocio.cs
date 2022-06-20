@@ -90,5 +90,44 @@ namespace negocio
             }
         }
 
+        public void Agregar(Articulo nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta(Diccionario.AGREGAR_ARTICULO);
+                //datos.setearParametros("@Id", nuevo.ID);
+                datos.setearParametros("@nombre", nuevo.Nombre);
+                datos.setearParametros("@codigo", nuevo.Codigo);
+                datos.setearParametros("@descripcion", nuevo.Descripcion);
+                datos.setearParametros("@URLImagen", nuevo.URLImagen);
+                datos.setearParametros("@idTipo", nuevo.Tipo.ID);
+                datos.setearParametros("@idColor", nuevo.Color.ID);
+                datos.setearParametros("@idTalle", nuevo.Talle.ID);
+                datos.setearParametros("@idCategoria", nuevo.Categoria.ID);
+                datos.setearParametros("@idMarca", nuevo.Marca.ID);
+                datos.setearParametros("@idTemporada", nuevo.Temporada.ID);
+                datos.setearParametros("@descuento", nuevo.Descuento);
+                datos.setearParametros("@precio", nuevo.Precio);
+                datos.setearParametros("@idEstadoComercial", nuevo.EstadoComercial.ID);
+                datos.setearParametros("@estadoActivo", nuevo.EstadoNegocios);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+
+            }
+        }
+
+
+
+
     }
 }

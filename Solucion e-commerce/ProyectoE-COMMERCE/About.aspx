@@ -6,14 +6,18 @@
 
         <div class="col">
 
-            <asp:GridView runat="server" ID="dgvArticulos" CssClass="table-secondary " AutoGenerateColumns="false">
+            <asp:GridView runat="server" ID="dgvArticulos"  DataKeyNames="ID" OnSelectedIndexChanged="dgvArticulos_SelectedIndexChanged" CssClass="table" AutoGenerateColumns="false">
 
                 <Columns>
                     <asp:BoundField HeaderText="ID" DataField="ID" />
                     <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
                     <asp:BoundField HeaderText="Codigo" DataField="Codigo" />
                     <asp:BoundField HeaderText="Tipo" DataField="tipo.nombre" />
+                    <asp:BoundField HeaderText="Color" DataField="color.nombre" />
                     <asp:BoundField HeaderText="Precio" DataField="Precio" />
+                 
+                    <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" HeaderText="Acción" />
+                    
                 </Columns>
 
             </asp:GridView>

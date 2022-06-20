@@ -6,24 +6,24 @@ using dominio;
 
 namespace negocio
 {
-    public class EstadoComercialNegocio
+    public class TemporadaNegocio
     {
-        public List<EstadoComercial> Listar()
+        public List<Temporada> Listar()
         {
-            List<EstadoComercial> lista = new List<EstadoComercial>();
+            List<Temporada> lista = new List<Temporada>();
             AccesoDatos datos = new AccesoDatos();
 
 
             try
             {
-                datos.setearConsulta("SELECT ID, nombre from EstadoComercial");
+                datos.setearConsulta("SELECT ID, nombre from Temporada");
 
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
 
-                    EstadoComercial aux = new EstadoComercial();
+                    Temporada aux = new Temporada();
 
                     aux.ID = (int)datos.Lector["ID"];
                     aux.Nombre = (string)datos.Lector["nombre"];
@@ -45,5 +45,4 @@ namespace negocio
             }
         }
     }
-
 }

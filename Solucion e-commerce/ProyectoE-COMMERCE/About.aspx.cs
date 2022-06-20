@@ -18,5 +18,13 @@ namespace ProyectoE_COMMERCE
             dgvArticulos.DataSource = negocio.Listar();
             dgvArticulos.DataBind();
         }
+
+        protected void dgvArticulos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var id = dgvArticulos.SelectedDataKey.Value.ToString();
+            Response.Redirect("ArticuloForm.aspx? ID=" + id);
+
+
+        }
     }
 }

@@ -127,10 +127,71 @@ namespace ProyectoE_COMMERCE
 
                 Session.Add("error", ex);
             }
+
+            TemporadaNegocio temporadaNegocio = new TemporadaNegocio();
+
+            try
+            {
+                if (!IsPostBack)
+                {
+                    ddlTemporada.DataSource = temporadaNegocio.Listar();
+                    ddlTemporada.DataValueField = "ID";
+                    ddlTemporada.DataTextField = "Nombre";
+                    ddlTemporada.DataBind();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Session.Add("error", ex);
+            }
+
+            EstadoComercialNegocio estadoComercialNegocio = new EstadoComercialNegocio();
+
+            try
+            {
+                if (!IsPostBack)
+                {
+                    ddlEstado.DataSource = estadoComercialNegocio.Listar();
+                    ddlEstado.DataValueField = "ID";
+                    ddlEstado.DataTextField = "Nombre";
+                    ddlEstado.DataBind();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Session.Add("error", ex);
+            }
+
         }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Cargar_Desplegables();
+
+            if (Request.QueryString["ID"]!= null)
+            {
+                int Id = int.Parse(Request.QueryString["ID"].ToString());
+
+                List<Articulo> listaArt = new List<Articulo>();
+
+                ArticuloNegocio negocio = new ArticuloNegocio();
+
+                listaArt = negocio.Listar();    
+
+                Articulo seleccionado = listaArt.Find(x=> x.ID == Id);
+
+                textNombre.Text = seleccionado.Nombre;
+                textCodigo.Text = seleccionado.Codigo;
+                textDescripcion.Text = seleccionado.Descripcion;
+                textURLImagen.Text = seleccionado.URLImagen;
+                textCodigo.Text = seleccionado.Codigo;
+                textCodigo.ReadOnly = true;
+
+
+
+            }
 
           
             
@@ -140,16 +201,43 @@ namespace ProyectoE_COMMERCE
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
             Articulo art = new Articulo();
-       
+
+            ArticuloNegocio negocio = new ArticuloNegocio();
+
             art.Nombre = textNombre.Text;
             art.Codigo = textCodigo.Text;
             art.Descripcion = textDescripcion.Text;
             art.URLImagen = textURLImagen.Text;
-            //art.Tipo = (Tipo)ddlTipo.SelectedItem;
-            //art.Color = (Color)ddlColor.SelectedItem;
-            //art.Categoria = (Categoria)ddlCategoria.SelectedItem;
+            art.Tipo = new Tipo();
+            art.Tipo.ID = ddlTipo.SelectedIndex+1;
+            art.Color = new Color();
+            art.Color.ID = ddlColor.SelectedIndex+1;
+            art.Talle = new Talle();
+            art.Talle.ID = ddlTalle.SelectedIndex+1;
+            art.Categoria = new Categoria();
+            art.Categoria.ID = ddlCategoria.SelectedIndex+1;
+            art.Marca = new Marca();
+            art.Marca.ID = ddlMarca.SelectedIndex+1;
+            art.Temporada = new Temporada();
+            art.Temporada.ID = ddlTemporada.SelectedIndex+1;
+            art.Descuento = int.Parse(txtDescuento.Text);
+            art.Precio = decimal.Parse(txtPrecio.Text);
+            art.EstadoComercial = new EstadoComercial();
+            art.EstadoComercial.ID = ddlEstado.SelectedIndex+1;
+            art.EstadoNegocios = true;
 
+            negocio.Agregar(art);
+            MessageBox.Show("Agregado exitosamente");
 
+        }
+
+        protected void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
 
         }
     }
