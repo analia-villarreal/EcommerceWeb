@@ -18,11 +18,11 @@ namespace negocio
 
         public static string IMAGE_NOTFOUND = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXJq6u65-ZDLDMCQMHejY3TGV5Vbj-O343pyR1KoVE8lvmTet4TG319R9tPMgSgxKFgjY&usqp=CAU";
 
-        public static string MODIFICAR_ARTICULO = "update Articulo set Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, IdMarca = @IdMarca, IdCategoria = @IdCategoria, ImagenUrl = @imagenUrl, Precio = @precio where ID = @ID";
+        public static string MODIFICAR_ARTICULO = "update Articulo set Nombre = @nombre, Descripcion = @descripcion, URLImagen = @URLImagen, idTipo = @idTipo, idColor = @idColor, IdCategoria = @IdCategoria, idMarca = @idMarca, Descuento = @descuento, Precio = @precio, idEstadoComercial = @idEstadoComercial where ID = @ID";
 
         public static string AGREGAR_ARTICULO = "insert into Articulo values (@nombre,@codigo,@descripcion,@URLImagen,@idTipo,@idColor,@idTalle,@idCategoria,@idMarca,@idTemporada,@descuento,@precio,@idEstadoComercial,@estadoActivo)";
 
-        public static string BAJA_ARTICULO = "";
+        public static string BAJA_ARTICULO = "update articulo set estadoActivo = 0 where ID = @ID";
 
         public static string ELIMINAR_ARTICULO = "delete from articulos where ID = @ID";
 

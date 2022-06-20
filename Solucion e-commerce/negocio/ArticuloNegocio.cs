@@ -65,7 +65,7 @@ namespace negocio
                     aux.EstadoComercial = new EstadoComercial();
                     aux.EstadoComercial.ID = (int)datos.Lector["idEstadoComercial"];
                     aux.EstadoComercial.Nombre = (string)datos.Lector["nombre"];
-                    
+
                     aux.Descuento = (int)datos.Lector["descuento"];
 
                     if (estado == false && aux.EstadoNegocios == false) lista.Add(aux);
@@ -126,8 +126,63 @@ namespace negocio
             }
         }
 
+        public void Modificar(Articulo art)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta(Diccionario.MODIFICAR_ARTICULO);
+                datos.setearParametros("@nombre", art.Nombre);
+                datos.setearParametros("@descripcion", art.Descripcion);
+                datos.setearParametros("@URLImagen", art.URLImagen);
+                datos.setearParametros("@idTipo", art.Tipo.ID);
+                datos.setearParametros("@idColor", art.Color.ID);
+                datos.setearParametros("@idCategoria", art.Categoria.ID);
+                datos.setearParametros("@idMarca", art.Marca.ID);
+                datos.setearParametros("@descuento", art.Descuento);
+                datos.setearParametros("@precio", art.Precio);
+                datos.setearParametros("@idEstadoComercial", art.EstadoComercial.ID);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void BajaLogica(int id)
+        {
+
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {   
+                datos.setearConsulta(Diccionario.BAJA_ARTICULO);
+                datos.setearParametros("@ID", id);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }   
 
 
 
+
+        }
     }
 }
+   

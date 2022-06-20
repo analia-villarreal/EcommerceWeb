@@ -188,6 +188,7 @@ namespace ProyectoE_COMMERCE
                 textURLImagen.Text = seleccionado.URLImagen;
                 textCodigo.Text = seleccionado.Codigo;
                 textCodigo.ReadOnly = true;
+               
 
 
 
