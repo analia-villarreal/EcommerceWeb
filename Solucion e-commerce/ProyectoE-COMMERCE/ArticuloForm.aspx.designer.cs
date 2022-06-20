@@ -15,15 +15,6 @@ namespace ProyectoE_COMMERCE
     {
 
         /// <summary>
-        /// Control textID.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textID;
-
-        /// <summary>
         /// Control textNombre.
         /// </summary>
         /// <remarks>
@@ -69,6 +60,24 @@ namespace ProyectoE_COMMERCE
         protected global::System.Web.UI.WebControls.DropDownList ddlTipo;
 
         /// <summary>
+        /// Control ddlColor.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlColor;
+
+        /// <summary>
+        /// Control ddlTalle.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTalle;
+
+        /// <summary>
         /// Control ddlCategoria.
         /// </summary>
         /// <remarks>
@@ -76,15 +85,6 @@ namespace ProyectoE_COMMERCE
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlCategoria;
-
-        /// <summary>
-        /// Control ddlSubcategoria.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSubcategoria;
 
         /// <summary>
         /// Control ddlMarca.
