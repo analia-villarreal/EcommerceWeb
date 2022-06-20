@@ -8,7 +8,7 @@ namespace negocio
 {
     public class Diccionario
     {
-        public static string CONEXION_SERVER = "server=.\\SQLEXPRESS; database=eCOMMERCE_DB_; integrated security=true";
+        public static string CONEXION_SERVER = "server=.\\SQLEXPRESS; database=eCOMMERCE_DB2; integrated security=true";
 
         public static string LISTAR_MARCAS = "select id, descripcion as nombreMarca from MARCAS";
 
