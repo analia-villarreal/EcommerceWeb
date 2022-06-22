@@ -12,6 +12,7 @@ namespace ProyectoE_COMMERCE
 {
     public partial class ArticuloForm1 : System.Web.UI.Page
     {
+        public List<dominio.Articulo> listaArt { get; set; }
         private void Cargar_Desplegables()
         {
             
@@ -174,8 +175,6 @@ namespace ProyectoE_COMMERCE
             {
                 int Id = int.Parse(Request.QueryString["ID"].ToString());
 
-                List<Articulo> listaArt = new List<Articulo>();
-
                 ArticuloNegocio negocio = new ArticuloNegocio();
 
                 listaArt = negocio.Listar();    
@@ -188,9 +187,6 @@ namespace ProyectoE_COMMERCE
                 textURLImagen.Text = seleccionado.URLImagen;
                 textCodigo.Text = seleccionado.Codigo;
                 textCodigo.ReadOnly = true;
-               
-
-
 
             }
 
