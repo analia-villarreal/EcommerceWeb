@@ -20,7 +20,7 @@ namespace negocio
 
         public static string MODIFICAR_ARTICULO = "update Articulo set Nombre = @nombre, Descripcion = @descripcion, URLImagen = @URLImagen, idTipo = @idTipo, idColor = @idColor, IdCategoria = @IdCategoria, idMarca = @idMarca, Descuento = @descuento, Precio = @precio, idEstadoComercial = @idEstadoComercial where ID = @ID";
 
-        public static string AGREGAR_ARTICULO = "insert into Articulo values (@nombre,@codigo,@descripcion,@URLImagen,@idTipo,@idColor,@idTalle,@idCategoria,@idMarca,@idTemporada,@descuento,@precio,@idEstadoComercial,@estadoActivo)";
+        public static string AGREGAR_ARTICULO = "insert into Articulo values (@nombre,@codigo,@URLImagen,@descripcion,@idTipo,@idCategoria,@idColor,@idTalle,@idMarca,@idTemporada,@descuento,@precio,@idEstadoComercial,@estadoActivo)";
 
         public static string BAJA_ARTICULO = "update articulo set estadoActivo = 0 where ID = @ID";
 
@@ -29,6 +29,8 @@ namespace negocio
         public static string ALTA_ARTICULO = "update articulos set Estado = 1 where ID = @ID";
 
         public static string BUSCAR_POR_ID = "select A.Id, A.Codigo, A.Nombre, A.Descripcion, M.Descripcion as Marca, M.Id as IdMarca, C.Descripcion as Categoria, C.Id as IdCategoria, A.ImagenUrl, A.Precio, A.Estado from ARTICULOS A inner join MARCAS M on M.Id = A.IdMarca inner join CATEGORIAS C on C.Id = A.IdCategoria where A.Id = @ID";
+
+        public static string BUSCAR_POR_ID_TIPO = "Select T.Nombre from @aBuscar T where T.ID = @idtipo";
 
     }
 }
