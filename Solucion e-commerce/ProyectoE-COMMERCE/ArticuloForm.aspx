@@ -56,20 +56,27 @@
                     <label for="ddlEstado" class="form-label">Estado</label>
                     <asp:DropDownList ID="ddlEstado" runat="server" CssClass="form-select"></asp:DropDownList>
                 </div>
-                <div class="mb-3">
-                    <asp:Button CssClass="btn btn-primary" ID="btnAceptar" OnClick="btnAgregar_Click" runat="server" Text="Aceptar" />
-                </div>
-                <a href="About.aspx">Cancelar</a>
 
-                <%if (Request.QueryString["ID"]!= null){%>
+
+
+                <%if (Request.QueryString["ID"] != null)
+                    {%>
                 <div class="mb-3">
                     <asp:Button CssClass="btn btn-primary" ID="btnModificar" OnClick="btnModificar_Click"  runat="server" Text="Modificar" />
                 </div>
                 <div class="mb-3">
                     <asp:Button CssClass="btn btn-primary" ID="btnEliminar" OnClick="btnEliminar_Click" runat="server" Text="Eliminar" />
                 </div>
+                <%}
+                   else { %>
+                <div class="mb-3">
+                    <asp:Button CssClass="btn btn-primary" ID="btnAceptar" OnClick="btnAgregar_Click" runat="server" Text="Aceptar" />
+                </div>
+
 
                     <%}%>
+                <a href="About.aspx">Cancelar</a>
+
             </div>
         </div>
     </div>
