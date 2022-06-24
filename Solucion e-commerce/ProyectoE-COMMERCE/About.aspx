@@ -12,8 +12,8 @@
                     <asp:BoundField HeaderText="ID" DataField="ID" />
                     <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
                     <asp:BoundField HeaderText="Codigo" DataField="Codigo" />
-                    <%-- <asp:BoundField HeaderText="Tipo" DataField="IDtipo"  />   Consultar como poder llamar a una funcion aqui
-                    <asp:BoundField HeaderText="Color" DataField="IDcolor" /> --%>
+                    <asp:BoundField HeaderText="Tipo" DataField="Tipo.Nombre"  />  
+                    <asp:BoundField HeaderText="Color" DataField="Color.Nombre" /> 
                     <asp:BoundField HeaderText="Precio" DataField="Precio" />
                  
                     <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" HeaderText="Acción" />

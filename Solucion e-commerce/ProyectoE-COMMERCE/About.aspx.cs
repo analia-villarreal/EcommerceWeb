@@ -22,12 +22,12 @@ namespace ProyectoE_COMMERCE
         protected void dgvArticulos_SelectedIndexChanged(object sender, EventArgs e)
         {
             var id = dgvArticulos.SelectedDataKey.Value.ToString();
-            Response.Redirect("ArticuloForm.aspx? ID=" + id);
+            Response.Redirect("ArticuloForm.aspx?ID=" + id);
 
 
         }
 
-        
+        /*
         protected string DevolverCaracteristica(int IDbusqueda, string tipoDato)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -61,6 +61,6 @@ namespace ProyectoE_COMMERCE
             return aDevolver;
 
         }  ///Consultar a maxi como embeber el resultado de esta funcion en el .aspx
-
+        */
     }
 }
