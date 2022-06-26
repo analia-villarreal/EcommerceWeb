@@ -206,21 +206,21 @@ namespace ProyectoE_COMMERCE
             art.Descripcion = textDescripcion.Text;
             art.URLImagen = textURLImagen.Text;
             art.Tipo = new Tipo();
-            art.Tipo.ID = ddlTipo.SelectedIndex+1;
+            art.Tipo.ID = int.Parse(ddlTipo.SelectedValue);
             art.Color = new Color();
-            art.Color.ID = ddlColor.SelectedIndex+1;
+            art.Color.ID = int.Parse(ddlColor.SelectedValue);
             art.Talle = new Talle();
-            art.Talle.ID = ddlTalle.SelectedIndex+1;
+            art.Talle.ID = int.Parse(ddlTalle.SelectedValue);
             art.Categoria = new Categoria();
-            art.Categoria.ID = ddlCategoria.SelectedIndex+1;
+            art.Categoria.ID = int.Parse(ddlCategoria.SelectedValue);
             art.Marca = new Marca();
-            art.Marca.ID = ddlMarca.SelectedIndex+1;
+            art.Marca.ID = int.Parse(ddlMarca.SelectedValue);
             art.Temporada = new Temporada();
-            art.Temporada.ID = ddlTemporada.SelectedIndex+1;
+            art.Temporada.ID = int.Parse(ddlTemporada.SelectedValue);
             art.Descuento = int.Parse(txtDescuento.Text);
             art.Precio = decimal.Parse(txtPrecio.Text);
             art.EstadoComercial = new EstadoComercial();
-            art.EstadoComercial.ID = ddlEstado.SelectedIndex+1;
+            art.EstadoComercial.ID = int.Parse(ddlEstado.SelectedValue);
             art.EstadoNegocios = true;
 
             negocio.Agregar(art);

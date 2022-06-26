@@ -22,7 +22,7 @@ namespace ProyectoE_COMMERCE
         protected void dgvArticulos_SelectedIndexChanged(object sender, EventArgs e)
         {
             var id = dgvArticulos.SelectedDataKey.Value.ToString();
-            Response.Redirect("ArticuloForm.aspx? ID=" + id);
+            Response.Redirect("ArticuloForm.aspx? ID="+id);
 
 
         }
