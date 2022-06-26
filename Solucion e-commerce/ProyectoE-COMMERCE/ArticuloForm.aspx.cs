@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,53 +9,30 @@ using System.Windows;
 using dominio;
 using negocio;
 
+
 namespace ProyectoE_COMMERCE
 {
     public partial class ArticuloForm1 : System.Web.UI.Page
     {
+        public ArticuloForm1()
+        {
+
+            //InitializeComponent();
+
+        }
         public List<dominio.Articulo> listaArt { get; set; }
+
+        private Articulo art = null;
         private void Cargar_Desplegables()
         {
-            
-            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
-
-            try
-            {
-                if (!IsPostBack)
-                {
-                    ddlCategoria.DataSource = categoriaNegocio.Listar();
-                    ddlCategoria.DataValueField = "ID";
-                    ddlCategoria.DataTextField = "Nombre";
-                    ddlCategoria.DataBind();
-                }
-                
-            }
-            catch (Exception ex)
-            {
-
-                Session.Add("error", ex);
-            }
-            
-            ColorNegocio colorNegocio = new ColorNegocio();
-
-            try
-            {
-                if (!IsPostBack)
-                {
-                    ddlColor.DataSource = colorNegocio.Listar();
-                    ddlColor.DataValueField = "ID";
-                    ddlColor.DataTextField = "Nombre";
-                    ddlColor.DataBind();
-                }
-             
-            }
-            catch (Exception ex)
-            {
-
-                Session.Add("error", ex);
-            }
-
             TipoNegocio tipoNegocio = new TipoNegocio();
+            ColorNegocio colorNegocio = new ColorNegocio();
+            TalleNegocio talleNegocio = new TalleNegocio();
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
+            TemporadaNegocio temporadaNegocio = new TemporadaNegocio();
+            EstadoComercialNegocio estadoNegocio = new EstadoComercialNegocio();
+
 
             try
             {
@@ -64,101 +42,40 @@ namespace ProyectoE_COMMERCE
                     ddlTipo.DataValueField = "ID";
                     ddlTipo.DataTextField = "Nombre";
                     ddlTipo.DataBind();
-                }
-                
-            }
-            catch (Exception ex)
-            {
 
-                MessageBox.Show("ex.ToString()");
-            }
+                    ddlColor.DataSource = colorNegocio.Listar();
+                    ddlColor.DataValueField = "ID";
+                    ddlColor.DataTextField = "Nombre";
+                    ddlColor.DataBind();
 
-            TalleNegocio talleNegocio = new TalleNegocio();
-
-            try
-            {
-                if (!IsPostBack)
-                {
                     ddlTalle.DataSource = talleNegocio.Listar();
                     ddlTalle.DataValueField = "ID";
                     ddlTalle.DataTextField = "Nombre";
                     ddlTalle.DataBind();
-                }
-                
-            }
-            catch (Exception ex)
-            {
 
-                Session.Add("error", ex);
-            }
+                    ddlCategoria.DataSource = categoriaNegocio.Listar();
+                    ddlCategoria.DataValueField = "ID";
+                    ddlCategoria.DataTextField = "Nombre";
+                    ddlCategoria.DataBind();
 
-            EstadoComercialNegocio estadoNegocio = new EstadoComercialNegocio();
+                    ddlMarca.DataSource = marcaNegocio.Listar();
+                    ddlMarca.DataValueField = "ID";
+                    ddlMarca.DataTextField = "Nombre";
+                    ddlMarca.DataBind();
 
-            try
-            {
-                if (!IsPostBack)
-                {
+                    ddlTemporada.DataSource = temporadaNegocio.Listar();
+                    ddlTemporada.DataValueField = "ID";
+                    ddlTemporada.DataTextField = "Nombre";
+                    ddlTemporada.DataBind();
+
                     ddlEstado.DataSource = estadoNegocio.Listar();
                     ddlEstado.DataValueField = "ID";
                     ddlEstado.DataTextField = "Nombre";
                     ddlEstado.DataBind();
 
                 }
-            }
-            catch (Exception ex)
-            {
 
-                Session.Add("error", ex);
-            }
-
-            MarcaNegocio marcaNegocio = new MarcaNegocio();
-
-            try
-            {
-                if (!IsPostBack)
-                {
-                    ddlMarca.DataSource = marcaNegocio.Listar();
-                    ddlMarca.DataValueField = "ID";
-                    ddlMarca.DataTextField = "Nombre";
-                    ddlMarca.DataBind();
-                }
-            }
-            catch (Exception ex)
-            {
-
-                Session.Add("error", ex);
-            }
-
-            TemporadaNegocio temporadaNegocio = new TemporadaNegocio();
-
-            try
-            {
-                if (!IsPostBack)
-                {
-                    ddlTemporada.DataSource = temporadaNegocio.Listar();
-                    ddlTemporada.DataValueField = "ID";
-                    ddlTemporada.DataTextField = "Nombre";
-                    ddlTemporada.DataBind();
-                }
-            }
-            catch (Exception ex)
-            {
-
-                Session.Add("error", ex);
-            }
-
-            EstadoComercialNegocio estadoComercialNegocio = new EstadoComercialNegocio();
-
-            try
-            {
-                if (!IsPostBack)
-                {
-                    ddlEstado.DataSource = estadoComercialNegocio.Listar();
-                    ddlEstado.DataValueField = "ID";
-                    ddlEstado.DataTextField = "Nombre";
-                    ddlEstado.DataBind();
-                }
-            }
+            }    
             catch (Exception ex)
             {
 
@@ -187,55 +104,81 @@ namespace ProyectoE_COMMERCE
                 textURLImagen.Text = seleccionado.URLImagen;
                 textCodigo.Text = seleccionado.Codigo;
                 textCodigo.ReadOnly = true;
+                ddlTipo.SelectedValue = seleccionado.Tipo.ID.ToString();
+                ddlColor.SelectedValue = seleccionado.Color.ID.ToString();
+                ddlTalle.SelectedValue = seleccionado.Talle.ID.ToString();
+                ddlCategoria.SelectedValue = seleccionado.Categoria.ID.ToString();
+                ddlMarca.SelectedValue = seleccionado.Marca.ID.ToString();
+                ddlTemporada.SelectedValue = seleccionado.Temporada.ID.ToString();
+                txtDescuento.Text= seleccionado.Descuento.ToString();
+                txtPrecio.Text = seleccionado.Descuento.ToString();
+                ddlEstado.Text = seleccionado.EstadoComercial.ID.ToString();
 
             }
-
-          
-            
-
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            Articulo art = new Articulo();
 
             ArticuloNegocio negocio = new ArticuloNegocio();
 
-            art.Nombre = textNombre.Text;
-            art.Codigo = textCodigo.Text;
-            art.Descripcion = textDescripcion.Text;
-            art.URLImagen = textURLImagen.Text;
-            art.Tipo = new Tipo();
-            art.Tipo.ID = int.Parse(ddlTipo.SelectedValue);
-            art.Color = new Color();
-            art.Color.ID = int.Parse(ddlColor.SelectedValue);
-            art.Talle = new Talle();
-            art.Talle.ID = int.Parse(ddlTalle.SelectedValue);
-            art.Categoria = new Categoria();
-            art.Categoria.ID = int.Parse(ddlCategoria.SelectedValue);
-            art.Marca = new Marca();
-            art.Marca.ID = int.Parse(ddlMarca.SelectedValue);
-            art.Temporada = new Temporada();
-            art.Temporada.ID = int.Parse(ddlTemporada.SelectedValue);
-            art.Descuento = int.Parse(txtDescuento.Text);
-            art.Precio = decimal.Parse(txtPrecio.Text);
-            art.EstadoComercial = new EstadoComercial();
-            art.EstadoComercial.ID = int.Parse(ddlEstado.SelectedValue);
-            art.EstadoNegocios = true;
+            try
+            {
+                if (art == null)
+                    art = new Articulo();
 
-            negocio.Agregar(art);
-            MessageBox.Show("Agregado exitosamente");
+                art.Nombre = textNombre.Text;
+                art.Codigo = textCodigo.Text;
+                art.Descripcion = textDescripcion.Text;
+                art.URLImagen = textURLImagen.Text;
+                art.Tipo = new Tipo();
+                art.Tipo.ID = int.Parse(ddlTipo.SelectedValue);
+                art.Color = new Color();
+                art.Color.ID = int.Parse(ddlColor.SelectedValue);
+                art.Talle = new Talle();
+                art.Talle.ID = int.Parse(ddlTalle.SelectedValue);
+                art.Categoria = new Categoria();
+                art.Categoria.ID = int.Parse(ddlCategoria.SelectedValue);
+                art.Marca = new Marca();
+                art.Marca.ID = int.Parse(ddlMarca.SelectedValue);
+                art.Temporada = new Temporada();
+                art.Temporada.ID = int.Parse(ddlTemporada.SelectedValue);
+                art.Descuento = int.Parse(txtDescuento.Text);
+                art.Precio = decimal.Parse(txtPrecio.Text);
+                art.EstadoComercial = new EstadoComercial();
+                art.EstadoComercial.ID = int.Parse(ddlEstado.SelectedValue);
+                art.EstadoNegocios = true;
+
+                if (art.ID != 0)
+                {
+                    negocio.Modificar(art);
+                    MessageBox.Show("Modificado exitosamente");
+                }
+                else
+                {
+                    negocio.Agregar(art);
+                    MessageBox.Show("Agregado exitosamente");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
 
         }
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
 
+
+
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
