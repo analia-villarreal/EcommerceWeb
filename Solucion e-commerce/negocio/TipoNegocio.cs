@@ -16,7 +16,7 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("SELECT ID, nombre from Tipo");
+                datos.setearConsulta("SELECT ID, nombreTipo from Tipo");
 
                 datos.ejecutarLectura();
 
@@ -26,7 +26,7 @@ namespace negocio
                     Tipo aux = new Tipo();
 
                     aux.ID = (int)datos.Lector["ID"];
-                    aux.Nombre = (string)datos.Lector["nombre"];
+                    aux.Nombre = (string)datos.Lector["nombreTipo"];
                     lista.Add(aux);
 
                 }

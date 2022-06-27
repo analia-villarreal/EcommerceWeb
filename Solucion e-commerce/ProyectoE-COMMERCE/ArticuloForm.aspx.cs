@@ -98,22 +98,24 @@ namespace ProyectoE_COMMERCE
 
                 Articulo seleccionado = listaArt.Find(x=> x.ID == Id);
 
-                textNombre.Text = seleccionado.Nombre;
-                textCodigo.Text = seleccionado.Codigo;
-                textDescripcion.Text = seleccionado.Descripcion;
-                textURLImagen.Text = seleccionado.URLImagen;
-                textCodigo.Text = seleccionado.Codigo;
-                textCodigo.ReadOnly = true;
-                ddlTipo.SelectedValue = seleccionado.Tipo.ID.ToString();
-                ddlColor.SelectedValue = seleccionado.Color.ID.ToString();
-                ddlTalle.SelectedValue = seleccionado.Talle.ID.ToString();
-                ddlCategoria.SelectedValue = seleccionado.Categoria.ID.ToString();
-                ddlMarca.SelectedValue = seleccionado.Marca.ID.ToString();
-                ddlTemporada.SelectedValue = seleccionado.Temporada.ID.ToString();
-                txtDescuento.Text= seleccionado.Descuento.ToString();
-                txtPrecio.Text = seleccionado.Descuento.ToString();
-                ddlEstado.Text = seleccionado.EstadoComercial.ID.ToString();
-
+                if (!IsPostBack)
+                {
+                    textNombre.Text = seleccionado.Nombre;
+                    textCodigo.Text = seleccionado.Codigo;
+                    textDescripcion.Text = seleccionado.Descripcion;
+                    textURLImagen.Text = seleccionado.URLImagen;
+                    textCodigo.Text = seleccionado.Codigo;
+                    textCodigo.ReadOnly = true;
+                    ddlTipo.SelectedValue = seleccionado.Tipo.ID.ToString();
+                    ddlColor.SelectedValue = seleccionado.Color.ID.ToString();
+                    ddlTalle.SelectedValue = seleccionado.Talle.ID.ToString();
+                    ddlCategoria.SelectedValue = seleccionado.Categoria.ID.ToString();
+                    ddlMarca.SelectedValue = seleccionado.Marca.ID.ToString();
+                    ddlTemporada.SelectedValue = seleccionado.Temporada.ID.ToString();
+                    txtDescuento.Text = seleccionado.Descuento.ToString();
+                    txtPrecio.Text = seleccionado.Descuento.ToString();
+                    ddlEstado.Text = seleccionado.EstadoComercial.ID.ToString();
+                }
             }
         }
 
@@ -126,7 +128,7 @@ namespace ProyectoE_COMMERCE
             {
                 if (art == null)
                     art = new Articulo();
-
+                
                 art.Nombre = textNombre.Text;
                 art.Codigo = textCodigo.Text;
                 art.Descripcion = textDescripcion.Text;
@@ -147,7 +149,7 @@ namespace ProyectoE_COMMERCE
                 art.Precio = decimal.Parse(txtPrecio.Text);
                 art.EstadoComercial = new EstadoComercial();
                 art.EstadoComercial.ID = int.Parse(ddlEstado.SelectedValue);
-                art.EstadoNegocios = true;
+                art.EstadoActivo = true;
 
                 if (art.ID != 0)
                 {
@@ -171,9 +173,43 @@ namespace ProyectoE_COMMERCE
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
+            ArticuloNegocio negocio = new ArticuloNegocio();
 
+            art = new Articulo();
 
+            try
+            {
+                art.ID = int.Parse(Request.QueryString["ID"]);
+                art.Nombre = textNombre.Text;
+                art.Codigo = textCodigo.Text;
+                art.Descripcion = textDescripcion.Text;
+                art.URLImagen = textURLImagen.Text;
+                art.Tipo = new Tipo();
+                art.Tipo.ID = int.Parse(ddlTipo.SelectedValue);
+                art.Color = new Color();
+                art.Color.ID = int.Parse(ddlColor.SelectedValue);
+                art.Talle = new Talle();
+                art.Talle.ID = int.Parse(ddlTalle.SelectedValue);
+                art.Categoria = new Categoria();
+                art.Categoria.ID = int.Parse(ddlCategoria.SelectedValue);
+                art.Marca = new Marca();
+                art.Marca.ID = int.Parse(ddlMarca.SelectedValue);
+                art.Temporada = new Temporada();
+                art.Temporada.ID = int.Parse(ddlTemporada.SelectedValue);
+                art.Descuento = int.Parse(txtDescuento.Text);
+                art.Precio = decimal.Parse(txtPrecio.Text);
+                art.EstadoComercial = new EstadoComercial();
+                art.EstadoComercial.ID = int.Parse(ddlEstado.SelectedValue);
+                art.EstadoActivo = true;
 
+                negocio.Modificar(art);
+                MessageBox.Show("Modificado exitosamente");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)

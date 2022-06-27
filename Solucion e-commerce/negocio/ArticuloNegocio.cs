@@ -26,7 +26,7 @@ namespace negocio
                 
                     aux.ID = ide; //hay que corregir esto, se deberia utilizar aux.ID = (int)datos.Lector["Id"];
                                   //pero por alguna razon crashea el sistema
-                    aux.Nombre = (string)datos.Lector["nombre"];
+                    aux.Nombre = (string)datos.Lector["nombreArticulo"];
 
                     aux.Codigo = (string)datos.Lector["codigo"];
 
@@ -36,27 +36,27 @@ namespace negocio
 
                     aux.Tipo = new Tipo();
                     aux.Tipo.ID = (int)datos.Lector["idTipo"];
-                    aux.Tipo.Nombre = (string)datos.Lector["nombre"];
+                    aux.Tipo.Nombre = (string)datos.Lector["Tipo"];
 
                     aux.Color = new Color();
                     aux.Color.ID = (int)datos.Lector["idColor"];
-                    aux.Color.Nombre = (string)datos.Lector["nombre"];
+                    aux.Color.Nombre = (string)datos.Lector["Color"];
 
                     aux.Talle = new Talle();
                     aux.Talle.ID = (int)datos.Lector["idTalle"];
-                    aux.Talle.Nombre = (string)datos.Lector["nombre"];
+                    aux.Talle.Nombre = (string)datos.Lector["Talle"];
 
                     aux.Categoria = new Categoria();
                     aux.Categoria.ID = (int)datos.Lector["idCategoria"];
-                    aux.Categoria.Nombre = (string)datos.Lector["nombre"];
+                    aux.Categoria.Nombre = (string)datos.Lector["Categoria"];
 
                     aux.Marca = new Marca();
                     aux.Marca.ID = (int)datos.Lector["idMarca"];
-                    aux.Marca.Nombre = (string)datos.Lector["nombre"];
+                    aux.Marca.Nombre = (string)datos.Lector["Marca"];
 
                     aux.Temporada = new Temporada();
                     aux.Temporada.ID = (int)datos.Lector["idtemporada"];
-                    aux.Temporada.Nombre = (string)datos.Lector["nombre"];
+                    aux.Temporada.Nombre = (string)datos.Lector["Temporada"];
 
                     aux.Descuento = (int)datos.Lector["descuento"];
 
@@ -64,9 +64,9 @@ namespace negocio
 
                     aux.EstadoComercial = new EstadoComercial();
                     aux.EstadoComercial.ID = (int)datos.Lector["idEstadoComercial"];
-                    aux.EstadoComercial.Nombre = (string)datos.Lector["nombre"];
+                    aux.EstadoComercial.Nombre = (string)datos.Lector["Estado_Comercial"];
 
-                    aux.EstadoNegocios = (bool)datos.Lector["estadoActivo"];
+                    aux.EstadoActivo = (bool)datos.Lector["estadoActivo"];
 
                     lista.Add(aux);
 
@@ -181,7 +181,7 @@ namespace negocio
                 datos.setearParametros("@descuento", nuevo.Descuento);
                 datos.setearParametros("@precio", nuevo.Precio);
                 datos.setearParametros("@idEstadoComercial", nuevo.EstadoComercial.ID);
-                datos.setearParametros("@estadoActivo", nuevo.EstadoNegocios);
+                datos.setearParametros("@estadoActivo", nuevo.EstadoActivo);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -203,6 +203,7 @@ namespace negocio
             try
             {
                 datos.setearConsulta(Diccionario.MODIFICAR_ARTICULO);
+                datos.setearParametros("@ID", art.ID);
                 datos.setearParametros("@nombre", art.Nombre);
                 datos.setearParametros("@descripcion", art.Descripcion);
                 datos.setearParametros("@URLImagen", art.URLImagen);

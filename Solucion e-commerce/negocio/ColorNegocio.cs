@@ -15,7 +15,7 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("SELECT ID, nombre from Color");
+                datos.setearConsulta("SELECT ID, nombreColor from Color");
 
                 datos.ejecutarLectura();
 
@@ -25,7 +25,7 @@ namespace negocio
                     Color aux = new Color();
 
                     aux.ID = (int)datos.Lector["ID"];
-                    aux.Nombre = (string)datos.Lector["nombre"];
+                    aux.Nombre = (string)datos.Lector["nombreColor"];
                     lista.Add(aux);
 
 

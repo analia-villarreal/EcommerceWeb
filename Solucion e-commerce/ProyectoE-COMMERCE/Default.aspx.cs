@@ -18,7 +18,7 @@ namespace ProyectoE_COMMERCE
         protected void Page_Load(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
-            listaArticulos = negocio.ListarConSP();
+            listaArticulos = negocio.Listar();
 
             Session.Add("catalogo", listaArticulos);
         }

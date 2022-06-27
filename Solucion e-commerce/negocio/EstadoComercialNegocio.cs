@@ -16,7 +16,7 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("SELECT ID, nombre from EstadoComercial");
+                datos.setearConsulta("SELECT ID, nombreEC from EstadoComercial");
 
                 datos.ejecutarLectura();
 
@@ -26,7 +26,7 @@ namespace negocio
                     EstadoComercial aux = new EstadoComercial();
 
                     aux.ID = (int)datos.Lector["ID"];
-                    aux.Nombre = (string)datos.Lector["nombre"];
+                    aux.Nombre = (string)datos.Lector["nombreEC"];
                     lista.Add(aux);
 
 
