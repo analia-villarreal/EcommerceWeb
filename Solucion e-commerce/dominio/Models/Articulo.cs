@@ -21,7 +21,7 @@ namespace dominio
         public int Descuento { get; set; }      
         public decimal Precio { get; set; }
         public EstadoComercial EstadoComercial { get; set; }
-        public bool EstadoNegocios { get; set; }
+        public bool EstadoActivo { get; set; }
     }
     public class cantArticulo
     {
