@@ -10,11 +10,11 @@ using dominio;
 using negocio;
 
 
-namespace ProyectoE_COMMERCE
+namespace ProyectoE_COMMERCE.ABMs
 {
-    public partial class ArticuloForm1 : System.Web.UI.Page
+    public partial class ABMArticulos : System.Web.UI.Page
     {
-        public ArticuloForm1()
+        public ABMArticulos()
         {
 
             //InitializeComponent();

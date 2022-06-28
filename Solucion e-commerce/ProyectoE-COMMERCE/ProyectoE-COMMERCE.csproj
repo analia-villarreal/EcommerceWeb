@@ -102,8 +102,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
-    <Content Include="ArticuloForm.aspx" />
+    <Content Include="ABMs\ABMmain.aspx" />
+    <Content Include="ABMs\ABMArticulos.aspx" />
+    <Content Include="ABMs\ABMColor.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\master.css" />
     <Content Include="Content\Site.css" />
@@ -153,21 +154,28 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
+    <Compile Include="ABMs\ABMColor.aspx.cs">
+      <DependentUpon>ABMColor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
+    <Compile Include="ABMs\ABMColor.aspx.designer.cs">
+      <DependentUpon>ABMColor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="ABMs\ABMmain.aspx.cs">
+      <DependentUpon>ABMmain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ABMs\ABMmain.aspx.designer.cs">
+      <DependentUpon>ABMmain.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="ArticuloForm.aspx.cs">
-      <DependentUpon>ArticuloForm.aspx</DependentUpon>
+    <Compile Include="ABMs\ABMArticulos.aspx.cs">
+      <DependentUpon>ABMArticulos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ArticuloForm.aspx.designer.cs">
-      <DependentUpon>ArticuloForm.aspx</DependentUpon>
+    <Compile Include="ABMs\ABMArticulos.aspx.designer.cs">
+      <DependentUpon>ABMArticulos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

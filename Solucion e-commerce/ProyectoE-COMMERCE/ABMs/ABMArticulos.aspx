@@ -1,6 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ArticuloForm.aspx.cs" Inherits="ProyectoE_COMMERCE.ArticuloForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ABMArticulos.aspx.cs" Inherits="ProyectoE_COMMERCE.ABMs.ABMArticulos" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+
     <div class="form-group">
         <div class="row">
             <div class="col-6">
@@ -99,7 +101,7 @@
                     <asp:Button CssClass="btn btn-primary" ID="btnAceptar" OnClick="btnAgregar_Click" runat="server" Text="Aceptar" />
                 </div>
                 <%}%>
-                <a href="About.aspx">Cancelar</a>
+                <a href="ABMmain.aspx">Cancelar</a>
             </div>
         </div>
     </div>

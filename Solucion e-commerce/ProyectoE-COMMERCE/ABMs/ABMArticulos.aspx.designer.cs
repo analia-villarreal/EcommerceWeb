@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ProyectoE_COMMERCE
+namespace ProyectoE_COMMERCE.ABMs
 {
 
 
-    public partial class ArticuloForm1
+    public partial class ABMArticulos
     {
 
         /// <summary>
