@@ -8,8 +8,8 @@ namespace dominio
 {
     public enum Rol
     {
-        normal = 1,
-        admin = 2
+        ADMIN = 1,
+        NORMAL = 2
     }
 
 
@@ -23,13 +23,14 @@ namespace dominio
         public string Email { get; set; }
         public Rol Rol { get; set; }
         public int IdDireccion { get; set; }
+
+        public Usuario(string user, string pass, bool admin)
+        {
+            UserName = user;
+            Contrasenia = pass;
+            Rol = admin ? Rol.ADMIN : Rol.NORMAL;
+        }
     }
-    /*
-    public Usuario(string User, string pass, bool admin)
-    {
-        UserName = User;
-        Contrasenia = pass;
-        Rol = admin ? 
-    }
-    */
+
+    
 }

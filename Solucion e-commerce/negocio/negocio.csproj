@@ -83,6 +83,7 @@
     <Compile Include="TalleNegocio.cs" />
     <Compile Include="TemporadaNegocio.cs" />
     <Compile Include="TipoNegocio.cs" />
+    <Compile Include="UsuarioNegocio.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

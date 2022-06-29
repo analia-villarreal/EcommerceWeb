@@ -34,5 +34,6 @@ namespace negocio
 
         public static string BUSCAR_POR_ID_TIPO = "Select T.Nombre from @aBuscar T where T.ID = @idtipo";
 
+        public static string LISTAR_USUARIOS = "Select T.Nombre from @aBuscar T where T.ID = @idtipo";
     }
 }
