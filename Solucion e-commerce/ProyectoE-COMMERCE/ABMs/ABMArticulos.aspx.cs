@@ -6,8 +6,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows;
-using dominio;
-using negocio;
+using dominio.Models;
+using negocio.Models;
 
 
 namespace ProyectoE_COMMERCE.ABMs
@@ -20,7 +20,7 @@ namespace ProyectoE_COMMERCE.ABMs
             //InitializeComponent();
 
         }
-        public List<dominio.Articulo> listaArt { get; set; }
+        public List<dominio.Models.Articulo> listaArt { get; set; }
 
         private Articulo art = null;
         private void Cargar_Desplegables()
@@ -150,17 +150,10 @@ namespace ProyectoE_COMMERCE.ABMs
                 art.EstadoComercial = new EstadoComercial();
                 art.EstadoComercial.ID = int.Parse(ddlEstado.SelectedValue);
                 art.EstadoActivo = true;
-
-                if (art.ID != 0)
-                {
-                    negocio.Modificar(art);
-                    MessageBox.Show("Modificado exitosamente");
-                }
-                else
-                {
-                    negocio.Agregar(art);
-                    MessageBox.Show("Agregado exitosamente");
-                }
+                                             
+                negocio.Agregar(art);
+                MessageBox.Show("Agregado exitosamente");
+                
             }
             catch (Exception ex)
             {

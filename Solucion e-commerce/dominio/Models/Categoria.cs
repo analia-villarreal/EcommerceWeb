@@ -3,16 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace dominio
+namespace dominio.Models
 {
-    public class Categoria
+    public class Categoria : ItemChico
     {
-        public int ID { get; set; }
-        public string Nombre { get; set; }
-
-        public override string ToString()
-        {
-            return Nombre;
-        }
+        
     }
 }

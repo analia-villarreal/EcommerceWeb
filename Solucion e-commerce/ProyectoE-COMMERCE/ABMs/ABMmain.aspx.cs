@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using dominio;
-using negocio;
+using dominio.Models;
+using negocio.Models;
 
 namespace ProyectoE_COMMERCE.ABMs
 {
@@ -13,14 +13,15 @@ namespace ProyectoE_COMMERCE.ABMs
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ArticuloNegocio negocio = new ArticuloNegocio();
+            ArticuloNegocio negocioArticulos = new ArticuloNegocio();
+            ItemChicoNegocio negocioColores = new ItemChicoNegocio();
 
-            dgvArticulos.DataSource = negocio.Listar();
+            dgvArticulos.DataSource = negocioArticulos.Listar();
             dgvArticulos.DataBind();
-
-            dvgColores.DataSource = negocio.Listar();
-            dvgColores.DataBind();
-
+            
+            dgvColores.DataSource = negocioColores.Listar("Color");
+            dgvColores.DataBind();
+            
         }
 
         protected void dgvArticulos_SelectedIndexChanged(object sender, EventArgs e)
@@ -30,15 +31,15 @@ namespace ProyectoE_COMMERCE.ABMs
             Response.Redirect("ABMArticulos.aspx?ID=" + id);
 
         }
-        /*
+        
         protected void dgvColores_SelectedIndexChanged(object sender, EventArgs e)
         {
             var id = dgvColores.SelectedDataKey.Value.ToString();
 
-            Response.Redirect("ABMArticulos.aspx?ID=" + id);
+            Response.Redirect("ABMColor.aspx?ID=" + id);
 
         }
-        */
+        
 
     }
 }

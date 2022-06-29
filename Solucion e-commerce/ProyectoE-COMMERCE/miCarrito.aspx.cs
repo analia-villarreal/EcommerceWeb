@@ -8,19 +8,19 @@ using System.Configuration;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using dominio;
-using negocio;
+using dominio.Models;
+using negocio.Models;
 
 
 namespace ProyectoE_COMMERCE
 {
     public partial class miCarrito : Page
     {
-        public List<dominio.Articulo> listaArticulosCarro { get; set; }
+        public List<dominio.Models.Articulo> listaArticulosCarro { get; set; }
 
         public List<int> cantidadArticulos { get; set; }
 
-        public List<dominio.Articulo> listaCatalogo { get; set; }
+        public List<dominio.Models.Articulo> listaCatalogo { get; set; }
 
 
         public List<cantArticulo> cantArticulos { get; set; }
@@ -33,7 +33,7 @@ namespace ProyectoE_COMMERCE
 
             if (Session["carrito"] == null || Session["cantArt"] == null)
             {
-                listaArticulosCarro = new List<dominio.Articulo>();
+                listaArticulosCarro = new List<dominio.Models.Articulo>();
                 Session.Add("carrito", listaArticulosCarro);
                 cantArticulos = new List<cantArticulo>();
                 Session.Add("cantArt", cantArticulos);

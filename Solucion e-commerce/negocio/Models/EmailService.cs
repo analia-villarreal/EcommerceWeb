@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using dominio;
+using dominio.Models;
 using System.Net.Mail;
 using System.Net;
 
 
-namespace negocio
+namespace negocio.Models
 {
     public class EmailService
     {

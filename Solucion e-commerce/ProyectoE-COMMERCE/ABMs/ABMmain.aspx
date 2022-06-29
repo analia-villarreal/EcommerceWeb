@@ -16,12 +16,12 @@
 
         <div class="col">
 
-            <asp:GridView runat="server" ID="dvgColores"  DataKeyNames="ID"  CssClass="table" AutoGenerateColumns="false">
+            <asp:GridView runat="server" ID="dgvColores"  DataKeyNames="ID"  CssClass="table" AutoGenerateColumns="false" OnSelectedIndexChanged="dgvColores_SelectedIndexChanged">
 
                 <Columns>
                     <asp:BoundField HeaderText="ID" DataField="ID" />
                     <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
-                 
+                    <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" HeaderText="Acción" />
                  
                     
                 </Columns>

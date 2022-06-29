@@ -20,12 +20,12 @@
     </div>
     --%>
     <div class="row row-cols-1 row-cols-md-3 g-4">
-        <% foreach (dominio.Articulo item in listaArticulos)
+        <% foreach (dominio.Models.Articulo item in listaArticulos)
             { %>
 
             <div class="col">
                 <div class="card">
-                    <img src="<%= item.URLImagen %>" onerror="this.src='<%=negocio.Diccionario.IMAGE_NOTFOUND%>'" class="card-img-top" alt="...">
+                    <img src="<%= item.URLImagen %>" onerror="this.src='<%=negocio.Models.Diccionario.IMAGE_NOTFOUND%>'" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><%= item.Nombre %></h5>
                         <p class="card-text"><%= item.Descripcion %></p>
