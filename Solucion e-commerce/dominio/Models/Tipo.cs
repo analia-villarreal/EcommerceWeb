@@ -3,18 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace dominio
+namespace dominio.Models
 {
-    public class Tipo
+    public class Tipo : ItemChico
     {
         
-        public int ID { get; set; }
-        public string Nombre { get; set; }
 
-        public override string ToString()
-        {
-            return Nombre;
-        }
         
     }
 }

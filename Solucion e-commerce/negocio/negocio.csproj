@@ -68,22 +68,29 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArticuloNegocio.cs" />
-    <Compile Include="AccesoDatos.cs" />
-    <Compile Include="CategoriaNegocio.cs" />
-    <Compile Include="ColorNegocio.cs" />
-    <Compile Include="Diccionario.cs" />
-    <Compile Include="EmailService.cs" />
-    <Compile Include="EstadoComercialNegocio.cs" />
+    <Compile Include="Models\ArticuloNegocio.cs" />
+    <Compile Include="Models\AccesoDatos.cs" />
+    <Compile Include="Models\CategoriaNegocio.cs" />
+    <Compile Include="Models\ColorNegocio.cs" />
+    <Compile Include="Models\Diccionario.cs" />
+    <Compile Include="Models\EmailService.cs" />
+    <Compile Include="Models\EstadoComercialNegocio.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="MarcaNegocio.cs" />
+    <Compile Include="Models\ItemChicoNegocio.cs" />
+    <Compile Include="Models\MarcaNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="TalleNegocio.cs" />
     <Compile Include="TemporadaNegocio.cs" />
     <Compile Include="TipoNegocio.cs" />
     <Compile Include="UsuarioNegocio.cs" />
+=======
+    <Compile Include="Models\TalleNegocio.cs" />
+    <Compile Include="Models\TemporadaNegocio.cs" />
+    <Compile Include="Models\TipoNegocio.cs" />
+>>>>>>> 144cdbfa9ef61dc5cfb3be1650750ae7fa773640
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -96,7 +103,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\dominio\dominio.csproj">

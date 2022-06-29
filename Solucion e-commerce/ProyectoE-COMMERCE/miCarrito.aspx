@@ -30,7 +30,7 @@
             </div>
 
             <div class="w-100 border"></div>
-        <%foreach(dominio.Articulo item in listaArticulosCarro)
+        <%foreach(dominio.Models.Articulo item in listaArticulosCarro)
                {%>
                     
                         <div class="col border">
@@ -43,7 +43,7 @@
                             <p><%= item.Descripcion %></p>
                         </div>
                         <div class="col border">
-                            <img class="img-thumbnail" src="<%= item.URLImagen %>" onerror="this.src='<%=negocio.Diccionario.IMAGE_NOTFOUND%>'"  style="width:70%" />
+                            <img class="img-thumbnail" src="<%= item.URLImagen %>" onerror="this.src='<%=negocio.Models.Diccionario.IMAGE_NOTFOUND%>'"  style="width:70%" />
                         </div>
                         <div class="col border">
                             <a href="miCarrito?idmas=<%= item.ID %>">+</a>

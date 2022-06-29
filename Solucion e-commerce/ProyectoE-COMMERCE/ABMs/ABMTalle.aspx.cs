@@ -10,12 +10,12 @@ using negocio.Models;
 
 namespace ProyectoE_COMMERCE.ABMs
 {
-    public partial class ABMColor : System.Web.UI.Page
+    public partial class ABMTalle : System.Web.UI.Page
     {
 
-        public List<dominio.Models.ItemChico> listaColor { get; set; }
+        public List<dominio.Models.ItemChico> listaTalle { get; set; }
 
-        private ItemChico col = null;
+        private ItemChico itemGeneral = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,9 +26,9 @@ namespace ProyectoE_COMMERCE.ABMs
 
                 ItemChicoNegocio negocio = new ItemChicoNegocio();
 
-                listaColor = negocio.Listar("Color");
+                listaTalle = negocio.Listar("Talle");
 
-                ItemChico seleccionado = listaColor.Find(x => x.ID == Id);
+                ItemChico seleccionado = listaTalle.Find(x => x.ID == Id);
 
                 if (!IsPostBack)
                 {
@@ -44,14 +44,14 @@ namespace ProyectoE_COMMERCE.ABMs
 
             try
             {
-                if (col == null)
-                    col = new Color();
+                if (itemGeneral == null)
+                    itemGeneral = new Color();
 
-                col.Nombre = textNombre.Text;
+                itemGeneral.Nombre = textNombre.Text;
 
-                negocio.Agregar(col,"Color");
+                negocio.Agregar(itemGeneral, "Talle");
                 MessageBox.Show("Agregado exitosamente");
-                
+
             }
             catch (Exception ex)
             {
@@ -73,10 +73,10 @@ namespace ProyectoE_COMMERCE.ABMs
                 mod.ID = int.Parse(Request.QueryString["ID"]);
                 mod.Nombre = textNombre.Text;
 
-                negocio.Modificar(mod, "Color");
+                negocio.Modificar(mod, "Talle");
                 MessageBox.Show("Modificado exitosamente");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
@@ -94,5 +94,5 @@ namespace ProyectoE_COMMERCE.ABMs
 
 
 
-    
+
 }

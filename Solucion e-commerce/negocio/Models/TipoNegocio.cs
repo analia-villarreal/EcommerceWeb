@@ -2,31 +2,31 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using dominio;
+using dominio.Models;
 
-namespace negocio
+namespace negocio.Models
 {
-    public class MarcaNegocio
+    public class TipoNegocio
     {
-        public List<Marca> Listar()
+        public List<Tipo> Listar()
         {
-            List<Marca> lista = new List<Marca>();
+            List<Tipo> lista = new List<Tipo>();
             AccesoDatos datos = new AccesoDatos();
 
 
             try
             {
-                datos.setearConsulta("SELECT ID, nombreMarca from Marca");
+                datos.setearConsulta("SELECT ID, nombreTipo from Tipo");
 
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
 
-                    Marca aux = new Marca();
+                    Tipo aux = new Tipo();
 
                     aux.ID = (int)datos.Lector["ID"];
-                    aux.Nombre = (string)datos.Lector["nombreMarca"];
+                    aux.Nombre = (string)datos.Lector["nombreTipo"];
                     lista.Add(aux);
 
                 }

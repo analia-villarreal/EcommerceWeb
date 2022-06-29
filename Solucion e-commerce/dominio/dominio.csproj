@@ -68,6 +68,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\ItemChico.cs" />
     <Compile Include="Models\EstadoComercial.cs" />
     <Compile Include="Models\Color.cs" />
     <Compile Include="Models\Marca.cs" />

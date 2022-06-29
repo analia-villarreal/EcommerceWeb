@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ABMColor.aspx.cs" Inherits="ProyectoE_COMMERCE.ABMs.ABMColor" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ABMTalle.aspx.cs" Inherits="ProyectoE_COMMERCE.ABMs.ABMTalle" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="form-group">
+     <div class="form-group">
         <div class="row">
             <div class="col-6">
                 <div class="mb-3 row">
@@ -31,6 +31,7 @@
             </div>
         </div>
     </div>
+
 
 
 

@@ -105,6 +105,7 @@
     <Content Include="ABMs\ABMmain.aspx" />
     <Content Include="ABMs\ABMArticulos.aspx" />
     <Content Include="ABMs\ABMColor.aspx" />
+    <Content Include="ABMs\ABMTalle.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\master.css" />
     <Content Include="Content\Site.css" />
@@ -160,6 +161,13 @@
     </Compile>
     <Compile Include="ABMs\ABMColor.aspx.designer.cs">
       <DependentUpon>ABMColor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ABMs\ABMTalle.aspx.cs">
+      <DependentUpon>ABMTalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ABMs\ABMTalle.aspx.designer.cs">
+      <DependentUpon>ABMTalle.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="ABMs\ABMmain.aspx.cs">
