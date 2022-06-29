@@ -15,13 +15,18 @@ namespace ProyectoE_COMMERCE.ABMs
         {
             ArticuloNegocio negocioArticulos = new ArticuloNegocio();
             ItemChicoNegocio negocioColores = new ItemChicoNegocio();
+            ItemChicoNegocio negocioTalles = new ItemChicoNegocio();
 
             dgvArticulos.DataSource = negocioArticulos.Listar();
             dgvArticulos.DataBind();
             
             dgvColores.DataSource = negocioColores.Listar("Color");
             dgvColores.DataBind();
-            
+
+            dgvTalles.DataSource = negocioTalles.Listar("Talle");
+            dgvTalles.DataBind();
+
+
         }
 
         protected void dgvArticulos_SelectedIndexChanged(object sender, EventArgs e)
@@ -39,7 +44,15 @@ namespace ProyectoE_COMMERCE.ABMs
             Response.Redirect("ABMColor.aspx?ID=" + id);
 
         }
-        
+
+        protected void dgvTalles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var id = dgvTalles.SelectedDataKey.Value.ToString();
+
+            Response.Redirect("ABMTalle.aspx?ID=" + id);
+
+        }
+
 
     }
 }

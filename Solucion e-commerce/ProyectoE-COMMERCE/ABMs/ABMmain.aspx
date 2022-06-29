@@ -2,6 +2,38 @@
 
 <asp:Content ID="BodyContent" CssClass ="table" ContentPlaceHolderID="MainContent" runat="server">
 
+        <%-- ABM de Talles --%>
+     <p>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" href="#talles" aria-expanded="true" aria-controls="talles"> 
+        ABM de Talles
+      </button>
+    </p>
+    
+
+    <div class="collapse" id ="talles">
+    <div class="row">
+
+        <div class="col">
+
+            <asp:GridView runat="server" ID="dgvTalles"  DataKeyNames="ID"  CssClass="table" AutoGenerateColumns="false" OnSelectedIndexChanged="dgvTalles_SelectedIndexChanged">
+
+                <Columns>
+                    <asp:BoundField HeaderText="ID" DataField="ID" />
+                    <asp:BoundField HeaderText="Numero de Talle" DataField="Nombre" />
+                    <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" HeaderText="Acción" />
+                 
+                    
+                </Columns>
+
+            </asp:GridView>
+            <a href="ABMTalle.aspx">Agregar</a>
+
+        </div>
+    </div>
+    </div>
+
+
+
 
         <%-- ABM de Colores --%>
     <p>
@@ -20,7 +52,7 @@
 
                 <Columns>
                     <asp:BoundField HeaderText="ID" DataField="ID" />
-                    <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
+                    <asp:BoundField HeaderText="Color" DataField="Nombre" />
                     <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" HeaderText="Acción" />
                  
                     
