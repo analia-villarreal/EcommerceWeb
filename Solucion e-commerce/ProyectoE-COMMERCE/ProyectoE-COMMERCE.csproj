@@ -104,8 +104,7 @@
   <ItemGroup>
     <Content Include="ABMs\ABMmain.aspx" />
     <Content Include="ABMs\ABMArticulos.aspx" />
-    <Content Include="ABMs\ABMColor.aspx" />
-    <Content Include="ABMs\ABMTalle.aspx" />
+    <Content Include="ABMs\ABMItemChico.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\master.css" />
     <Content Include="Content\Site.css" />
@@ -155,19 +154,12 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ABMs\ABMColor.aspx.cs">
-      <DependentUpon>ABMColor.aspx</DependentUpon>
+    <Compile Include="ABMs\ABMItemChico.aspx.cs">
+      <DependentUpon>ABMItemChico.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ABMs\ABMColor.aspx.designer.cs">
-      <DependentUpon>ABMColor.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ABMs\ABMTalle.aspx.cs">
-      <DependentUpon>ABMTalle.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ABMs\ABMTalle.aspx.designer.cs">
-      <DependentUpon>ABMTalle.aspx</DependentUpon>
+    <Compile Include="ABMs\ABMItemChico.aspx.designer.cs">
+      <DependentUpon>ABMItemChico.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="ABMs\ABMmain.aspx.cs">

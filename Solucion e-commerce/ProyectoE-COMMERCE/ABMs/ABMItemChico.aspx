@@ -1,5 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ABMColor.aspx.cs" Inherits="ProyectoE_COMMERCE.ABMs.ABMColor" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ABMItemChico.aspx.cs" Inherits="ProyectoE_COMMERCE.ABMs.ABMItemChico" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+    <h1>ABM de <%=Session["itemChicoABM"] %></h1>
+
 
     <div class="form-group">
         <div class="row">

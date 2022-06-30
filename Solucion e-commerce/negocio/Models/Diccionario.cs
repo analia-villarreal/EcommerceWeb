@@ -45,7 +45,7 @@ namespace negocio.Models
 
         ///PARA CATEGORIAS
 
-        public static string LISTAR_CATEGORIA = "select id, nombreCategoria as Categoria from CATEGORIAS";
+        public static string LISTAR_CATEGORIA = "select id, nombreCategoria as Categoria from CATEGORIA";
 
         public static string MODIFICAR_CATEGORIA = "update Categoria set nombreCategoria = @nombre where ID = @ID";
 
