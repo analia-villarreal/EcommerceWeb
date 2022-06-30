@@ -1,0 +1,51 @@
+[33m721a37d[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{0}: reset: moving to HEAD
+[33m721a37d[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{1}: reset: moving to HEAD
+[33m721a37d[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{2}: reset: moving to HEAD
+[33m721a37d[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{3}: reset: moving to HEAD
+[33m721a37d[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{4}: reset: moving to HEAD
+[33m721a37d[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{5}: reset: moving to HEAD
+[33m721a37d[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{6}: commit (merge): merge2
+[33m327b6cc[m HEAD@{7}: commit: merge
+[33m0cbd76f[m HEAD@{8}: commit: merge
+[33mee24edb[m HEAD@{9}: pull: Fast-forward
+[33mde0004d[m HEAD@{10}: commit: formLogin
+[33m8eb0534[m HEAD@{11}: commit (merge): merge5
+[33m690a1eb[m HEAD@{12}: commit: merge6
+[33mecaf67b[m HEAD@{13}: commit: form modificado
+[33m162c77c[m HEAD@{14}: commit: merge4
+[33m49d5778[m HEAD@{15}: pull: Merge made by the 'ort' strategy.
+[33ma27100b[m HEAD@{16}: commit: form modificado
+[33m974da83[m HEAD@{17}: commit: algunas mod
+[33mb88b543[m HEAD@{18}: commit (merge): merge4
+[33m5b20f13[m HEAD@{19}: commit: merge4
+[33mfeef2bd[m HEAD@{20}: commit: merge3
+[33me570e4b[m HEAD@{21}: commit: nuevo navbar
+[33m4e9cbce[m HEAD@{22}: commit: agregado de cards
+[33m69d399c[m HEAD@{23}: commit: antes de empezar
+[33m3d2e15f[m HEAD@{24}: commit: funciones modificar - baja logica
+[33mdd7aa5c[m HEAD@{25}: commit: form agregar funciona
+[33mb8d6f61[m HEAD@{26}: commit (merge): merge
+[33m1541334[m HEAD@{27}: commit: merge
+[33mc538e86[m HEAD@{28}: commit: agregar
+[33m12a3fcb[m HEAD@{29}: commit (merge): merge 2
+[33m15e6e0a[m HEAD@{30}: commit: merge 1
+[33me625dfd[m HEAD@{31}: commit: modificaciones en dominio
+[33mb337c91[m HEAD@{32}: commit (merge): ok
+[33m12988fc[m HEAD@{33}: commit: merge ok
+[33m72e70dc[m HEAD@{34}: pull: Fast-forward
+[33m016918e[m HEAD@{35}: pull: Merge made by the 'ort' strategy.
+[33mfd93b55[m HEAD@{36}: commit: form agregar art
+[33m446d79f[m HEAD@{37}: commit: dvg funciona
+[33mec841f0[m HEAD@{38}: commit: datagrid funciona
+[33mc43b29d[m HEAD@{39}: commit: merge2
+[33m120e1d9[m HEAD@{40}: pull: Merge made by the 'ort' strategy.
+[33mcbdf032[m HEAD@{41}: commit: con gridview
+[33mb7b26f4[m HEAD@{42}: commit (merge): merge
+[33m476476a[m HEAD@{43}: commit: cambios
+[33m4848677[m HEAD@{44}: reset: moving to 4848677ca9d66607b02c48215b48cdceefb545d2
+[33m4848677[m HEAD@{45}: reset: moving to 4848677ca9d66607b02c48215b48cdceefb545d2
+[33ma53d094[m HEAD@{46}: reset: moving to a53d0943b489a30c92b28945dc6f56caed7cb654
+[33ma53d094[m HEAD@{47}: reset: moving to a53d0943b489a30c92b28945dc6f56caed7cb654
+[33ma53d094[m HEAD@{48}: pull: Merge made by the 'ort' strategy.
+[33m12114b0[m HEAD@{49}: commit: con dominio y negocio
+[33m4d95f0a[m HEAD@{50}: commit (initial): primer commit
