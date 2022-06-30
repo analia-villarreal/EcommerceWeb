@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using dominio;
+using dominio.Models;
 
-namespace negocio
+namespace negocio.Models
 {
     public class UsuarioNegocio
     {
-        public bool Loguear(Usuario usuario)
+        /*public bool Loguear(Usuario usuario)
         {
             AccesoDatos datos = new AccesoDatos();
             try
@@ -21,7 +21,7 @@ namespace negocio
 
                 while (datos.Lector.Read())
                 {
-                    usuario.ID = datos.Lector["ID"];
+                    //usuario.ID = datos.Lector["ID"];
 
                 }
             }
@@ -33,7 +33,7 @@ namespace negocio
 
 
         }
-
+        */
 
     }
 }
