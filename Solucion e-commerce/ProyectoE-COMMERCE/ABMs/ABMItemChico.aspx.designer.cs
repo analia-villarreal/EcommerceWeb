@@ -11,7 +11,7 @@ namespace ProyectoE_COMMERCE.ABMs
 {
 
 
-    public partial class ABMTalle
+    public partial class ABMItemChico
     {
 
         /// <summary>

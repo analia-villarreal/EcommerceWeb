@@ -11,11 +11,14 @@ namespace ProyectoE_COMMERCE.ABMs
 {
     public partial class ABMmain : Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             ArticuloNegocio negocioArticulos = new ArticuloNegocio();
             ItemChicoNegocio negocioColores = new ItemChicoNegocio();
             ItemChicoNegocio negocioTalles = new ItemChicoNegocio();
+            ItemChicoNegocio negocioMarcas = new ItemChicoNegocio();
+            ItemChicoNegocio negocioCategorias = new ItemChicoNegocio();
 
             dgvArticulos.DataSource = negocioArticulos.Listar();
             dgvArticulos.DataBind();
@@ -25,6 +28,12 @@ namespace ProyectoE_COMMERCE.ABMs
 
             dgvTalles.DataSource = negocioTalles.Listar("Talle");
             dgvTalles.DataBind();
+
+            dgvMarcas.DataSource = negocioMarcas.Listar("Marca");
+            dgvMarcas.DataBind();
+
+            dgvCategorias.DataSource = negocioCategorias.Listar("Categoria");
+            dgvCategorias.DataBind();
 
 
         }
@@ -41,7 +50,8 @@ namespace ProyectoE_COMMERCE.ABMs
         {
             var id = dgvColores.SelectedDataKey.Value.ToString();
 
-            Response.Redirect("ABMColor.aspx?ID=" + id);
+            Session["itemChicoABM"] = "Color";
+            Response.Redirect("ABMItemChico.aspx?ID=" + id);
 
         }
 
@@ -49,9 +59,29 @@ namespace ProyectoE_COMMERCE.ABMs
         {
             var id = dgvTalles.SelectedDataKey.Value.ToString();
 
-            Response.Redirect("ABMTalle.aspx?ID=" + id);
+            Session["itemChicoABM"]= "Talle";
+            Response.Redirect("ABMItemChico.aspx?ID=" + id);
+            
+        }
+
+        protected void dgvMarcas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var id = dgvMarcas.SelectedDataKey.Value.ToString();
+
+            Session["itemChicoABM"] = "Marca";
+            Response.Redirect("ABMItemChico.aspx?ID=" + id);
 
         }
+
+        protected void dgvCategorias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var id = dgvCategorias.SelectedDataKey.Value.ToString();
+
+            Session["itemChicoABM"] = "Categoria";
+            Response.Redirect("ABMItemChico.aspx?ID=" + id);
+
+        }
+
 
 
     }

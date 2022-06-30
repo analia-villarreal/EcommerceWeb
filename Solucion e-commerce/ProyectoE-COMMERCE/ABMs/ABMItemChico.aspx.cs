@@ -10,15 +10,18 @@ using negocio.Models;
 
 namespace ProyectoE_COMMERCE.ABMs
 {
-    public partial class ABMColor : System.Web.UI.Page
+    public partial class ABMItemChico : System.Web.UI.Page
     {
-
+        
         public List<dominio.Models.ItemChico> listaColor { get; set; }
 
         private ItemChico col = null;
 
+        public string itemABM { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            itemABM = (string)Session["itemChicoABM"];
 
             if (Request.QueryString["ID"] != null)
             {
@@ -26,7 +29,7 @@ namespace ProyectoE_COMMERCE.ABMs
 
                 ItemChicoNegocio negocio = new ItemChicoNegocio();
 
-                listaColor = negocio.Listar("Color");
+                listaColor = negocio.Listar(itemABM);
 
                 ItemChico seleccionado = listaColor.Find(x => x.ID == Id);
 
@@ -49,7 +52,7 @@ namespace ProyectoE_COMMERCE.ABMs
 
                 col.Nombre = textNombre.Text;
 
-                negocio.Agregar(col,"Color");
+                negocio.Agregar(col,itemABM);
                 MessageBox.Show("Agregado exitosamente");
                 
             }
@@ -73,7 +76,7 @@ namespace ProyectoE_COMMERCE.ABMs
                 mod.ID = int.Parse(Request.QueryString["ID"]);
                 mod.Nombre = textNombre.Text;
 
-                negocio.Modificar(mod, "Color");
+                negocio.Modificar(mod, itemABM);
                 MessageBox.Show("Modificado exitosamente");
             }
             catch(Exception ex)

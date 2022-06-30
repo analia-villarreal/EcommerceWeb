@@ -2,6 +2,72 @@
 
 <asp:Content ID="BodyContent" CssClass ="table" ContentPlaceHolderID="MainContent" runat="server">
 
+
+        <%-- ABM de Categorias --%>
+     <p>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" href="#categorias" aria-expanded="true" aria-controls="categorias"> 
+        ABM de Categorias
+      </button>
+    </p>
+    
+
+    <div class="collapse" id ="categorias">
+    <div class="row">
+
+        <div class="col">
+
+            <asp:GridView runat="server" ID="dgvCategorias"  DataKeyNames="ID"  CssClass="table" AutoGenerateColumns="false" OnSelectedIndexChanged="dgvCategorias_SelectedIndexChanged">
+
+                <Columns>
+                    <asp:BoundField HeaderText="ID" DataField="ID" />
+                    <asp:BoundField HeaderText="Categoria" DataField="Nombre" />
+                    <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" HeaderText="Acción" />
+                 
+                    
+                </Columns>
+
+            </asp:GridView>
+            <a href="ABMItemChico.aspx">Agregar</a>
+
+        </div>
+    </div>
+    </div>
+
+
+
+
+        <%-- ABM de Marcas --%>
+     <p>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" href="#marcas" aria-expanded="true" aria-controls="marcas"> 
+        ABM de Marcas
+      </button>
+    </p>
+    
+
+    <div class="collapse" id ="marcas">
+    <div class="row">
+
+        <div class="col">
+
+            <asp:GridView runat="server" ID="dgvMarcas"  DataKeyNames="ID"  CssClass="table" AutoGenerateColumns="false" OnSelectedIndexChanged="dgvMarcas_SelectedIndexChanged">
+
+                <Columns>
+                    <asp:BoundField HeaderText="ID" DataField="ID" />
+                    <asp:BoundField HeaderText="Marca" DataField="Nombre" />
+                    <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" HeaderText="Acción" />
+                 
+                    
+                </Columns>
+
+            </asp:GridView>
+            <a href="ABMItemChico.aspx">Agregar</a>
+
+        </div>
+    </div>
+    </div>
+
+
+
         <%-- ABM de Talles --%>
      <p>
       <button class="btn btn-primary" type="button" data-bs-toggle="collapse" href="#talles" aria-expanded="true" aria-controls="talles"> 
@@ -26,7 +92,7 @@
                 </Columns>
 
             </asp:GridView>
-            <a href="ABMTalle.aspx">Agregar</a>
+            <a href="ABMItemChico.aspx">Agregar</a>
 
         </div>
     </div>
@@ -59,7 +125,7 @@
                 </Columns>
 
             </asp:GridView>
-            <a href="ABMColor.aspx">Agregar</a>
+            <a href="ABMItemChico.aspx">Agregar</a>
 
         </div>
     </div>

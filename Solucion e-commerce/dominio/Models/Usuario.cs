@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 
-namespace dominio
+namespace dominio.Models
 {
     public enum Rol
     {
