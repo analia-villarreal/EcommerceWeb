@@ -81,16 +81,9 @@
     <Compile Include="Models\ItemChicoNegocio.cs" />
     <Compile Include="Models\MarcaNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
-    <Compile Include="TalleNegocio.cs" />
-    <Compile Include="TemporadaNegocio.cs" />
-    <Compile Include="TipoNegocio.cs" />
-    <Compile Include="UsuarioNegocio.cs" />
-=======
     <Compile Include="Models\TalleNegocio.cs" />
     <Compile Include="Models\TemporadaNegocio.cs" />
     <Compile Include="Models\TipoNegocio.cs" />
->>>>>>> 144cdbfa9ef61dc5cfb3be1650750ae7fa773640
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
