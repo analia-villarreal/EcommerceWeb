@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 
-    <div>
+    <dikv>
         <div id="loginForm">
             <div id="label-inicio">
                 <div class="row">
@@ -15,23 +15,27 @@
                 </span>
             </div>
 
-            <div class="Login-Form">
-                <form action="/" method="post">
+            <div class="LoginForm">
+                <div action="/" method="post">
                     <div class="row mb-3">
-                        <asp:Label class="col-sm-2 col-form-label" Text="Email" runat="server" />
+                        <asp:Label class="col-sm-2 col-form-label" Text="Nombre de Usuario" runat="server" />
                         <div class="col-sm-10">
-                            <asp:TextBox ID="txtEmail" runat="server" class="form-control" />
+                            <asp:TextBox ID="txtUser" runat="server" class="form-control" />
                         </div>
                     </div>
                     <div class="row mb-3">
                         <asp:Label Text="Contraseña" ID="PassLogin" runat="server" CssClass="col-sm-2 col-form-label" />
                         <div class="col-sm-10">
-                            <asp:TextBox ID="txtLogin" runat="server" class="form-control" />
+                            <asp:TextBox ID="txtPass" runat="server" class="form-control" />
+                        </div>
+                        <div class="row mb-3">
+                            <asp:Button ID="IniciarSesion" Text="INICIAR SESIÓN" OnClick="IniciarSesion_Click"  runat="server" />
+
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
-    </div>
-
+        </div>
+    </dikv>
 
 </asp:Content>

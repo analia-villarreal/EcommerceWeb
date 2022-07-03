@@ -20,7 +20,7 @@ namespace ProyectoE_COMMERCE.ABMs
             //InitializeComponent();
 
         }
-        public List<dominio.Models.Articulo> listaArt { get; set; }
+        public List<Articulo> listaArt { get; set; }
 
         private Articulo art = null;
         private void Cargar_Desplegables()

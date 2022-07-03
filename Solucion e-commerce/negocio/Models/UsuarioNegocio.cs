@@ -8,32 +8,39 @@ namespace negocio.Models
 {
     public class UsuarioNegocio
     {
-        /*public bool Loguear(Usuario usuario)
+        public bool Loguear(Usuario usuario)
         {
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("SELECT ID, u.idRol, r.nombreRol as Rol FROM Usuario u, Rol r WHERE u.idRol = r.ID AND Username = @nombreUsuario AND contrasenia=@contraseñaUsuario");
-                datos.setearParametros("@nombreUsuario", usuario.UserName);
-                datos.setearParametros("@contraseñaUsuario", usuario.Contrasenia);
+                datos.setearConsulta("SELECT ID, idRol FROM Usuario WHERE nombreUsuario=@UserName AND pass=@pass");
+                datos.setearParametros("@UserName", usuario.UserName);
+                datos.setearParametros("@pass", usuario.Pass);
 
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
-                    //usuario.ID = datos.Lector["ID"];
+                    usuario.ID = (int)datos.Lector["ID"];
+                    usuario.Rol = (int)(datos.Lector["idRol"]) == 1 ? Rol.ADMIN : Rol.NORMAL;
+                    return true;
 
                 }
+                return false;
             }
             catch (Exception ex)
             {
 
                 throw ex;
             }
+            finally
+            {
+                datos.cerrarConexion();
+            }
 
 
         }
-        */
+       
 
     }
 }

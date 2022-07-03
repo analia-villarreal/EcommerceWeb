@@ -1,24 +1,26 @@
 ﻿body {
-
 }
 * {
     margin: 0;
     box-sizing: border-box;
 }
-.d-flex{
+
+.d-flex {
     margin-left: 20px;
 }
-.label-inicio{
-    position:relative;
-    width:100%;
+
+.label-inicio {
+    position: relative;
+    width: 100%;
     margin: 19px 0;
-    text-align:center;
+    text-align: center;
 }
-.loginForm{
-    width:100%;
-    max-width:502px;
+
+.loginForm {
+    width: 100%;
+    max-width: 502px;
     margin: 0 auto;
     padding-top: 61px;
     padding-bottom: 87px;
-    overflow:hidden;
+    overflow: hidden;
 }

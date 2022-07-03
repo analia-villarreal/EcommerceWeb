@@ -17,7 +17,7 @@ namespace dominio.Models
     {
         public int ID { get; set; }
         public string UserName { get; set; }
-        public string Contrasenia { get; set; }
+        public string Pass { get; set; }
         public string Nombre_Usuario { get; set; }
         public string Apellido { get; set; }
         public string Email { get; set; }
@@ -27,7 +27,7 @@ namespace dominio.Models
         public Usuario(string user, string pass, bool admin)
         {
             UserName = user;
-            Contrasenia = pass;
+            Pass = pass;
             Rol = admin ? Rol.ADMIN : Rol.NORMAL;
         }
     }

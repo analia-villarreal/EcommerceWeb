@@ -81,10 +81,9 @@
     <Compile Include="Models\ItemChicoNegocio.cs" />
     <Compile Include="Models\MarcaNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
+
     <Compile Include="Models\UsuarioNegocio.cs" />
-=======
->>>>>>> 754c241a02320b2a9991f45e0d365c7ce73bf755
+
     <Compile Include="Models\TalleNegocio.cs" />
     <Compile Include="Models\TemporadaNegocio.cs" />
     <Compile Include="Models\TipoNegocio.cs" />
