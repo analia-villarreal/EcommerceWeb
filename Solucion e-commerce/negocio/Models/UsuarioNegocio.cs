@@ -13,7 +13,7 @@ namespace negocio.Models
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("SELECT ID, idRol FROM Usuario WHERE nombreUsuario=@UserName AND pass=@pass");
+                datos.setearConsulta("SELECT ID, idRol FROM Usuario WHERE usuario=@UserName AND pass=@pass");
                 datos.setearParametros("@UserName", usuario.UserName);
                 datos.setearParametros("@pass", usuario.Pass);
 
