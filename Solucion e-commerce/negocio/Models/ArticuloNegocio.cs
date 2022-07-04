@@ -16,7 +16,6 @@ namespace negocio.Models
             try
             {
                 datos.setearConsulta(Diccionario.LISTAR_ARTICULOS);
-
                 datos.ejecutarLectura();
                 int ide = 0;
                 while (datos.Lector.Read())
@@ -24,6 +23,85 @@ namespace negocio.Models
                     ide++;
                     Articulo aux = new Articulo();
                 
+                    aux.ID = ide; //hay que corregir esto, se deberia utilizar aux.ID = (int)datos.Lector["Id"];
+                                  //pero por alguna razon crashea el sistema
+                    aux.Nombre = (string)datos.Lector["nombreArticulo"];
+
+                    aux.Codigo = (string)datos.Lector["codigo"];
+
+                    aux.Descripcion = (string)datos.Lector["descripcion"];
+                    if (!(datos.Lector["URLImagen"] is DBNull))
+                        aux.URLImagen = (string)datos.Lector["URLImagen"];
+
+                    aux.Tipo = new Tipo();
+                    aux.Tipo.ID = (int)datos.Lector["idTipo"];
+                    aux.Tipo.Nombre = (string)datos.Lector["Tipo"];
+
+                    aux.Color = new Color();
+                    aux.Color.ID = (int)datos.Lector["idColor"];
+                    aux.Color.Nombre = (string)datos.Lector["Color"];
+
+                    aux.Talle = new Talle();
+                    aux.Talle.ID = (int)datos.Lector["idTalle"];
+                    aux.Talle.Nombre = (string)datos.Lector["Talle"];
+
+                    aux.Categoria = new Categoria();
+                    aux.Categoria.ID = (int)datos.Lector["idCategoria"];
+                    aux.Categoria.Nombre = (string)datos.Lector["Categoria"];
+
+                    aux.Marca = new Marca();
+                    aux.Marca.ID = (int)datos.Lector["idMarca"];
+                    aux.Marca.Nombre = (string)datos.Lector["Marca"];
+
+                    aux.Temporada = new Temporada();
+                    aux.Temporada.ID = (int)datos.Lector["idtemporada"];
+                    aux.Temporada.Nombre = (string)datos.Lector["Temporada"];
+
+                    aux.Descuento = (int)datos.Lector["descuento"];
+
+                    aux.Precio = (decimal)datos.Lector["precio"];
+
+                    aux.EstadoComercial = new EstadoComercial();
+                    aux.EstadoComercial.ID = (int)datos.Lector["idEstadoComercial"];
+                    aux.EstadoComercial.Nombre = (string)datos.Lector["Estado_Comercial"];
+
+                    aux.EstadoActivo = (bool)datos.Lector["estadoActivo"];
+
+                    lista.Add(aux);
+
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+
+            }
+        }
+
+        public List<Articulo> ListarPorPagina(int pagina)
+        {
+            List<Articulo> lista = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                int ide = 0+8*pagina;
+                datos.setearConsulta(Diccionario.LISTAR_ARTICULOS);
+                datos.setearParametros("@ID1", pagina);
+                datos.setearParametros("@ID2", pagina);
+                datos.ejecutarLectura();
+                
+                while (datos.Lector.Read())
+                {
+                    ide++;
+                    Articulo aux = new Articulo();
+
                     aux.ID = ide; //hay que corregir esto, se deberia utilizar aux.ID = (int)datos.Lector["Id"];
                                   //pero por alguna razon crashea el sistema
                     aux.Nombre = (string)datos.Lector["nombreArticulo"];

@@ -11,11 +11,30 @@ namespace ProyectoE_COMMERCE.ABMs
 {
     public partial class ABMCategoria : System.Web.UI.Page
     {
+        public List<ItemChico> ItemsChicos { get; set; }
+        public int pagina { get; set; }
+
+
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.QueryString["pagina"] != null)
+            {
+                pagina = int.Parse(Request.QueryString["pagina"].ToString());
+
+            }
+            else
+            {
+                pagina = 1;
+            }
+
+
+
             ItemChicoNegocio negocioCategorias = new ItemChicoNegocio();
 
-            dgvCategorias.DataSource = negocioCategorias.Listar("Categoria");
+            ItemsChicos = negocioCategorias.Listar("Categoria");
+            dgvCategorias.DataSource = negocioCategorias.ListarPorPagina("Categoria", pagina);
             dgvCategorias.DataBind();
 
         }

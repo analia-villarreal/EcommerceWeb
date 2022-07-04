@@ -12,11 +12,14 @@ namespace ProyectoE_COMMERCE.ABMs
     public partial class ABMArticulo : Page
     {
 
+
+
+
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             ArticuloNegocio negocioArticulos = new ArticuloNegocio();
-
-
 
 
 
