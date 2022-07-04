@@ -11,9 +11,27 @@ namespace ProyectoE_COMMERCE
 {
     public partial class LoginForm : System.Web.UI.Page
     {
+        public bool IsAdmin()
+        {
+            if (Session["usuario"] != null && ((dominio.Models.Usuario)Session["usuario"]).Rol == dominio.Models.Rol.ADMIN)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            /*
+            if (Session["usuario"] == null)
+            {
+                Session.Add("error", "Debes Loguearte");
+                Response.Redirect("ErrorLogin.aspx", false);
+            }
+            */
         }
 
 

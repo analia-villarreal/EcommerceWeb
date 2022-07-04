@@ -41,31 +41,11 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-        <%--
-        <div class="navbar">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">Nombre de la aplicación</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Inicio</a></li>
-                        <li><a runat="server" href="~/About">Acerca de</a></li>
-                        <li><a runat="server" href="~/Contact">Contacto</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        --%>
 
         <nav class="navbar navbar-expand-lg bg-light" style="background-color: #e3f2fd;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="Fotos/Logo.png" alt="logo" /></a>
+                <a class="navbar-brand" href="#">
+                    <img src="Fotos/Logo.png" alt="logo" /></a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -75,6 +55,13 @@
                         <li class="nav-item">
                             <a class="nav-link" runat="server" aria-current="page" href="~/">Home</a>
                         </li>
+
+                        <%if (Session["usuario"] != null && ((dominio.Models.Usuario)Session["usuario"]).Rol == dominio.Models.Rol.ADMIN){%>
+                        <li class="nav-item">
+                            <a class="nav-link" runat="server" href="~/ABMs/ABMmain">Administracion general de Items</a>
+                        </li>
+                        <% }%>
+
                         <li class="nav-item">
                             <a class="nav-link" runat="server" href="~/ABMs/ABMmain">Administracion general de Items</a>
                         </li>
@@ -82,8 +69,8 @@
                             <a class="nav-link" runat="server" href="~/Contact">Contact</a>
                         </li>
                     </ul>
-                     <div class="nav-item d-flex">
-                         <a class="nav-link" runat="server" href="LoginForm.aspx"><i class="fa-solid fa-user"></i></a>
+                    <div class="nav-item d-flex">
+                        <a class="nav-link" runat="server" href="LoginForm.aspx"><i class="fa-solid fa-user"></i></a>
                     </div>
                     <div class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
