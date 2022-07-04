@@ -38,3 +38,42 @@ C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\dom
 C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\dominio\obj\Debug\dominio.csproj.CopyComplete
 C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\dominio\obj\Debug\dominio.dll
 C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\dominio\obj\Debug\dominio.pdb
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\dominio.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\dominio.pdb
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\csc.exe
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\csc.exe.config
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\csc.rsp
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\csi.exe
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\csi.exe.config
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\csi.rsp
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\System.Buffers.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\System.Memory.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\System.Numerics.Vectors.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\vbc.exe
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\vbc.exe.config
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\vbc.rsp
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\VBCSCompiler.exe
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\obj\Debug\dominio.csproj.AssemblyReference.cache
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\obj\Debug\dominio.csproj.CopyComplete
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\obj\Debug\dominio.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\dominio\obj\Debug\dominio.pdb

@@ -12,9 +12,9 @@ using negocio.Models;
 
 namespace ProyectoE_COMMERCE.ABMs
 {
-    public partial class ABMArticulos : System.Web.UI.Page
+    public partial class ArticulosForm : System.Web.UI.Page
     {
-        public ABMArticulos()
+        public ArticulosForm()
         {
 
             //InitializeComponent();

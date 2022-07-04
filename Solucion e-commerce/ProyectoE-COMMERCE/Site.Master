@@ -57,13 +57,33 @@
                         </li>
 
                         <%if (Session["usuario"] != null && ((dominio.Models.Usuario)Session["usuario"]).Rol == dominio.Models.Rol.ADMIN){%>
+<<<<<<< HEAD
                         <li class="nav-item">
                             <a class="nav-link" runat="server" href="~/ABMs/ABMmain">Administracion general de Items</a>
                         </li>
                         <% }%>
 
+=======
+>>>>>>> b2e17135f9ab86fa81f9c804ca0ab3eaf8ce3d93
                         <li class="nav-item">
-                            <a class="nav-link" runat="server" href="~/ABMs/ABMmain">Administracion general de Items</a>
+                            <a class="nav-link" runat="server" href="~/ABMs/ABMArticulo">Administracion general de Items</a>
+                        </li>
+                        <% }%>
+
+                        <li class="nav-item">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                                    Administracion General de Items
+                                    </button>
+                                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" runat="server" href="ABMs/ABMArticulo">ABM de Articulos</a>
+                                        <a class="dropdown-item" runat="server" href="ABMs/ABMCategoria">ABM de Categorias</a>
+                                        <a class="dropdown-item" runat="server" href="ABMs/ABMMarca">ABM de Marcas</a>
+                                        <a class="dropdown-item" runat="server" href="ABMs/ABMTalle">ABM de Talles</a>
+                                        <a class="dropdown-item" runat="server" href="ABMs/ABMColor">ABM de Colores</a>
+                                      </div>
+                                </div>
+    
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" runat="server" href="~/Contact">Contact</a>
@@ -79,6 +99,7 @@
                 </div>
             </div>
         </nav>
+        <br />
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>

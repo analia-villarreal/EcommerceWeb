@@ -16,7 +16,7 @@ namespace negocio.Models
 
             try
             {
-                datos.setearConsulta("SELECT ID, nombreMarca from Marca");
+                datos.setearConsulta(Diccionario.LISTAR_MARCA);
 
                 datos.ejecutarLectura();
 
@@ -43,5 +43,79 @@ namespace negocio.Models
 
             }
         }
+
+        public List<Marca> ListarPorPagina()
+        {
+            List<Marca> lista = new List<Marca>();
+            AccesoDatos datos = new AccesoDatos();
+
+
+            try
+            {
+                datos.setearConsulta(Diccionario.LISTAR_MARCA_POR_PAGINA);
+                datos.setearParametros("@ID", 0);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+
+                    Marca aux = new Marca();
+
+                    aux.ID = (int)datos.Lector["ID"];
+                    aux.Nombre = (string)datos.Lector["nombreMarca"];
+                    lista.Add(aux);
+
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+
+            }
+        }
+
+        public List<Marca> ListarPorPagina(int pagina)
+        {
+            List<Marca> lista = new List<Marca>();
+            AccesoDatos datos = new AccesoDatos();
+
+
+            try
+            {
+                datos.setearConsulta(Diccionario.LISTAR_MARCA_POR_PAGINA);
+                datos.setearParametros("@ID", pagina);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+
+                    Marca aux = new Marca();
+
+                    aux.ID = (int)datos.Lector["ID"];
+                    aux.Nombre = (string)datos.Lector["nombreMarca"];
+                    lista.Add(aux);
+
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+
+            }
+        }
+
+
     }
 }

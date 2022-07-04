@@ -19,13 +19,15 @@ namespace negocio.Models
 
         ///ELEMENTALES PARA USO RECURRENTE
 
-        public static string CONEXION_SERVER = "server=.\\SQLEXPRESS; database=eCOMMERCE_DB5; integrated security=true";
+        public static string CONEXION_SERVER = "server=.\\SQLEXPRESS; database=eCOMMERCE_DB3; integrated security=true";
 
         public static string IMAGE_NOTFOUND = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXJq6u65-ZDLDMCQMHejY3TGV5Vbj-O343pyR1KoVE8lvmTet4TG319R9tPMgSgxKFgjY&usqp=CAU";
 
         ///PARA MARCAS
 
         public static string LISTAR_MARCA = "select id, nombreMarca as Marca from Marca";
+
+        public static string LISTAR_MARCA_POR_PAGINA = "select id, nombreMarca as Marca from Marca where id > 0+15* @ID AND id < 16+15* @ID ";
 
         public static string MODIFICAR_MARCA = "update Marca set nombreMarca = @nombre where ID= @ID";
 
@@ -37,6 +39,8 @@ namespace negocio.Models
 
         public static string LISTAR_TALLE = "select id, nombreTalle as Talle from Talle";
 
+        public static string LISTAR_TALLE_POR_PAGINA = "select id, nombreTalle as Talle from Talle where id > 0+15* @ID and id < 16+15* @ID ";
+
         public static string MODIFICAR_TALLE = "update Talle set nombreTalle = @nombre where ID = @ID";
 
         public static string AGREGAR_TALLE = "insert into Talle values (@nombre)";
@@ -46,6 +50,8 @@ namespace negocio.Models
         ///PARA CATEGORIAS
 
         public static string LISTAR_CATEGORIA = "select id, nombreCategoria as Categoria from CATEGORIA";
+
+        public static string LISTAR_CATEGORIA_POR_PAGINA = "select id, nombreCategoria as Categoria from CATEGORIA where id > 0+15* @ID and id <16+15* @ID  ";
 
         public static string MODIFICAR_CATEGORIA = "update Categoria set nombreCategoria = @nombre where ID = @ID";
 
@@ -58,6 +64,8 @@ namespace negocio.Models
 
         public static string LISTAR_COLOR = "SELECT ID, nombreColor as Color from Color";
 
+        public static string LISTAR_COLOR_POR_PAGINA = "SELECT ID, nombreColor as Color from Color where id > 0+15* @ID and id < 16+15* @ID  ";
+
         public static string MODIFICAR_COLOR = "update Color set nombreColor = @nombre where ID = @ID";
 
         public static string AGREGAR_COLOR = "insert into Color values (@nombre)";
@@ -66,7 +74,9 @@ namespace negocio.Models
 
 
         ///PARA ARTICULOS
-        public static string LISTAR_ARTICULOS = "SELECT a.ID,a.nombreArticulo,a.codigo,a.descripcion,a.URLImagen,a.idTipo,ti.nombreTipo as Tipo,a.idColor,co.nombreColor as Color,a.idTalle,t.nombreTalle as Talle,a.idCategoria,c.nombreCategoria as Categoria,a.idMarca,m.nombreMarca as Marca,a.idTemporada,te.nombreTemporada as Temporada,a.descuento,a.precio,a.idEstadoComercial,ec.nombreEC as Estado_Comercial,a.estadoActivo FROM Articulo a,Tipo ti,Color co,Talle t,Categoria c,Marca m,Temporada te,EstadoComercial ec WHERE a.idTipo=ti.ID AND a.idColor=co.ID AND a.idTalle=t.ID AND a.idCategoria=c.ID AND a.idMarca=m.ID AND a.idTemporada=te.ID AND a.idEstadoComercial=ec.ID";
+        public static string LISTAR_ARTICULOS = "SELECT a.ID,a.nombreArticulo,a.codigo,a.descripcion,a.URLImagen,a.idTipo,ti.nombreTipo as Tipo,a.idColor,co.nombreColor as Color,a.idTalle,t.nombreTalle as Talle,a.idCategoria,c.nombreCategoria as Categoria,a.idMarca,m.nombreMarca as Marca,a.idTemporada,te.nombreTemporada as Temporada,a.descuento,a.precio,a.idEstadoComercial,ec.nombreEC as Estado_Comercial,a.estadoActivo FROM Articulo a,Tipo ti,Color co,Talle t,Categoria c,Marca m,Temporada te,EstadoComercial ec WHERE a.idTipo=ti.ID AND a.idColor=co.ID AND a.idTalle=t.ID AND a.idCategoria=c.ID AND a.idMarca=m.ID AND a.idTemporada=te.ID AND a.idEstadoComercial=ec.ID ";
+
+        public static string LISTAR_ARTICULOS_POR_PAGINA = "SELECT a.ID,a.nombreArticulo,a.codigo,a.descripcion,a.URLImagen,a.idTipo,ti.nombreTipo as Tipo,a.idColor,co.nombreColor as Color,a.idTalle,t.nombreTalle as Talle,a.idCategoria,c.nombreCategoria as Categoria,a.idMarca,m.nombreMarca as Marca,a.idTemporada,te.nombreTemporada as Temporada,a.descuento,a.precio,a.idEstadoComercial,ec.nombreEC as Estado_Comercial,a.estadoActivo FROM Articulo a,Tipo ti,Color co,Talle t,Categoria c,Marca m,Temporada te,EstadoComercial ec WHERE a.idTipo=ti.ID AND a.idColor=co.ID AND a.idTalle=t.ID AND a.idCategoria=c.ID AND a.idMarca=m.ID AND a.idTemporada=te.ID AND a.idEstadoComercial=ec.ID AND a.ID > 0+8* @ID1 and a.ID < 9+8* @ID2 ";
 
         public static string LISTAR_ARTICULOS_ACTIVOS = "EXEC storedListarActivos1";
        
