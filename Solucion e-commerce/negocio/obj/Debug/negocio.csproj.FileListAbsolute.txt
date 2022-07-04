@@ -1,4 +1,3 @@
-C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\negocio\bin\negocio.dll.config
 C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\negocio\bin\negocio.dll
 C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\negocio\bin\negocio.pdb
 C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\negocio\bin\roslyn\csc.exe
@@ -34,7 +33,6 @@ C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\neg
 C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\negocio\bin\dominio.dll
 C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\negocio\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\negocio\bin\dominio.pdb
-C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\negocio\bin\dominio.dll.config
 C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\negocio\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\negocio\obj\Debug\negocio.csproj.AssemblyReference.cache
 C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\negocio\obj\Debug\negocio.csproj.CoreCompileInputs.cache

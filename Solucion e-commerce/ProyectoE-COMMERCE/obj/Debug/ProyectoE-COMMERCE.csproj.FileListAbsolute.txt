@@ -46,9 +46,7 @@ C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\Pro
 C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\ProyectoE-COMMERCE\bin\System.Web.Optimization.dll
 C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\ProyectoE-COMMERCE\bin\WebGrease.dll
 C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\ProyectoE-COMMERCE\bin\dominio.pdb
-C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\ProyectoE-COMMERCE\bin\dominio.dll.config
 C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\ProyectoE-COMMERCE\bin\negocio.pdb
-C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\ProyectoE-COMMERCE\bin\negocio.dll.config
 C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\ProyectoE-COMMERCE\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\ProyectoE-COMMERCE\bin\System.Web.Optimization.xml
 C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\ProyectoE-COMMERCE\bin\Newtonsoft.Json.xml

@@ -1,4 +1,3 @@
-C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\dominio\bin\dominio.dll.config
 C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\dominio\bin\dominio.dll
 C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\dominio\bin\dominio.pdb
 C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\dominio\bin\roslyn\csc.exe
