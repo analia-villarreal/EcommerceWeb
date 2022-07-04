@@ -64,10 +64,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Global.asax" />
-    <Content Include="Web.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Models\ArticuloNegocio.cs" />
     <Compile Include="Models\AccesoDatos.cs" />
     <Compile Include="Models\CategoriaNegocio.cs" />
@@ -75,27 +71,13 @@
     <Compile Include="Models\Diccionario.cs" />
     <Compile Include="Models\EmailService.cs" />
     <Compile Include="Models\EstadoComercialNegocio.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
     <Compile Include="Models\ItemChicoNegocio.cs" />
     <Compile Include="Models\MarcaNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-
     <Compile Include="Models\UsuarioNegocio.cs" />
-
     <Compile Include="Models\TalleNegocio.cs" />
     <Compile Include="Models\TemporadaNegocio.cs" />
     <Compile Include="Models\TipoNegocio.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

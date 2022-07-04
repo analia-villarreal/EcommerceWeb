@@ -41,3 +41,45 @@ C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\neg
 C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\negocio\obj\Debug\negocio.csproj.CopyComplete
 C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\negocio\obj\Debug\negocio.dll
 C:\Users\USUARIO\Documents\UTN\PROGRAMACION III\PROYECTO\Solucion e-commerce\negocio\obj\Debug\negocio.pdb
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\negocio.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\negocio.pdb
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\csc.exe
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\csc.exe.config
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\csc.rsp
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\csi.exe
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\csi.exe.config
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\csi.rsp
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\System.Buffers.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\System.Memory.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\System.Numerics.Vectors.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\vbc.exe
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\vbc.exe.config
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\vbc.rsp
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\VBCSCompiler.exe
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\dominio.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\dominio.pdb
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\dominio.dll.config
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\obj\Debug\negocio.csproj.AssemblyReference.cache
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\obj\Debug\negocio.csproj.CoreCompileInputs.cache
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\obj\Debug\negocio.csproj.CopyComplete
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\obj\Debug\negocio.dll
+C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\obj\Debug\negocio.pdb

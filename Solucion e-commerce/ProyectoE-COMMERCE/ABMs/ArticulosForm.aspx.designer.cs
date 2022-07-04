@@ -11,7 +11,7 @@ namespace ProyectoE_COMMERCE.ABMs
 {
 
 
-    public partial class ABMArticulos
+    public partial class ArticulosForm
     {
 
         /// <summary>

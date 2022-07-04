@@ -19,7 +19,7 @@ namespace negocio.Models
 
         ///ELEMENTALES PARA USO RECURRENTE
 
-        public static string CONEXION_SERVER = "server=.\\SQLEXPRESS; database=eCOMMERCE_DB5; integrated security=true";
+        public static string CONEXION_SERVER = "server=.\\SQLEXPRESS; database=eCOMMERCE_DB3; integrated security=true";
 
         public static string IMAGE_NOTFOUND = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXJq6u65-ZDLDMCQMHejY3TGV5Vbj-O343pyR1KoVE8lvmTet4TG319R9tPMgSgxKFgjY&usqp=CAU";
 

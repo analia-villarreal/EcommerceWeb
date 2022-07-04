@@ -10,7 +10,7 @@ using negocio.Models;
 
 namespace ProyectoE_COMMERCE.ABMs
 {
-    public partial class ABMItemChico : System.Web.UI.Page
+    public partial class ItemChicoForm : System.Web.UI.Page
     {
         
         public List<dominio.Models.ItemChico> listaColor { get; set; }

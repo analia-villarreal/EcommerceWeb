@@ -102,9 +102,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ABMs\ABMmain.aspx" />
-    <Content Include="ABMs\ABMArticulos.aspx" />
-    <Content Include="ABMs\ABMItemChico.aspx" />
+    <Content Include="ABMs\ABMCategoria.aspx" />
+    <Content Include="ABMs\ABMColor.aspx" />
+    <Content Include="ABMs\ABMArticulo.aspx" />
+    <Content Include="ABMs\ABMMarca.aspx" />
+    <Content Include="ABMs\ABMTalle.aspx" />
+    <Content Include="ABMs\ArticulosForm.aspx" />
+    <Content Include="ABMs\ItemChicoForm.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\master.css" />
     <Content Include="Content\Site.css" />
@@ -155,28 +159,56 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ABMs\ABMItemChico.aspx.cs">
-      <DependentUpon>ABMItemChico.aspx</DependentUpon>
+    <Compile Include="ABMs\ABMCategoria.aspx.cs">
+      <DependentUpon>ABMCategoria.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ABMs\ABMItemChico.aspx.designer.cs">
-      <DependentUpon>ABMItemChico.aspx</DependentUpon>
+    <Compile Include="ABMs\ABMCategoria.aspx.designer.cs">
+      <DependentUpon>ABMCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ABMs\ABMColor.aspx.cs">
+      <DependentUpon>ABMColor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ABMs\ABMColor.aspx.designer.cs">
+      <DependentUpon>ABMColor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ABMs\ABMMarca.aspx.cs">
+      <DependentUpon>ABMMarca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ABMs\ABMMarca.aspx.designer.cs">
+      <DependentUpon>ABMMarca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ABMs\ABMTalle.aspx.cs">
+      <DependentUpon>ABMTalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ABMs\ABMTalle.aspx.designer.cs">
+      <DependentUpon>ABMTalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ABMs\ItemChicoForm.aspx.cs">
+      <DependentUpon>ItemChicoForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ABMs\ItemChicoForm.aspx.designer.cs">
+      <DependentUpon>ItemChicoForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="ABMs\ABMmain.aspx.cs">
-      <DependentUpon>ABMmain.aspx</DependentUpon>
+    <Compile Include="ABMs\ABMArticulo.aspx.cs">
+      <DependentUpon>ABMArticulo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ABMs\ABMmain.aspx.designer.cs">
-      <DependentUpon>ABMmain.aspx</DependentUpon>
+    <Compile Include="ABMs\ABMArticulo.aspx.designer.cs">
+      <DependentUpon>ABMArticulo.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="ABMs\ABMArticulos.aspx.cs">
-      <DependentUpon>ABMArticulos.aspx</DependentUpon>
+    <Compile Include="ABMs\ArticulosForm.aspx.cs">
+      <DependentUpon>ArticulosForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ABMs\ABMArticulos.aspx.designer.cs">
-      <DependentUpon>ABMArticulos.aspx</DependentUpon>
+    <Compile Include="ABMs\ArticulosForm.aspx.designer.cs">
+      <DependentUpon>ArticulosForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

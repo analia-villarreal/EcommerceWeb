@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ABMItemChico.aspx.cs" Inherits="ProyectoE_COMMERCE.ABMs.ABMItemChico" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ItemChicoForm.aspx.cs" Inherits="ProyectoE_COMMERCE.ABMs.ItemChicoForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <h1>ABM de <%=Session["itemChicoABM"] %></h1>
@@ -29,7 +29,7 @@
                         <asp:Button CssClass="btn btn-primary" ID="btnAceptar" OnClick="btnAgregar_Click" runat="server" Text="Aceptar" />
                     </div>
                     <%}%>
-                    <a href="ABMmain.aspx">Cancelar</a>
+                    <a href="ABMArticulo.aspx">Cancelar</a>
                 </div>
             </div>
         </div>
