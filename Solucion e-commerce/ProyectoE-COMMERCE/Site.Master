@@ -59,6 +59,9 @@
                         <%if (Session["usuario"] != null && ((dominio.Models.Usuario)Session["usuario"]).Rol == dominio.Models.Rol.ADMIN){%>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> b2e17135f9ab86fa81f9c804ca0ab3eaf8ce3d93
 =======
 >>>>>>> b2e17135f9ab86fa81f9c804ca0ab3eaf8ce3d93
                         <li class="nav-item">
@@ -80,6 +83,7 @@
                                       </div>
                                 </div>
     
+<<<<<<< HEAD
                         </li>
                         <% }%>
 
@@ -104,6 +108,8 @@
                                       </div>
                                 </div>
     
+=======
+>>>>>>> b2e17135f9ab86fa81f9c804ca0ab3eaf8ce3d93
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" runat="server" href="~/Contact">Contact</a>
