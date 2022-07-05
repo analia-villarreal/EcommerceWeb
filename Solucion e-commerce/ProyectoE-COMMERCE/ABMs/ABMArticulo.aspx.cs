@@ -12,22 +12,12 @@ namespace ProyectoE_COMMERCE.ABMs
     public partial class ABMArticulo : Page
     {
 
-
-
-
-
-
         protected void Page_Load(object sender, EventArgs e)
         {
             ArticuloNegocio negocioArticulos = new ArticuloNegocio();
 
-
-
             dgvArticulos.DataSource = negocioArticulos.Listar();
-            dgvArticulos.DataBind();
-
-
-          
+            dgvArticulos.DataBind();         
 
         }
 
@@ -38,15 +28,11 @@ namespace ProyectoE_COMMERCE.ABMs
             Response.Redirect("ArticulosForm.aspx?ID=" + id);
 
         }
-        
 
-
-    
-
-
-
-
-
-
+        protected void dgvArticulos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            dgvArticulos.PageIndex = e.NewPageIndex;
+            dgvArticulos.DataBind();
+        }
     }
 }

@@ -10,8 +10,9 @@
 
         <div class="col">
 
-            <asp:GridView runat="server" ID="dgvArticulos"  DataKeyNames="ID" OnSelectedIndexChanged="dgvArticulos_SelectedIndexChanged" CssClass="table" AutoGenerateColumns="false">
-
+            <asp:GridView runat="server" ID="dgvArticulos"  DataKeyNames="ID" 
+              OnSelectedIndexChanged="dgvArticulos_SelectedIndexChanged" CssClass="table" AutoGenerateColumns="false"
+              OnPageIndexChanging="dgvArticulos_PageIndexChanging" AllowPaging="true" PageSize="5">
                 <Columns>
                     <asp:BoundField HeaderText="ID" DataField="ID" />
                     <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
@@ -19,10 +20,8 @@
                     <asp:BoundField HeaderText="Descripcion" DataField="Descripcion" />
                     <asp:BoundField HeaderText="Tipo" DataField="Tipo.Nombre"  />  
                     <asp:BoundField HeaderText="Color" DataField="Color.Nombre" /> 
-                    <asp:BoundField HeaderText="Precio" DataField="Precio" />
-                 
+                    <asp:BoundField HeaderText="Precio" DataField="Precio" />          
                     <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" HeaderText="Acción" />
-                    
                 </Columns>
 
             </asp:GridView>
