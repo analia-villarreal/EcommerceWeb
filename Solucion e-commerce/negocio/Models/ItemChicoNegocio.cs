@@ -62,61 +62,6 @@ namespace negocio.Models
 
 
 
-        public List<ItemChico> ListarPorPagina(string tipodato, int pagina)
-        {
-            List<ItemChico> lista = new List<ItemChico>();
-            AccesoDatos datos = new AccesoDatos();
-
-            try
-            {
-
-                switch (tipodato)
-                {
-                    case "Color":
-                        datos.setearConsulta(Diccionario.LISTAR_COLOR_POR_PAGINA);
-                        break;
-                    case "Marca":
-                        datos.setearConsulta(Diccionario.LISTAR_MARCA_POR_PAGINA);
-                        break;
-                    case "Talle":
-                        datos.setearConsulta(Diccionario.LISTAR_TALLE_POR_PAGINA);
-                        break;
-                    case "Categoria":
-                        datos.setearConsulta(Diccionario.LISTAR_CATEGORIA_POR_PAGINA);
-                        break;
-
-                }
-                datos.setearParametros("@ID", pagina-1);
-                datos.ejecutarLectura();
-
-                while (datos.Lector.Read())
-                {
-
-                    ItemChico aux = new ItemChico();
-
-                    aux.ID = (int)datos.Lector["ID"];
-                    aux.Nombre = (string)datos.Lector[tipodato];
-                    lista.Add(aux);
-
-
-                }
-                return lista;
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-            finally
-            {
-                datos.cerrarConexion();
-
-            }
-
-
-        }
-
-
         public void Agregar(ItemChico nuevo, string tipodato)
         {
             AccesoDatos datos = new AccesoDatos();

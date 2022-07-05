@@ -74,7 +74,6 @@ C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\roslyn
 C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\dominio.dll
 C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\dominio.pdb
-C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\dominio.dll.config
 C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\obj\Debug\negocio.csproj.AssemblyReference.cache
 C:\Users\Yo\Documents\GitHub\EcommerceWeb\Solucion e-commerce\negocio\obj\Debug\negocio.csproj.CoreCompileInputs.cache

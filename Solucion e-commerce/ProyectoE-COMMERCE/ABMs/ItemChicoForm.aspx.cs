@@ -15,7 +15,9 @@ namespace ProyectoE_COMMERCE.ABMs
         
         public List<dominio.Models.ItemChico> listaColor { get; set; }
 
-        private ItemChico col = null;
+        private ItemChico itemChic = null;
+
+        public static string mensaje { get; set; }
 
         public string itemABM { get; set; }
 
@@ -37,6 +39,7 @@ namespace ProyectoE_COMMERCE.ABMs
                 {
                     textNombre.Text = seleccionado.Nombre;
                 }
+            
             }
         }
 
@@ -47,19 +50,19 @@ namespace ProyectoE_COMMERCE.ABMs
 
             try
             {
-                if (col == null)
-                    col = new Color();
+                if (itemChic == null)
+                    itemChic = new ItemChico();
 
-                col.Nombre = textNombre.Text;
+                itemChic.Nombre = textNombre.Text;
 
-                negocio.Agregar(col,itemABM);
-                MessageBox.Show("Agregado exitosamente");
+                negocio.Agregar(itemChic,itemABM);
+                mensaje = "Agregado exitosamente";
                 
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.ToString());
+                mensaje = ex.ToString();
             }
 
 
@@ -77,22 +80,32 @@ namespace ProyectoE_COMMERCE.ABMs
                 mod.Nombre = textNombre.Text;
 
                 negocio.Modificar(mod, itemABM);
-                MessageBox.Show("Modificado exitosamente");
+                mensaje = "Modificado exitosamente";
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                mensaje = ex.ToString();
             }
 
 
         }
+
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
 
         }
 
+        protected void btnBorrarMensaje_Click(object sender, EventArgs e)
+        {
+            mensaje = null;
+        }
 
+        protected void btnVolverAlABM_Click(object sender, EventArgs e)
+        {
+            mensaje = null;
+            Response.Redirect("ABM" + itemABM);
+        }
     }
 
 

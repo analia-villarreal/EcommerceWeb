@@ -11,30 +11,16 @@ namespace ProyectoE_COMMERCE.ABMs
 {
     public partial class ABMCategoria : System.Web.UI.Page
     {
-        public List<ItemChico> ItemsChicos { get; set; }
-        public int pagina { get; set; }
-
-
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["pagina"] != null)
-            {
-                pagina = int.Parse(Request.QueryString["pagina"].ToString());
-
-            }
-            else
-            {
-                pagina = 1;
-            }
-
+            Session["itemChicoABM"] = "Categoria";
 
 
             ItemChicoNegocio negocioCategorias = new ItemChicoNegocio();
-
-            ItemsChicos = negocioCategorias.Listar("Categoria");
-            dgvCategorias.DataSource = negocioCategorias.ListarPorPagina("Categoria", pagina);
+            
+            dgvCategorias.DataSource = negocioCategorias.Listar("Categoria");
             dgvCategorias.DataBind();
 
         }
@@ -43,9 +29,15 @@ namespace ProyectoE_COMMERCE.ABMs
         {
             var id = dgvCategorias.SelectedDataKey.Value.ToString();
 
-            Session["itemChicoABM"] = "Categoria";
+            
             Response.Redirect("ItemChicoForm.aspx?ID=" + id);
 
+        }
+
+        protected void dgvCategorias_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            dgvCategorias.PageIndex = e.NewPageIndex;
+            dgvCategorias.DataBind();
         }
 
 

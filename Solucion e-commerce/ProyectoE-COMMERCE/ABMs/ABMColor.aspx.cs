@@ -12,30 +12,18 @@ namespace ProyectoE_COMMERCE.ABMs
     public partial class ABMColor : System.Web.UI.Page
     {
 
-        public List<ItemChico> ItemsChicos { get; set; }
-        public int pagina { get; set; }
-
 
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["pagina"] != null)
-            {
-                pagina = int.Parse(Request.QueryString["pagina"].ToString());
-               
-            }
-            else
-            {
-                pagina = 1;
-            }
+            Session["itemChicoABM"] = "Color";
 
 
 
             ItemChicoNegocio negocioColores = new ItemChicoNegocio();
 
-            dgvColores.DataSource = negocioColores.ListarPorPagina("Color", pagina);
-            ItemsChicos = negocioColores.Listar("Color");
+            dgvColores.DataSource = negocioColores.Listar("Color");
             dgvColores.DataBind();
 
         }
@@ -44,9 +32,18 @@ namespace ProyectoE_COMMERCE.ABMs
         {
             var id = dgvColores.SelectedDataKey.Value.ToString();
 
-            Session["itemChicoABM"] = "Color";
+            
             Response.Redirect("ItemChicoForm.aspx?ID=" + id);
 
         }
+
+        protected void dgvColores_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            dgvColores.PageIndex = e.NewPageIndex;
+            dgvColores.DataBind();
+        }
+
+
+
     }
 }

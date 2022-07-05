@@ -11,27 +11,15 @@ namespace ProyectoE_COMMERCE.ABMs
 {
     public partial class ABMTalle : System.Web.UI.Page
     {
-        public List<ItemChico> ItemsChicos { get; set; }
-        public int pagina { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["pagina"] != null)
-            {
-                pagina = int.Parse(Request.QueryString["pagina"].ToString());
-           
-            }
-            else
-            {
-                pagina = 1;
-            }
-
+            Session["itemChicoABM"] = "Talle";
 
 
             ItemChicoNegocio negocioTalles = new ItemChicoNegocio();
 
-            dgvTalles.DataSource = negocioTalles.ListarPorPagina("Talle", pagina);
-            ItemsChicos = negocioTalles.Listar("Talle");
+            dgvTalles.DataSource = negocioTalles.Listar("Talle");
             dgvTalles.DataBind();
 
         }
@@ -39,10 +27,19 @@ namespace ProyectoE_COMMERCE.ABMs
         {
             var id = dgvTalles.SelectedDataKey.Value.ToString();
 
-            Session["itemChicoABM"] = "Talle";
+            
             Response.Redirect("ItemChicoForm.aspx?ID=" + id);
 
         }
+
+        protected void dgvTalles_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            dgvTalles.PageIndex = e.NewPageIndex;
+            dgvTalles.DataBind();
+        }
+
+
+
 
     }
 }

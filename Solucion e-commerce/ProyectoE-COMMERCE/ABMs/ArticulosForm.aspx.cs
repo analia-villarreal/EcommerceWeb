@@ -149,7 +149,6 @@ namespace ProyectoE_COMMERCE.ABMs
                 art.Precio = decimal.Parse(txtPrecio.Text);
                 art.EstadoComercial = new EstadoComercial();
                 art.EstadoComercial.ID = int.Parse(ddlEstado.SelectedValue);
-                art.EstadoActivo = true;
                                              
                 negocio.Agregar(art);
                 MessageBox.Show("Agregado exitosamente");

@@ -27,11 +27,11 @@ namespace negocio.Models
 
         public static string LISTAR_MARCA = "select id, nombreMarca as Marca from Marca";
 
-        public static string LISTAR_MARCA_POR_PAGINA = "select id, nombreMarca as Marca from Marca where id > 0+15* @ID AND id < 16+15* @ID ";
-
         public static string MODIFICAR_MARCA = "update Marca set nombreMarca = @nombre where ID= @ID";
 
-        public static string AGREGAR_MARCA = "insert into Marca values (@nombre)";
+        public static string AGREGAR_MARCA = "insert into Marca values (@nombre, 1)";
+
+        public static string BAJA_MARCA = "update Marca set estadoMarca = 0 where ID = @ID";
 
         public static string ELIMINAR_MARCA = "delete from Marca where ID = @ID";
 
@@ -39,11 +39,11 @@ namespace negocio.Models
 
         public static string LISTAR_TALLE = "select id, nombreTalle as Talle from Talle";
 
-        public static string LISTAR_TALLE_POR_PAGINA = "select id, nombreTalle as Talle from Talle where id > 0+15* @ID and id < 16+15* @ID ";
-
         public static string MODIFICAR_TALLE = "update Talle set nombreTalle = @nombre where ID = @ID";
 
-        public static string AGREGAR_TALLE = "insert into Talle values (@nombre)";
+        public static string AGREGAR_TALLE = "insert into Talle values (@nombre, 1)";
+
+        public static string BAJA_TALLE = "update Talle set estadoTalle = 0 where ID = @ID";
 
         public static string ELIMINAR_TALLE = "delete from Talle where ID = @ID";
 
@@ -51,11 +51,11 @@ namespace negocio.Models
 
         public static string LISTAR_CATEGORIA = "select id, nombreCategoria as Categoria from CATEGORIA";
 
-        public static string LISTAR_CATEGORIA_POR_PAGINA = "select id, nombreCategoria as Categoria from CATEGORIA where id > 0+15* @ID and id <16+15* @ID  ";
-
         public static string MODIFICAR_CATEGORIA = "update Categoria set nombreCategoria = @nombre where ID = @ID";
 
-        public static string AGREGAR_CATEGORIA = "insert into Categoria values (@nombre)";
+        public static string AGREGAR_CATEGORIA = "insert into Categoria values (@nombre, 1)";
+
+        public static string BAJA_CATEGORIA = "update Categoria set estadoCategoria = 0 where ID = @ID";
 
         public static string ELIMINAR_CATEGORIA = "delete from Categoria where ID = @ID";
 
@@ -64,13 +64,15 @@ namespace negocio.Models
 
         public static string LISTAR_COLOR = "SELECT ID, nombreColor as Color from Color";
 
-        public static string LISTAR_COLOR_POR_PAGINA = "SELECT ID, nombreColor as Color from Color where id > 0+15* @ID and id < 16+15* @ID  ";
-
         public static string MODIFICAR_COLOR = "update Color set nombreColor = @nombre where ID = @ID";
 
-        public static string AGREGAR_COLOR = "insert into Color values (@nombre)";
+        public static string AGREGAR_COLOR = "insert into Color values (@nombre, 1)";
+
+        public static string BAJA_COLOR = "update Color set estadoColor = 0 where ID = @ID";
 
         public static string ELIMINAR_COLOR = "delete from Color where ID = @ID";
+
+
 
 
         ///PARA ARTICULOS
@@ -82,7 +84,7 @@ namespace negocio.Models
        
         public static string MODIFICAR_ARTICULO = "update Articulo set NombreArticulo = @nombre, Descripcion = @descripcion, URLImagen = @URLImagen, idTipo = @idTipo, idColor = @idColor, IdTalle = @IdTalle,  IdCategoria = @IdCategoria, idMarca = @idMarca, idTemporada = @idTemporada, Descuento = @descuento, Precio = @precio, idEstadoComercial = @idEstadoComercial where ID = @ID";
         
-        public static string AGREGAR_ARTICULO = "insert into Articulo values (@nombre,@codigo,@URLImagen,@descripcion,@idTipo,@idCategoria,@idColor,@idTalle,@idMarca,@idTemporada,@descuento,@precio,@idEstadoComercial,@estadoActivo)";
+        public static string AGREGAR_ARTICULO = "insert into Articulo values (@nombre,@codigo,@URLImagen,@descripcion,@idTipo,@idCategoria,@idColor,@idTalle,@idMarca,@idTemporada,@descuento,@precio,@idEstadoComercial, 1)";
         
         public static string BAJA_ARTICULO = "update articulo set estadoActivo = 0 where ID = @ID";
         

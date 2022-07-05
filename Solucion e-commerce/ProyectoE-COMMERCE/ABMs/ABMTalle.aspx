@@ -8,7 +8,9 @@
 
         <div class="col">
 
-            <asp:GridView runat="server" ID="dgvTalles"  DataKeyNames="ID"  CssClass="table" AutoGenerateColumns="false" OnSelectedIndexChanged="dgvTalles_SelectedIndexChanged">
+            <asp:GridView runat="server" ID="dgvTalles"  
+                OnPageIndexChanging="dgvTalles_PageIndexChanging" AllowPaging="true" PageSize="15"
+                DataKeyNames="ID"  CssClass="table" AutoGenerateColumns="false" OnSelectedIndexChanged="dgvTalles_SelectedIndexChanged">
 
                 <Columns>
                     <asp:BoundField HeaderText="ID" DataField="ID" />
@@ -24,69 +26,6 @@
         </div>
     </div>
 
-
-    <!-- El codigo para la paginazion esta HORRIBLE, pero no se como hacerlo mejor
-        Preguntarle al profesor mejor manera de mostrar esto-->
-
-
-    <% if ((ItemsChicos.Count / (double)15) > 1)
-        { %>
-    
-         <nav aria-label="Page navigation example">
-          <ul class="pagination justify-content-center">
-
-            <!-- CODIGO PARA MOSTRAR EL PREVIO -->
-
-           <% if (pagina == 1)
-              { %>
-                            <li class="page-item disabled">
-                                <a class="page-link" href="ABMTalle.aspx?pagina=<%=pagina-1 %>" tabindex="-1">Previo</a>
-                            </li>
-
-                <% }
-                else { %>
-
-                            <li class="page-item">
-                                <a class="page-link" href="ABMTalle.aspx?pagina=<%=pagina-1 %>" tabindex="-1">Previo</a>
-                            </li>
-
-              <%} %>
-
-
-              <!-- CODIGO PARA MOSTRAR LAS PAGINAS -->
-            
-              <% for (int i = 0; i < ((ItemsChicos.Count / 15)+1); i++)
-                  { %>
-                         <li class="page-item"><a class="page-link" href="ABMTalle.aspx?pagina=<%=i+1 %>"><%=i+1 %></a></li>
-
-              <%  } %>
-
-
-              <!-- CODIGO PARA MOSTRAR EL SIGUIENTE -->
-
-                         <% if (pagina == ((ItemsChicos.Count / 15)+1))
-              { %>
-                            <li class="page-item disabled">
-                                <a class="page-link" href="ABMTalle.aspx?pagina=<%=pagina+1 %>" >Siguiente</a>
-                            </li>
-
-                <% }
-                else { %>
-
-                            <li class="page-item">
-                                <a class="page-link" href="ABMTalle.aspx?pagina=<%=pagina+1 %>" tabindex="-1">Siguiente</a>
-                            </li>
-
-              <%} %>
-
-
-          </ul>
-        </nav>
-
-    
-    
-
-        <% } %>
 
 
 
