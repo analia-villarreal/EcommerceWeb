@@ -9,7 +9,6 @@ MARTIN ROMERO:
 --------------
 A HACER:
 
->Arreglar la paginacion que se mostro en los videos de maxi y reemplazar la que hice
 >Agregar la eliminacion en ABMs
 >Permitir modificar los ABM chicos en la misma pagina de listado
 
@@ -17,7 +16,7 @@ HECHO:
 
 >Generar el ABM individual de cada uno de los elementos
 >Realizar una funcion en los ABM que muestra los primeros 18 resultados, asi no se crashea la pagina y carga rapido
-
+>Arreglar la paginacion que se mostro en los videos de maxi y reemplazar la que hice
 
 
 ------------------------------
