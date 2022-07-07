@@ -2,10 +2,6 @@
 
 <asp:Content ID="BodyContent" CssClass ="table" ContentPlaceHolderID="MainContent" runat="server">
 
-
-
-    
-
     <div class="row">
 
         <div class="col">

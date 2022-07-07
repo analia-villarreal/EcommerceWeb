@@ -8,7 +8,7 @@ namespace negocio.Models
 {
     public class ArticuloNegocio
     {
-        public List<Articulo> Listar()
+        public List<Articulo> Listar(string id = "")
         {
             List<Articulo> lista = new List<Articulo>();
             AccesoDatos datos = new AccesoDatos();
@@ -16,15 +16,22 @@ namespace negocio.Models
             try
             {
                 datos.setearConsulta(Diccionario.LISTAR_ARTICULOS);
+
+                if (id != "")
+                {
+                    datos.setearConsulta(Diccionario.LISTAR_ARTICULOS += " and a.ID = " + id);
+                }
+                
+                
                 datos.ejecutarLectura();
-                int ide = 0;
+                
                 while (datos.Lector.Read())
                 {
-                    ide++;
+                   
                     Articulo aux = new Articulo();
-                
-                    aux.ID = ide; //hay que corregir esto, se deberia utilizar aux.ID = (int)datos.Lector["Id"];
-                                  //pero por alguna razon crashea el sistema
+
+                    aux.ID = (int)datos.Lector["ID"];
+
                     aux.Nombre = (string)datos.Lector["nombreArticulo"];
 
                     aux.Codigo = (string)datos.Lector["codigo"];

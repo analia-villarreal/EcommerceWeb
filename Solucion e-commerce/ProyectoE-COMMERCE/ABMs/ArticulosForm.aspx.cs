@@ -14,98 +14,95 @@ namespace ProyectoE_COMMERCE.ABMs
 {
     public partial class ArticulosForm : System.Web.UI.Page
     {
-        public ArticulosForm()
+
+        protected void Page_Load(object sender, EventArgs e)
         {
-
-            //InitializeComponent();
-
-        }
-        public List<Articulo> listaArt { get; set; }
-
-        private Articulo art = null;
-        private void Cargar_Desplegables()
-        {
-            TipoNegocio tipoNegocio = new TipoNegocio();
-            ColorNegocio colorNegocio = new ColorNegocio();
-            TalleNegocio talleNegocio = new TalleNegocio();
-            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
-            MarcaNegocio marcaNegocio = new MarcaNegocio();
-            TemporadaNegocio temporadaNegocio = new TemporadaNegocio();
-            EstadoComercialNegocio estadoNegocio = new EstadoComercialNegocio();
-
-
             try
             {
+                //////////////////////configuracion inicial////////////////
                 if (!IsPostBack)
                 {
-                    ddlTipo.DataSource = tipoNegocio.Listar();
+                    ItemChicoNegocio negocio = new ItemChicoNegocio();
+
+                    TipoNegocio tipoNegocio = new TipoNegocio();
+                    List<Tipo> listaTipo = tipoNegocio.Listar();
+
+                    ddlTipo.DataSource = listaTipo;
                     ddlTipo.DataValueField = "ID";
-                    ddlTipo.DataTextField = "Nombre";
+                    ddlTipo.DataTextField = "nombreTipo";
                     ddlTipo.DataBind();
 
-                    ddlColor.DataSource = colorNegocio.Listar();
+              
+                    List<ItemChico> listaColor = negocio.Listar("Color");
+
+                    ddlColor.DataSource = listaColor;
                     ddlColor.DataValueField = "ID";
                     ddlColor.DataTextField = "Nombre";
                     ddlColor.DataBind();
 
-                    ddlTalle.DataSource = talleNegocio.Listar();
+                    List<ItemChico> listaTalle = negocio.Listar("Talle");
+
+                    ddlTalle.DataSource = listaTalle;
                     ddlTalle.DataValueField = "ID";
                     ddlTalle.DataTextField = "Nombre";
                     ddlTalle.DataBind();
 
-                    ddlCategoria.DataSource = categoriaNegocio.Listar();
+                    
+                    List<ItemChico> listaCategoria = negocio.Listar("Categoria");
+
+                    ddlCategoria.DataSource = listaCategoria;
                     ddlCategoria.DataValueField = "ID";
                     ddlCategoria.DataTextField = "Nombre";
                     ddlCategoria.DataBind();
 
-                    ddlMarca.DataSource = marcaNegocio.Listar();
+
+                    List<ItemChico> listaMarca = negocio.Listar("Marca");
+
+                    ddlMarca.DataSource = listaMarca;
                     ddlMarca.DataValueField = "ID";
                     ddlMarca.DataTextField = "Nombre";
                     ddlMarca.DataBind();
 
-                    ddlTemporada.DataSource = temporadaNegocio.Listar();
+                    TemporadaNegocio temporadaNegocio = new TemporadaNegocio();
+                    List<Temporada> listaTemporada = temporadaNegocio.Listar();
+
+                    ddlTemporada.DataSource = listaTemporada;
                     ddlTemporada.DataValueField = "ID";
                     ddlTemporada.DataTextField = "Nombre";
                     ddlTemporada.DataBind();
 
-                    ddlEstado.DataSource = estadoNegocio.Listar();
+                    EstadoComercialNegocio estadoNegocio = new EstadoComercialNegocio();
+                    List<EstadoComercial> listaEC = estadoNegocio.Listar();
+
+                    ddlEstado.DataSource = listaEC;
                     ddlEstado.DataValueField = "ID";
                     ddlEstado.DataTextField = "Nombre";
                     ddlEstado.DataBind();
-
                 }
 
-            }    
-            catch (Exception ex)
-            {
+                /////////////////////CONFIG MODIFICAR ////
 
-                Session.Add("error", ex);
-            }
-
-        }
-
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            Cargar_Desplegables();
-
-            if (Request.QueryString["ID"]!= null)
-            {
-                int Id = int.Parse(Request.QueryString["ID"].ToString());
-
-                ArticuloNegocio negocio = new ArticuloNegocio();
-
-                listaArt = negocio.Listar();    
-
-                Articulo seleccionado = listaArt.Find(x=> x.ID == Id);
-
-                if (!IsPostBack)
+                if (Request.QueryString["ID"] != null)
                 {
+                    string Id = Request.QueryString["ID"].ToString();
+
+                    //int Id = int.Parse(Request.QueryString["ID"].ToString());
+
+                    ArticuloNegocio negocio = new ArticuloNegocio();
+
+                    List<Articulo> listaArt = negocio.Listar(Id);
+
+                    Articulo seleccionado = listaArt[0];
+
+                    //Articulo seleccionado = listaArt.Find(x=> x.ID == Id);
+
                     textNombre.Text = seleccionado.Nombre;
                     textCodigo.Text = seleccionado.Codigo;
                     textDescripcion.Text = seleccionado.Descripcion;
                     textURLImagen.Text = seleccionado.URLImagen;
                     textCodigo.Text = seleccionado.Codigo;
                     textCodigo.ReadOnly = true;
+
                     ddlTipo.SelectedValue = seleccionado.Tipo.ID.ToString();
                     ddlColor.SelectedValue = seleccionado.Color.ID.ToString();
                     ddlTalle.SelectedValue = seleccionado.Talle.ID.ToString();
@@ -113,10 +110,18 @@ namespace ProyectoE_COMMERCE.ABMs
                     ddlMarca.SelectedValue = seleccionado.Marca.ID.ToString();
                     ddlTemporada.SelectedValue = seleccionado.Temporada.ID.ToString();
                     txtDescuento.Text = seleccionado.Descuento.ToString();
-                    txtPrecio.Text = seleccionado.Descuento.ToString();
+                    txtPrecio.Text = seleccionado.Precio.ToString();
                     ddlEstado.Text = seleccionado.EstadoComercial.ID.ToString();
+
                 }
             }
+            catch (Exception ex)
+            {
+
+                Session.Add("error", ex);
+                //Response.Redirect("", false);
+            }
+
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
@@ -126,9 +131,8 @@ namespace ProyectoE_COMMERCE.ABMs
 
             try
             {
-                if (art == null)
-                    art = new Articulo();
-                
+                Articulo art = new Articulo();
+
                 art.Nombre = textNombre.Text;
                 art.Codigo = textCodigo.Text;
                 art.Descripcion = textDescripcion.Text;
@@ -149,25 +153,28 @@ namespace ProyectoE_COMMERCE.ABMs
                 art.Precio = decimal.Parse(txtPrecio.Text);
                 art.EstadoComercial = new EstadoComercial();
                 art.EstadoComercial.ID = int.Parse(ddlEstado.SelectedValue);
-                                             
+
                 negocio.Agregar(art);
-                MessageBox.Show("Agregado exitosamente");
-                
+                //Response.Redirect("", false);
+
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.ToString());
+                Session.Add("error", ex);
+                //Response.Redirect("", false);
             }
 
 
         }
 
+
+
         protected void btnModificar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
 
-            art = new Articulo();
+            Articulo art = new Articulo();
 
             try
             {
@@ -195,18 +202,19 @@ namespace ProyectoE_COMMERCE.ABMs
                 art.EstadoActivo = true;
 
                 negocio.Modificar(art);
-                MessageBox.Show("Modificado exitosamente");
+                Response.Redirect("", false);
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.ToString());
+                Session.Add("error", ex);
+                Response.Redirect("", false);
             }
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
