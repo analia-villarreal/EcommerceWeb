@@ -14,8 +14,8 @@
                     <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
                     <asp:BoundField HeaderText="Codigo" DataField="Codigo" />
                     <asp:BoundField HeaderText="Descripcion" DataField="Descripcion" />
-                    <asp:BoundField HeaderText="Tipo" DataField="Tipo.Nombre"  />  
-                    <asp:BoundField HeaderText="Color" DataField="Color.Nombre" /> 
+                    <asp:BoundField HeaderText="Tipo" DataField="Tipo.NombreTipo"  />  
+                    <asp:BoundField HeaderText="Color" DataField="Color.NombreColor" /> 
                     <asp:BoundField HeaderText="Precio" DataField="Precio" />          
                     <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" HeaderText="Acción" />
                 </Columns>

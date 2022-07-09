@@ -65,10 +65,10 @@
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         <a class="dropdown-item" runat="server" href="ABMs/ABMArticulo">ABM de Articulos</a>
-                                        <a class="dropdown-item" runat="server" href="ABMs/ABMCategoria">ABM de Categorias</a>
+                                        <%--<a class="dropdown-item" runat="server" href="ABMs/ABMCategoria">ABM de Categorias</a>
                                         <a class="dropdown-item" runat="server" href="ABMs/ABMMarca">ABM de Marcas</a>
                                         <a class="dropdown-item" runat="server" href="ABMs/ABMTalle">ABM de Talles</a>
-                                        <a class="dropdown-item" runat="server" href="ABMs/ABMColor">ABM de Colores</a>
+                                        <a class="dropdown-item" runat="server" href="ABMs/ABMColor">ABM de Colores</a>--%>
                                     </div>
                                 </div>
 

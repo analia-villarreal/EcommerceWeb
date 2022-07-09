@@ -26,7 +26,7 @@ namespace negocio.Models
                     Temporada aux = new Temporada();
 
                     aux.ID = (int)datos.Lector["ID"];
-                    aux.Nombre = (string)datos.Lector["nombreTemporada"];
+                    aux.NombreTemporada = (string)datos.Lector["nombreTemporada"];
                     lista.Add(aux);
 
 

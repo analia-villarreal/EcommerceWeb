@@ -26,7 +26,7 @@ namespace negocio.Models
                     Tipo aux = new Tipo();
 
                     aux.ID = (int)datos.Lector["ID"];
-                    aux.Nombre = (string)datos.Lector["nombreTipo"];
+                    aux.NombreTipo = (string)datos.Lector["nombreTipo"];
                     lista.Add(aux);
 
                 }

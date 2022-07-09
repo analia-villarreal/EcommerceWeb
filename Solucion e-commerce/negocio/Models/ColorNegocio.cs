@@ -25,7 +25,7 @@ namespace negocio.Models
                     Color aux = new Color();
 
                     aux.ID = (int)datos.Lector["ID"];
-                    aux.Nombre = (string)datos.Lector["nombreColor"];
+                    aux.NombreColor = (string)datos.Lector["nombreColor"];
                     lista.Add(aux);
 
 
@@ -51,7 +51,7 @@ namespace negocio.Models
             try
             {
                 datos.setearConsulta(Diccionario.AGREGAR_COLOR);
-                datos.setearParametros("@nombre", nuevo.Nombre);
+                datos.setearParametros("@nombre", nuevo.NombreColor);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -72,7 +72,7 @@ namespace negocio.Models
             {
                 datos.setearConsulta(Diccionario.MODIFICAR_COLOR);
                 datos.setearParametros("@ID", modif.ID);
-                datos.setearParametros("@nombre", modif.Nombre);
+                datos.setearParametros("@nombre", modif.NombreColor);
             }
             catch (Exception ex)
             {

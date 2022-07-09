@@ -26,7 +26,7 @@ namespace negocio.Models
                     Marca aux = new Marca();
 
                     aux.ID = (int)datos.Lector["ID"];
-                    aux.Nombre = (string)datos.Lector["nombreMarca"];
+                    aux.NombreMarca = (string)datos.Lector["nombreMarca"];
                     lista.Add(aux);
 
                 }

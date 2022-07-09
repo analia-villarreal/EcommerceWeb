@@ -25,7 +25,7 @@ namespace negocio.Models
 
         ///PARA MARCAS
 
-        public static string LISTAR_MARCA = "select ID, nombreMarca as Marca from Marca";
+        public static string LISTAR_MARCA = "select ID, nombreMarca from Marca";
 
         public static string MODIFICAR_MARCA = "update Marca set nombreMarca = @nombre where ID= @ID";
 
@@ -37,7 +37,7 @@ namespace negocio.Models
 
         ///PARA TALLES
 
-        public static string LISTAR_TALLE = "select ID, nombreTalle as Talle from Talle";
+        public static string LISTAR_TALLE = "select ID, nombreTalle from Talle";
 
         public static string MODIFICAR_TALLE = "update Talle set nombreTalle = @nombre where ID = @ID";
 
@@ -49,7 +49,7 @@ namespace negocio.Models
 
         ///PARA CATEGORIAS
 
-        public static string LISTAR_CATEGORIA = "select ID, nombreCategoria as Categoria from CATEGORIA";
+        public static string LISTAR_CATEGORIA = "select ID, nombreCategoria from CATEGORIA";
 
         public static string MODIFICAR_CATEGORIA = "update Categoria set nombreCategoria = @nombre where ID = @ID";
 
@@ -62,7 +62,7 @@ namespace negocio.Models
 
         ///PARA COLORES
 
-        public static string LISTAR_COLOR = "SELECT ID, nombreColor as Color from Color";
+        public static string LISTAR_COLOR = "SELECT ID, nombreColor from Color";
 
         public static string MODIFICAR_COLOR = "update Color set nombreColor = @nombre where ID = @ID";
 
@@ -82,7 +82,7 @@ namespace negocio.Models
 
         public static string LISTAR_ARTICULOS_ACTIVOS = "EXEC storedListarActivos1";
        
-        public static string MODIFICAR_ARTICULO = "update Articulo set NombreArticulo = @nombre, Descripcion = @descripcion, URLImagen = @URLImagen, idTipo = @idTipo, idColor = @idColor, IdTalle = @IdTalle,  IdCategoria = @IdCategoria, idMarca = @idMarca, idTemporada = @idTemporada, Descuento = @descuento, Precio = @precio, idEstadoComercial = @idEstadoComercial where ID = @ID";
+        public static string MODIFICAR_ARTICULO = "update Articulo set NombreArticulo = @nombre, Descripcion = @descripcion, URLImagen = @URLImagen, idTipo = @idTipo, idColor = @idColor, IdTalle = @IdTalle, IdCategoria = @IdCategoria, idMarca = @idMarca, idTemporada = @idTemporada, Descuento = @descuento, Precio = @precio, idEstadoComercial = @idEstadoComercial, estadoActivo = @estadoActivo where ID = @ID";
         
         public static string AGREGAR_ARTICULO = "insert into Articulo values (@nombre,@codigo,@URLImagen,@descripcion,@idTipo,@idCategoria,@idColor,@idTalle,@idMarca,@idTemporada,@descuento,@precio,@idEstadoComercial, 1)";
         

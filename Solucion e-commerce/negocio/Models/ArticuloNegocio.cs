@@ -8,21 +8,14 @@ namespace negocio.Models
 {
     public class ArticuloNegocio
     {
-        public List<Articulo> Listar(string id = "")
+        public List<Articulo> Listar()
         {
             List<Articulo> lista = new List<Articulo>();
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                datos.setearConsulta(Diccionario.LISTAR_ARTICULOS);
-
-                if (id != "")
-                {
-                    datos.setearConsulta(Diccionario.LISTAR_ARTICULOS += " and a.ID = " + id);
-                }
-                
-                
+                datos.setearConsulta("SELECT a.ID, a.nombreArticulo, a.codigo, a.descripcion, a.URLImagen, a.idTipo, ti.nombreTipo, a.idColor, co.nombreColor, a.idTalle, t.nombreTalle, a.idCategoria, c.nombreCategoria, a.idMarca, m.nombreMarca, a.idTemporada, te.nombreTemporada, a.descuento, a.precio, a.idEstadoComercial, ec.nombreEC, a.estadoActivo FROM Articulo a, Tipo ti, Color co, Talle t, Categoria c, Marca m, Temporada te, EstadoComercial ec WHERE a.idTipo = ti.ID AND a.idColor = co.ID AND a.idTalle = t.ID AND a.idCategoria = c.ID AND a.idMarca = m.ID AND a.idTemporada = te.ID AND a.idEstadoComercial = ec.ID");
                 datos.ejecutarLectura();
                 
                 while (datos.Lector.Read())
@@ -42,27 +35,27 @@ namespace negocio.Models
 
                     aux.Tipo = new Tipo();
                     aux.Tipo.ID = (int)datos.Lector["idTipo"];
-                    aux.Tipo.Nombre = (string)datos.Lector["Tipo"];
+                    aux.Tipo.NombreTipo = (string)datos.Lector["nombreTipo"];
 
                     aux.Color = new Color();
                     aux.Color.ID = (int)datos.Lector["idColor"];
-                    aux.Color.Nombre = (string)datos.Lector["Color"];
+                    aux.Color.NombreColor = (string)datos.Lector["nombreColor"];
 
                     aux.Talle = new Talle();
                     aux.Talle.ID = (int)datos.Lector["idTalle"];
-                    aux.Talle.Nombre = (string)datos.Lector["Talle"];
+                    aux.Talle.NombreTalle = (string)datos.Lector["nombreTalle"];
 
                     aux.Categoria = new Categoria();
                     aux.Categoria.ID = (int)datos.Lector["idCategoria"];
-                    aux.Categoria.Nombre = (string)datos.Lector["Categoria"];
+                    aux.Categoria.NombreCategoria = (string)datos.Lector["nombreCategoria"];
 
                     aux.Marca = new Marca();
                     aux.Marca.ID = (int)datos.Lector["idMarca"];
-                    aux.Marca.Nombre = (string)datos.Lector["Marca"];
+                    aux.Marca.NombreMarca = (string)datos.Lector["nombreMarca"];
 
                     aux.Temporada = new Temporada();
                     aux.Temporada.ID = (int)datos.Lector["idtemporada"];
-                    aux.Temporada.Nombre = (string)datos.Lector["Temporada"];
+                    aux.Temporada.NombreTemporada = (string)datos.Lector["nombreTemporada"];
 
                     aux.Descuento = (int)datos.Lector["descuento"];
 
@@ -70,7 +63,7 @@ namespace negocio.Models
 
                     aux.EstadoComercial = new EstadoComercial();
                     aux.EstadoComercial.ID = (int)datos.Lector["idEstadoComercial"];
-                    aux.EstadoComercial.Nombre = (string)datos.Lector["Estado_Comercial"];
+                    aux.EstadoComercial.NombreEC = (string)datos.Lector["nombreEC"];
 
                     aux.EstadoActivo = (bool)datos.Lector["estadoActivo"];
 
@@ -111,6 +104,7 @@ namespace negocio.Models
                 datos.setearParametros("@descuento", nuevo.Descuento);
                 datos.setearParametros("@precio", nuevo.Precio);
                 datos.setearParametros("@idEstadoComercial", nuevo.EstadoComercial.ID);
+                datos.setearParametros("@estadoActivo", nuevo.EstadoActivo);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -145,6 +139,7 @@ namespace negocio.Models
                 datos.setearParametros("@descuento", art.Descuento);
                 datos.setearParametros("@precio", art.Precio);
                 datos.setearParametros("@idEstadoComercial", art.EstadoComercial.ID);
+                datos.setearParametros("@estadoActivo", art.EstadoActivo);
                 datos.ejecutarAccion();
 
             }

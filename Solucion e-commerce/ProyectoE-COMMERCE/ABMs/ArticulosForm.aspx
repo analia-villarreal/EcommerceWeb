@@ -42,6 +42,7 @@
                         <asp:DropDownList ID="ddlColor" runat="server" CssClass="form-select"></asp:DropDownList>
                     </div>
                 </div>
+
                 <div class="mb-3 row">
                     <label for="ddlTalle" class="col-sm-2 col-form-label">Talle</label>
                     <div class="col-sm-10">
@@ -60,6 +61,7 @@
                         <asp:DropDownList ID="ddlMarca" runat="server" CssClass="form-select"></asp:DropDownList>
                     </div>
                 </div>
+
                 <div class="mb-3 row">
                     <label for="ddlTemporada" class="col-sm-2 col-form-label">Temporada</label>
                     <div class="col-sm-10">
@@ -84,6 +86,14 @@
                         <asp:DropDownList ID="ddlEstado" runat="server" CssClass="form-select"></asp:DropDownList>
                     </div>
                 </div>
+                <div class="mb-3 row">
+                    <div class="col-sm-10 form-check-input">
+                        <asp:CheckBox Text="" ID="chkActivo" runat="server" />
+                        <asp:Label Text="Activo" CssClass="form-check-label" runat="server" />
+                    </div>
+                </div>
+
+
                 <%if (Request.QueryString["ID"] != null)
                     {%>
                 <div class="mb-3 row">
@@ -103,7 +113,7 @@
                 <%}%>
                 <a href="ABMArticulo.aspx">Cancelar</a>
             </div>
-        </div>
+    </div>
     </div>
 
 

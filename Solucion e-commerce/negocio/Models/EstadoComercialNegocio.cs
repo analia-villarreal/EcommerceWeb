@@ -26,7 +26,7 @@ namespace negocio.Models
                     EstadoComercial aux = new EstadoComercial();
 
                     aux.ID = (int)datos.Lector["ID"];
-                    aux.Nombre = (string)datos.Lector["nombreEC"];
+                    aux.NombreEC = (string)datos.Lector["nombreEC"];
                     lista.Add(aux);
 
 

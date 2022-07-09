@@ -26,7 +26,7 @@ namespace negocio.Models
                     Categoria aux = new Categoria();
 
                     aux.ID = (int)datos.Lector["ID"];
-                    aux.Nombre = (string)datos.Lector["nombreCategoria"];
+                    aux.NombreCategoria = (string)datos.Lector["nombreCategoria"];
                     lista.Add(aux);
 
 

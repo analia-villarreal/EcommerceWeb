@@ -26,7 +26,7 @@ namespace negocio.Models
                     Talle aux = new Talle();
 
                     aux.ID = (int)datos.Lector["ID"];
-                    aux.Nombre = (string)datos.Lector["nombreTalle"];
+                    aux.NombreTalle = (string)datos.Lector["nombreTalle"];
                     lista.Add(aux);
 
 

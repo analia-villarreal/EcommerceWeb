@@ -22,8 +22,6 @@ namespace ProyectoE_COMMERCE.ABMs
                 //////////////////////configuracion inicial////////////////
                 if (!IsPostBack)
                 {
-                    ItemChicoNegocio negocio = new ItemChicoNegocio();
-
                     TipoNegocio tipoNegocio = new TipoNegocio();
                     List<Tipo> listaTipo = tipoNegocio.Listar();
 
@@ -32,35 +30,36 @@ namespace ProyectoE_COMMERCE.ABMs
                     ddlTipo.DataTextField = "nombreTipo";
                     ddlTipo.DataBind();
 
-              
-                    List<ItemChico> listaColor = negocio.Listar("Color");
+                    ColorNegocio colorNegocio = new ColorNegocio();
+                    List<Color> listaColor = colorNegocio.Listar();
 
                     ddlColor.DataSource = listaColor;
                     ddlColor.DataValueField = "ID";
-                    ddlColor.DataTextField = "Nombre";
+                    ddlColor.DataTextField = "nombreColor";
                     ddlColor.DataBind();
 
-                    List<ItemChico> listaTalle = negocio.Listar("Talle");
+                    TalleNegocio talleNegocio = new TalleNegocio(); 
+                    List<Talle> listaTalle = talleNegocio.Listar();
 
                     ddlTalle.DataSource = listaTalle;
                     ddlTalle.DataValueField = "ID";
-                    ddlTalle.DataTextField = "Nombre";
+                    ddlTalle.DataTextField = "nombreTalle";
                     ddlTalle.DataBind();
 
-                    
-                    List<ItemChico> listaCategoria = negocio.Listar("Categoria");
+                    CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+                    List<Categoria> listaCategoria = categoriaNegocio.Listar();
 
                     ddlCategoria.DataSource = listaCategoria;
                     ddlCategoria.DataValueField = "ID";
-                    ddlCategoria.DataTextField = "Nombre";
+                    ddlCategoria.DataTextField = "nombreCategoria";
                     ddlCategoria.DataBind();
 
-
-                    List<ItemChico> listaMarca = negocio.Listar("Marca");
+                    MarcaNegocio marcaNegocio = new MarcaNegocio();
+                    List<Marca> listaMarca = marcaNegocio.Listar();
 
                     ddlMarca.DataSource = listaMarca;
                     ddlMarca.DataValueField = "ID";
-                    ddlMarca.DataTextField = "Nombre";
+                    ddlMarca.DataTextField = "nombreMarca";
                     ddlMarca.DataBind();
 
                     TemporadaNegocio temporadaNegocio = new TemporadaNegocio();
@@ -68,7 +67,7 @@ namespace ProyectoE_COMMERCE.ABMs
 
                     ddlTemporada.DataSource = listaTemporada;
                     ddlTemporada.DataValueField = "ID";
-                    ddlTemporada.DataTextField = "Nombre";
+                    ddlTemporada.DataTextField = "nombreTemporada";
                     ddlTemporada.DataBind();
 
                     EstadoComercialNegocio estadoNegocio = new EstadoComercialNegocio();
@@ -76,7 +75,7 @@ namespace ProyectoE_COMMERCE.ABMs
 
                     ddlEstado.DataSource = listaEC;
                     ddlEstado.DataValueField = "ID";
-                    ddlEstado.DataTextField = "Nombre";
+                    ddlEstado.DataTextField = "nombreEC";
                     ddlEstado.DataBind();
                 }
 
@@ -84,17 +83,17 @@ namespace ProyectoE_COMMERCE.ABMs
 
                 if (Request.QueryString["ID"] != null)
                 {
-                    string Id = Request.QueryString["ID"].ToString();
+                    //string Id = Request.QueryString["ID"].ToString();
 
-                    //int Id = int.Parse(Request.QueryString["ID"].ToString());
+                    int Id = int.Parse(Request.QueryString["ID"].ToString());
 
                     ArticuloNegocio negocio = new ArticuloNegocio();
 
-                    List<Articulo> listaArt = negocio.Listar(Id);
+                    List<Articulo> listaArt = negocio.Listar();
 
-                    Articulo seleccionado = listaArt[0];
+                    //Articulo seleccionado = listaArt[0];
 
-                    //Articulo seleccionado = listaArt.Find(x=> x.ID == Id);
+                    Articulo seleccionado = listaArt.Find(x=> x.ID == Id);
 
                     textNombre.Text = seleccionado.Nombre;
                     textCodigo.Text = seleccionado.Codigo;
@@ -112,6 +111,7 @@ namespace ProyectoE_COMMERCE.ABMs
                     txtDescuento.Text = seleccionado.Descuento.ToString();
                     txtPrecio.Text = seleccionado.Precio.ToString();
                     ddlEstado.Text = seleccionado.EstadoComercial.ID.ToString();
+                    chkActivo.Checked = seleccionado.EstadoActivo;
 
                 }
             }
@@ -153,6 +153,7 @@ namespace ProyectoE_COMMERCE.ABMs
                 art.Precio = decimal.Parse(txtPrecio.Text);
                 art.EstadoComercial = new EstadoComercial();
                 art.EstadoComercial.ID = int.Parse(ddlEstado.SelectedValue);
+                art.EstadoActivo = chkActivo.Checked;
 
                 negocio.Agregar(art);
                 //Response.Redirect("", false);
@@ -199,10 +200,10 @@ namespace ProyectoE_COMMERCE.ABMs
                 art.Precio = decimal.Parse(txtPrecio.Text);
                 art.EstadoComercial = new EstadoComercial();
                 art.EstadoComercial.ID = int.Parse(ddlEstado.SelectedValue);
-                art.EstadoActivo = true;
+                art.EstadoActivo = chkActivo.Checked;
 
                 negocio.Modificar(art);
-                Response.Redirect("", false);
+                //Response.Redirect("", false);
             }
             catch (Exception ex)
             {
