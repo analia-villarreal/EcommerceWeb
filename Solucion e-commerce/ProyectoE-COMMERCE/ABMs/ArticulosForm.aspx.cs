@@ -203,19 +203,25 @@ namespace ProyectoE_COMMERCE.ABMs
                 art.EstadoActivo = chkActivo.Checked;
 
                 negocio.Modificar(art);
-                //Response.Redirect("", false);
+                Response.Redirect("MensajeModificar.aspx", false);
             }
             catch (Exception ex)
             {
 
                 Session.Add("error", ex);
-                Response.Redirect("", false);
+                //Response.Redirect("", false);
             }
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
+            ArticuloNegocio negocio = new ArticuloNegocio();
 
+            int ID = int.Parse(Request.QueryString["ID"]);
+
+            negocio.BajaLogica(ID);
+
+            Response.Redirect("ABMArticulo.aspx", false);
         }
     }
 }

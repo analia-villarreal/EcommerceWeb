@@ -12,7 +12,6 @@ namespace dominio.Models
         NORMAL = 2
     }
 
-
     public class Usuario
     {
         public int ID { get; set; }
@@ -22,7 +21,7 @@ namespace dominio.Models
         public string Apellido { get; set; }
         public string Email { get; set; }
         public Rol Rol { get; set; }
-        public int IdDireccion { get; set; }
+        public Direccion IdDireccion { get; set; }
 
         public Usuario(string user, string pass, bool admin)
         {

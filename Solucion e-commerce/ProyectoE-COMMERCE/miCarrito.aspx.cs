@@ -29,8 +29,6 @@ namespace ProyectoE_COMMERCE
         protected void Page_Load(object sender, EventArgs e)
         {
 
-
-
             if (Session["carrito"] == null || Session["cantArt"] == null)
             {
                 listaArticulosCarro = new List<dominio.Models.Articulo>();
@@ -193,5 +191,15 @@ namespace ProyectoE_COMMERCE
 
         }
 
+        protected void GenerarPedido_Click(object sender, EventArgs e)
+        {
+            if (Session["usuario"] == null)
+            {
+                Session.Add("error", "Debes Loguearte");
+                Response.Redirect("ErrorLogin.aspx", false);
+            }
+
+
+        }
     }
 }

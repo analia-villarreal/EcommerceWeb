@@ -123,6 +123,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="LoginForm.aspx" />
     <Content Include="miCarrito.aspx" />
+    <Content Include="ABMs\MensajeModificar.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -269,6 +270,13 @@
     </Compile>
     <Compile Include="miCarrito.aspx.designer.cs">
       <DependentUpon>miCarrito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ABMs\MensajeModificar.aspx.cs">
+      <DependentUpon>MensajeModificar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ABMs\MensajeModificar.aspx.designer.cs">
+      <DependentUpon>MensajeModificar.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

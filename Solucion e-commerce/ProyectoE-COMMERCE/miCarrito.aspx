@@ -60,8 +60,6 @@
                         </div>
                         <div class="w-100"></div>
                     
-
-
            <%  } %>
             </div>
             <div class="col-sm border">
@@ -69,6 +67,9 @@
             </div>
             <div class="col-sm border">
                 <p>$<%= obtenerPrecioTotal() %></p>
+            </div>
+            <div class="col-sm border">
+                <asp:Button Text="Generar Pedido" ID="GenerarPedido" CssClass="btn btn-success btn-lg" OnClick="GenerarPedido_Click" runat="server" />
             </div>
     </div>
 

@@ -64,6 +64,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Carrito.cs" />
+    <Compile Include="Models\Direccion.cs" />
+    <Compile Include="Models\Envio.cs" />
+    <Compile Include="Models\FormaEnvio.cs" />
+    <Compile Include="Models\FormaPago.cs" />
     <Compile Include="Models\ItemChico.cs" />
     <Compile Include="Models\EstadoComercial.cs" />
     <Compile Include="Models\Color.cs" />
@@ -71,6 +76,7 @@
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Articulo.cs" />
     <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\Pedido.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Temporada.cs" />
     <Compile Include="Models\Tipo.cs" />
