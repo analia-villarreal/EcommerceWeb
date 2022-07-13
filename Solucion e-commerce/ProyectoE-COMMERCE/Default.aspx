@@ -4,13 +4,29 @@
 
     <%--<asp:GridView CssClass="table" ID="dgvArticulos" runat="server" OnRowDataBound="dgvArticulos_RowDataBound" OnSelectedIndexChanged="dgvArticulos_SelectedIndexChanged" ></asp:GridView>--%>
 
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img class="d-block w-100" src="https://dash.vtexassets.com/assets/vtex.file-manager-graphql/images/46389bc2-d30f-4e7d-8f6e-fe6b6f4b8e3a___e63b50f14a64efd7b603c5f3e4c638fe.jpg" alt="First slide">
             </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="https://dash.vtexassets.com/assets/vtex.file-manager-graphql/images/46389bc2-d30f-4e7d-8f6e-fe6b6f4b8e3a___e63b50f14a64efd7b603c5f3e4c638fe.jpg" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="https://dash.vtexassets.com/assets/vtex.file-manager-graphql/images/46389bc2-d30f-4e7d-8f6e-fe6b6f4b8e3a___e63b50f14a64efd7b603c5f3e4c638fe.jpg" alt="Third slide">
+            </div>
         </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
+
+
 
     <%--    <h1 class="title">Catalogo de Articulos</h1>--%>
 
@@ -53,6 +69,8 @@
 
         </div>
         <!--------------------------------->
+
+
 
         <div class="col-9">
 

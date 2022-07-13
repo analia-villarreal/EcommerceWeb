@@ -6,7 +6,7 @@
         window.history.pushState(null, null, '<%=Request.Url.LocalPath%>');
     </script>
 
-    <div class="container align-content-center bg-light">
+    <div class="container align-content-center">
         <div class="row">
             <%--            <div class="col-sm border">
                 <h2>Codigo</h2>
@@ -30,36 +30,36 @@
                 <h2>Opciones</h2>
             </div>--%>
 
-            <div class="col-8 bg-dark text-white">
+            <div class="col-7 bg-dark text-white" style="margin-right: 30px;padding-top:25px;padding-bottom:15px">
 
                 <%foreach (dominio.Models.Articulo item in listaArticulosCarro)
                     {%>
 
-                <div style="display: flex; gap: 30px; align-content: center; justify-content: space-around; align-items: center">
+                <div class="miflex">
                     <%--                        <div class="col border">
                             <h4><%= item.Codigo %></h4>
                         </div>--%>
                     <img class="" src="<%= item.URLImagen %>" onerror="this.src='<%=negocio.Models.Diccionario.IMAGE_NOTFOUND%>'" style="width: 15%" />
 
 
-                    <h4 style="display: inline-block; text-align: center"><%= item.Nombre %></h4>
+                    <p style="display: inline-block; text-align: center;    margin-bottom: 0rem;"><%= item.Nombre %></p>
 
                     <%--                     <div class="col border">
                             <p><%= item.Descripcion %></p>
                         </div>--%>
 
-                    <p style="display: inline-block; text-align: center">$<%= item.Precio * cantArticulos.Find(x => x.id == item.ID).cant %></p>
-
-                    <div style="display: inline-block; border: 1px solid rgba(255,255,255,0.2); padding: 15px; border-radius: 5px">
+                    <p style="display: inline-block; text-align: center;    margin-bottom: 0rem;font-weight:bold">$<%= item.Precio * cantArticulos.Find(x => x.id == item.ID).cant %></p>
 
 
-
-                        <a style="display: inline-block; font-size: 2rem" href="miCarrito?idmas=<%= item.ID %>">+</a>
+                    <%--                  <div style="display: inline-block; border: 1px solid rgba(255,255,255,0.2); padding: 0px; border-radius: 5px">--%>
+                    <div>
+                        <a class="icon-resta" style="display: inline-block;" href="miCarrito?idmenos=<%= item.ID %>">-</a>
 
                         <p style="display: inline-block; text-align: center; margin: 0 15px;"><%= cantArticulos.Find(x => x.id == item.ID).cant %></p>
 
-                        <a style="display: inline-block; font-size: 2rem" href="miCarrito?idmenos=<%= item.ID %>">-</a>
+                        <a class="icon-suma" style="display: inline-block;" href="miCarrito?idmas=<%= item.ID %>">+</a>
                     </div>
+                    <%--                    </div>--%>
 
 
 
@@ -73,14 +73,14 @@
 
 
 
-            <div class="col-4">
+            <div class="col-4 bg-dark text-white">
                 <hr />
-                <div class="col-sm" style="display:flex;justify-content:space-around">
-                    <p style="font-weight:bold;font-size:1.8rem">Total</p>
-                    <p style="font-weight:bold;font-size:1.8rem">$<%= obtenerPrecioTotal() %></p>
+                <div class="col-sm" style="display: flex; justify-content: space-around">
+                    <p style="font-weight: bold; font-size: 1.8rem">Total</p>
+                    <p style="font-weight: bold; font-size: 1.8rem">$<%= obtenerPrecioTotal() %></p>
                 </div>
                 <div class="col-sm">
-                    <asp:Button Text="Generar Pedido" ID="GenerarPedido" CssClass="btn btn-success btn-lg" style="display:block;width:100%;margin:0 auto" OnClick="GenerarPedido_Click" runat="server" />
+                    <asp:Button Text="Generar Pedido" ID="GenerarPedido" CssClass="btn btn-success btn-lg" Style="display: block; width: 100%; margin: 0 auto" OnClick="GenerarPedido_Click" runat="server" />
                 </div>
 
             </div>
