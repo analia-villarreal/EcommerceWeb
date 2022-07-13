@@ -7,7 +7,7 @@
     </script>
 
     <div class="container align-content-center">
-        <div class="row">
+        <div class="row" style="margin-top:50px">
             <%--            <div class="col-sm border">
                 <h2>Codigo</h2>
             </div>--%>
@@ -30,7 +30,7 @@
                 <h2>Opciones</h2>
             </div>--%>
 
-            <div class="col-7 bg-dark text-white" style="margin-right: 30px;padding-top:25px;padding-bottom:15px">
+            <div class="col-7 text-white" style="margin-right: 30px;padding-top:25px;padding-bottom:15px;background-color:#151515">
 
                 <%foreach (dominio.Models.Articulo item in listaArticulosCarro)
                     {%>
@@ -73,7 +73,7 @@
 
 
 
-            <div class="col-4 bg-dark text-white" style="margin:0;padding:0;padding-bottom:10px">
+            <div class="col-4 text-white" style="margin:0;padding:0;padding-bottom:10px;background-color:#151515">
                 <h3 style="text-align:center;background-color:#808080;padding-top:10px">Resumen de Compra</h3>
             <%--    <hr />--%>
                 <div class="col-sm" style="display: flex; justify-content: space-around">
