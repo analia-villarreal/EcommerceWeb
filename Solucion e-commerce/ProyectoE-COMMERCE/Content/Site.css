@@ -37,33 +37,48 @@ textarea {
 }
 
 
-a.nav-link{
-    color:#fff;
-    font-size:1.5rem
+a.nav-link {
+    color: #fff;
+    font-size: 1.5rem
 }
 
 .iconlogin {
-    border-radius:100%
+    border-radius: 100%
 }
-.shadow-card{
+
+.shadow-card {
     box-shadow: 0px 3px 9px rgba(0,0,0,0.2)
 }
 
-.title-3{
-/*    margin-top:60px;*/
-    margin-bottom:20px;
+.title-3 {
+    /*    margin-top:60px;*/
+    margin-bottom: 20px;
 }
 
 
 .contain-filtros {
     background-color: #1d2021
 }
-.contain-filtros *{
-    color:#fff
-}
+
+    .contain-filtros * {
+        color: #fff
+    }
 
 .precio {
     font-weight: bold;
     color: #dc3545;
-    font-size:1.2rem
+    font-size: 1.2rem
 }
+
+.card-img {
+    overflow: hidden;
+}
+
+    .card-img > img {
+        transition: .5s
+    }
+
+        .card-img > img:hover {
+            transform: scale(1.05);
+        }
+

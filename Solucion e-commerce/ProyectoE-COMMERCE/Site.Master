@@ -76,17 +76,20 @@
                         <% }
                         %>
                         <li class="nav-item">
+                            <a class="nav-link" runat="server" href="~/miCarrito">Carrito</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" runat="server" href="~/Contact">Contacto</a>
                         </li>
                     </ul>
-                    <div class="nav-item d-flex btn btn-danger" style="border-radius:100%">
+                    <div class="nav-item d-flex btn btn-danger" style="border-radius: 100%">
                         <a class="nav-link" runat="server" href="LoginForm.aspx"><i class="fa-solid fa-user"></i></a>
                     </div>
                     <% if (Session["usuario"] != null)
                         {%>
-                            <div class="nav-item d-flex btn btn-danger">
-                                <asp:Button ID="LogOut" Text="Salir" runat="server" OnClick="LogOut_Click" class="glyphicon glyphicon-search" CssClass="btn btn-danger"/>
-                            </div>
+                    <div class="nav-item d-flex btn btn-danger">
+                        <asp:Button ID="LogOut" Text="Salir" runat="server" OnClick="LogOut_Click" class="glyphicon glyphicon-search" CssClass="btn btn-danger" />
+                    </div>
                     <% } %>
                     <div class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Zapatillas Nike..." aria-label="Search">

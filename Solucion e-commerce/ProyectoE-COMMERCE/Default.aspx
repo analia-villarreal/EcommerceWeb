@@ -63,7 +63,9 @@
 
                 <div class="col">
                     <div class="card shadow-card">
-                        <img src="<%= item.URLImagen %>" onerror="this.src='<%=negocio.Models.Diccionario.IMAGE_NOTFOUND%>'" class="card-img-top" alt="...">
+                        <div class="card-img">
+                            <img src="<%= item.URLImagen %>" onerror="this.src='<%=negocio.Models.Diccionario.IMAGE_NOTFOUND%>'" class="card-img-top" alt="...">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title"><%= item.Nombre %></h5>
                             <p class="card-text"><%= item.Descripcion %></p>
