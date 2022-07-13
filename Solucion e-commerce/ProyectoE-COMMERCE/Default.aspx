@@ -7,13 +7,10 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="https://dash.vtexassets.com/assets/vtex.file-manager-graphql/images/46389bc2-d30f-4e7d-8f6e-fe6b6f4b8e3a___e63b50f14a64efd7b603c5f3e4c638fe.jpg" alt="First slide">
+                <img class="d-block w-100" src="https://www.stockcenter.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-StockCenter-Library/default/dw2ff71db3/21jun/fulltoppercuellos.gif?sw=1440&sfrm=gif" alt="First slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="https://dash.vtexassets.com/assets/vtex.file-manager-graphql/images/46389bc2-d30f-4e7d-8f6e-fe6b6f4b8e3a___e63b50f14a64efd7b603c5f3e4c638fe.jpg" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="https://dash.vtexassets.com/assets/vtex.file-manager-graphql/images/46389bc2-d30f-4e7d-8f6e-fe6b6f4b8e3a___e63b50f14a64efd7b603c5f3e4c638fe.jpg" alt="Third slide">
+                <img class="d-block w-100" src="https://essential.vtexassets.com/arquivos/iv-landing-d-banner-nike@2x.png" alt="Second slide">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -46,36 +43,102 @@
     --%>
 
 
-    <div class="row">
+    <div class="row"">
 
         <!--ACA VAN LOS FILTROS-->
-        <div class="col-3 contain-filtros">
+        <div class="col-3 contain-filtros" style="padding-top:30px;padding-left: 40px;
+    padding-right:40px">
 
-            <h5>Buscar por Filtros</h5>
+            <div>
+            <h5>Genero</h5>
 
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                <label class="form-check-label" for="defaultCheck1">
-                    Envio Gratis
+                <input class="form-check-input" type="checkbox" value="" id="checkhombre">
+                <label class="form-check-label" for="checkhombre">
+                    Hombre
                 </label>
             </div>
 
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-                <label class="form-check-label" for="defaultCheck1">
-                    6 Cuotas
+                <input class="form-check-input" type="checkbox" value="" id="checkmujer">
+                <label class="form-check-label" for="checkmujer">
+                    Mujer
                 </label>
             </div>
+            </div>
+
+                        <hr />
+
+            <div>
+            <h5>Talle</h5>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="checktalle40">
+                <label class="form-check-label" for="checktalle40">
+                    40
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="checktalle41">
+                <label class="form-check-label" for="checktalle41">
+                    41
+                </label>
+            </div>
+            </div>
+
+                        <hr />
+
+            <div>
+            <h5>Color</h5>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="checkcolorblanco">
+                <label class="form-check-label" for="checkcolorblanco">
+                    Blanco
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="checkcolornegro">
+                <label class="form-check-label" for="checkcolornegro">
+                    Negro
+                </label>
+            </div>
+            </div>
+
+
+                        <hr />
+
+
+            <div>
+            <h5>Marca</h5>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="checkmarcaadidas">
+                <label class="form-check-label" for="checkmarcaadidas">
+                    Adidas
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="checkmarcanike">
+                <label class="form-check-label" for="checkmarcanike">
+                    Nike
+                </label>
+            </div>
+            </div>
+
 
         </div>
         <!--------------------------------->
 
 
 
-        <div class="col-9">
+        <div class="col-9" style="padding-top:30px">
 
-            <h3 class="title-3">Nuevos</h3>
-            <div class="row row-cols-1 row-cols-md-3 g-3">
+ <%--           <h3 class="title-3">Nuevos</h3>--%>
+            <div class="row row-cols-1 row-cols-md-4 g-4">
                 <% foreach (dominio.Models.Articulo item in listaArticulos)
                     { %>
 
@@ -88,7 +151,7 @@
                             <h5 class="card-title"><%= item.Nombre %></h5>
                             <p class="card-text"><%= item.Descripcion %></p>
                             <p class="card-text precio">$<%= item.Precio %></p>
-                            <a class="btn btn-danger" style="display: block" href="miCarrito?id=<%= item.ID %>">Agregar al Carrito</a>
+                            <a class="btn btn-danger" style="display: block" href="miCarrito?id=<%= item.ID %>">Comprar</a>
                         </div>
                     </div>
                 </div>

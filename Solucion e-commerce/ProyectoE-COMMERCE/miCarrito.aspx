@@ -73,8 +73,9 @@
 
 
 
-            <div class="col-4 bg-dark text-white">
-                <hr />
+            <div class="col-4 bg-dark text-white" style="margin:0;padding:0;padding-bottom:10px">
+                <h3 style="text-align:center;background-color:#808080;padding-top:10px">Resumen de Compra</h3>
+            <%--    <hr />--%>
                 <div class="col-sm" style="display: flex; justify-content: space-around">
                     <p style="font-weight: bold; font-size: 1.8rem">Total</p>
                     <p style="font-weight: bold; font-size: 1.8rem">$<%= obtenerPrecioTotal() %></p>

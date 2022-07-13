@@ -40,15 +40,24 @@ textarea {
 a.nav-link {
     color: #fff;
     font-size: 1.5rem;
-    padding:7px 12px
-}
+    padding: 7px 12px;
 
+}
+a.nav-link:hover {
+    color: #fff;
+    text-decoration:double;
+}
+.nav-link.btn.btn-outline-danger {
+    border-radius: 100%
+}
 /*.iconlogin {
     border-radius: 100%
 }*/
-
+.shadow-card {
+    transition: .3s
+}
 .shadow-card:hover {
-    box-shadow: 0px 3px 11px rgba(0,0,0,0.2)
+    box-shadow: 0px 4px 13px rgba(0,0,0,0.3)
 }
 
 .title-3 {
@@ -58,7 +67,8 @@ a.nav-link {
 
 
 .contain-filtros {
-    background-color: #1d2021
+    background-color: #151515;
+
 }
 
     .contain-filtros * {
@@ -122,4 +132,19 @@ p {
 }
 .icon-resta:hover {
     color: #dc3545;
+}
+.btn-danger{
+    text-transform:uppercase
+}
+
+.container.body-content {
+    max-width: none;
+/*    padding-right: 0px;*/
+    padding-left: 0;
+}
+
+
+.form-check > .form-check-input:checked {
+    background-color: #dc3545;
+    border-color: #fff;
 }
