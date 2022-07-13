@@ -58,23 +58,23 @@
 
                         <%if (Session["usuario"] != null && ((dominio.Models.Usuario)Session["usuario"]).Rol == dominio.Models.Rol.ADMIN)
                             {%>
-                            <li class="nav-item">
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Administracion General de Items
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" runat="server" href="ABMs/ABMArticulo">ABM de Articulos</a>
-                                        <%--<a class="dropdown-item" runat="server" href="ABMs/ABMCategoria">ABM de Categorias</a>
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Administracion General de Items
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" runat="server" href="ABMs/ABMArticulo">ABM de Articulos</a>
+                                    <%--<a class="dropdown-item" runat="server" href="ABMs/ABMCategoria">ABM de Categorias</a>
                                         <a class="dropdown-item" runat="server" href="ABMs/ABMMarca">ABM de Marcas</a>
                                         <a class="dropdown-item" runat="server" href="ABMs/ABMTalle">ABM de Talles</a>
                                         <a class="dropdown-item" runat="server" href="ABMs/ABMColor">ABM de Colores</a>--%>
-                                    </div>
                                 </div>
+                            </div>
 
-                            </li>
+                        </li>
                         <% }
-%>
+                        %>
                         <li class="nav-item">
                             <a class="nav-link" runat="server" href="~/Contact">Contact</a>
                         </li>
@@ -82,9 +82,12 @@
                     <div class="nav-item d-flex">
                         <a class="nav-link" runat="server" href="LoginForm.aspx"><i class="fa-solid fa-user"></i></a>
                     </div>
-                    <div class="nav-item d-flex">
-                        <a class="nav-link" runat="server" >><i class="fa-solid fa-right-from-bracket"></i></a>
-                    </div>
+                    <% if (Session["usuario"] != null)
+                        {%>
+                            <div class="nav-item d-flex">
+                                <asp:Button ID="LogOut" Text="Salir" runat="server" OnClick="LogOut_Click"/>
+                            </div
+                    <% } %>
                     <div class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>

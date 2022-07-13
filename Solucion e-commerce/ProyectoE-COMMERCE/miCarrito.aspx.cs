@@ -193,11 +193,66 @@ namespace ProyectoE_COMMERCE
 
         protected void GenerarPedido_Click(object sender, EventArgs e)
         {
+    
+
             if (Session["usuario"] == null)
             {
                 Session.Add("error", "Debes Loguearte");
                 Response.Redirect("ErrorLogin.aspx", false);
             }
+
+            PedidoNegocio negocio = new PedidoNegocio();
+
+            List<Articulo>listaArtCarrito = (List<Articulo>)Session["carrito"];
+
+            Pedido nuevo = new Pedido();
+
+            nuevo.listaCarrito = listaArtCarrito;
+            nuevo.Fecha = DateTime.Now;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /*
+            public int ultimoNumVenta()
+            {
+                AccesoDatos datos = new AccesoDatos();
+                try
+                {
+                    datos.setearConsulta("SELECT NUM_VENTA FROM VENTAS WHERE NUM_VENTA = (SELECT max(NUM_VENTA) FROM VENTAS)");
+                    datos.ejecutarLectura();
+
+                    int num = 1;
+                    while (datos.Lector.Read())
+                    {
+
+                        num = (int)datos.Lector["NUM_VENTA"];
+                    }
+
+                    return num;
+                }
+
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    datos.cerrarConexion();
+                }
+            }
+
+            */
 
 
         }

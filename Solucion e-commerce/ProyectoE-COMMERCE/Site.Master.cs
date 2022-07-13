@@ -14,5 +14,14 @@ namespace ProyectoE_COMMERCE
         {
 
         }
+
+        protected void LogOut_Click(object sender, EventArgs e)
+        {
+            if (Session["usuario"] != null)
+            {
+                Session.Remove("usuario");
+                Response.Redirect("LoginForm.aspx");
+            }
+        }
     }
 }

@@ -9,7 +9,7 @@ namespace dominio.Models
     {
         public int ID { get; set; }
         public DateTime Fecha { get; set; }
-        public List<Carrito> listaCarrito { get; set; }
+        public List<Articulo> listaCarrito { get; set; }
         public Usuario IdUsuario  { get; set; }
         public Direccion IdDireccion{ get; set; }
         public FormaPago formaPago { get; set; }

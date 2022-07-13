@@ -125,6 +125,7 @@
     <Content Include="miCarrito.aspx" />
     <Content Include="ABMs\MensajeModificar.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="PedidoEnvioForm.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -241,6 +242,13 @@
     </Compile>
     <Compile Include="LoginForm.aspx.designer.cs">
       <DependentUpon>LoginForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PedidoEnvioForm.aspx.cs">
+      <DependentUpon>PedidoEnvioForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PedidoEnvioForm.aspx.designer.cs">
+      <DependentUpon>PedidoEnvioForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
