@@ -155,3 +155,4 @@ C:\Users\Juan\Source\Repos\EcommerceWeb2\Solucion e-commerce\dominio\obj\Debug\d
 C:\Users\Juan\Source\Repos\EcommerceWeb2\Solucion e-commerce\dominio\obj\Debug\dominio.csproj.CopyComplete
 C:\Users\Juan\Source\Repos\EcommerceWeb2\Solucion e-commerce\dominio\obj\Debug\dominio.dll
 C:\Users\Juan\Source\Repos\EcommerceWeb2\Solucion e-commerce\dominio\obj\Debug\dominio.pdb
+C:\Users\ani_k\OneDrive\Documentos\UTN\Programacion 3\PROYECTO\Solucion e-commerce\dominio\bin\dominio.dll.config

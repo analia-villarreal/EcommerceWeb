@@ -20,7 +20,7 @@ namespace ProyectoE_COMMERCE
             if (Session["usuario"] != null)
             {
                 Session.Remove("usuario");
-                Response.Redirect("LoginForm.aspx");
+                Response.Redirect("Default.aspx");
             }
         }
     }

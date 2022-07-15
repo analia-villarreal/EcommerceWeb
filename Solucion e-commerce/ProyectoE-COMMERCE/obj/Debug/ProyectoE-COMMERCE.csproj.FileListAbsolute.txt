@@ -244,3 +244,5 @@ C:\Users\Juan\Source\Repos\EcommerceWeb2\Solucion e-commerce\ProyectoE-COMMERCE\
 C:\Users\Juan\Source\Repos\EcommerceWeb2\Solucion e-commerce\ProyectoE-COMMERCE\obj\Debug\ProyectoE-COMMERCE.csproj.CopyComplete
 C:\Users\Juan\Source\Repos\EcommerceWeb2\Solucion e-commerce\ProyectoE-COMMERCE\obj\Debug\ProyectoE-COMMERCE.dll
 C:\Users\Juan\Source\Repos\EcommerceWeb2\Solucion e-commerce\ProyectoE-COMMERCE\obj\Debug\ProyectoE-COMMERCE.pdb
+C:\Users\ani_k\OneDrive\Documentos\UTN\Programacion 3\PROYECTO\Solucion e-commerce\ProyectoE-COMMERCE\bin\dominio.dll.config
+C:\Users\ani_k\OneDrive\Documentos\UTN\Programacion 3\PROYECTO\Solucion e-commerce\ProyectoE-COMMERCE\bin\negocio.dll.config

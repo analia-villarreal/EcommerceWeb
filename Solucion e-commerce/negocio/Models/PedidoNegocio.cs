@@ -8,37 +8,60 @@ namespace negocio.Models
 {
     public class PedidoNegocio
     {
-        /*
-        public void AgregarPedido(Pedido new)
+
+        public void AgregarPedido(Pedido nuevo)
         {
-            
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("INSERT INTO Pedido VALUES (@idUsuario,@idFormaPago,@retiraPorSucursal,@pagoConfirmado,@fechaInicioPedido,@fechaPago,@idEnvio,1)");
+                datos.setearParametros("@idUsuario", nuevo.IdUsuario);
+                datos.setearParametros("@idFormaPago", nuevo.formaPago);
+                datos.setearParametros("@dretiraPorSucursal", nuevo.RetiraSucursal);
+                datos.setearParametros("@pagoConfirmado", nuevo.PagoConfirmado);
+                datos.setearParametros("@fechaInicioPedido", nuevo.Fecha);
+                datos.setearParametros("@fechaPago", nuevo.FechaPago);
+                datos.setearParametros("@idEnvio", nuevo.EnvioPedido);
+              
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+
+            }
 
 
         }
-
-         public void AgregarArtXPed(Articulo art, int idPedido)
+        public void AgregarArtXPed(int num, Articulo art, int cant)
         {
-            /*
-            public void agregarDetalle(_Venta nuevaVenta, Agregados agregado)
+
+            AccesoDatos datos = new AccesoDatos();
+
+            try
             {
-                AccesoDatos datos = new AccesoDatos();
-                int num = ultimoNumVenta();
-                try
-                {
-                    datos.setearConsulta("INSERT INTO DETALLE_VENTA (DETALLE_VENTA, COD_PRODUCTO, CANTIDAD, PRECIO_VENTA, OBSERVACIONES, CONDICION_PAGO) VALUES ('" + num + "','" + agregado.Codigo + "','" + agregado.Cantidad + "','" + agregado.Precio + "','" + nuevaVenta.Observaciones + "','" + nuevaVenta.Condicion + "' )");
-                    datos.ejecutarAccion();
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-                finally
-                {
-                    datos.cerrarConexion();
-                }
+                datos.setearConsulta("INSERT INTO ARTICULOXPEDIDO VALUES ('" + num + "','" + art.ID + "','" + art.Precio + "','" + cant + "' )");
+
+                datos.ejecutarAccion();
+
             }
-            */
-        
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+
+        }
 
     }
 }

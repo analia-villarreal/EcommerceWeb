@@ -47,7 +47,9 @@ namespace ProyectoE_COMMERCE
                 if (negocio.Loguear(usuario))
                 {
                     Session.Add("usuario", usuario);
-                    Response.Redirect("Default.aspx", false);
+                    var id = usuario.ID;
+                    Response.Redirect("Default.aspx?ID=" + id, false);
+
                 }
                 else
                 {

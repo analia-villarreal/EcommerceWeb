@@ -190,7 +190,33 @@ namespace ProyectoE_COMMERCE
         {
 
         }
+        public int ultimoNumPedido()
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("SELECT ID FROM Pedido WHERE ID = (SELECT MAX(ID) FROM Pedido)");
+                datos.ejecutarLectura();
 
+                int num = 1;
+                while (datos.Lector.Read())
+                {
+
+                    num = (int)datos.Lector["ID"];
+                }
+
+                return num;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
         protected void GenerarPedido_Click(object sender, EventArgs e)
         {
     
@@ -205,54 +231,31 @@ namespace ProyectoE_COMMERCE
 
             List<Articulo>listaArtCarrito = (List<Articulo>)Session["carrito"];
 
+            List<cantArticulo> cantArt = new List<cantArticulo>();
+
+            cantArt = (List<cantArticulo>)Session["cantArt"];
+
+            int num = ultimoNumPedido();
+
             Pedido nuevo = new Pedido();
-
-            nuevo.listaCarrito = listaArtCarrito;
+                        
             nuevo.Fecha = DateTime.Now;
+            int Id = int.Parse(Request.QueryString["ID"].ToString());
+            nuevo.IdUsuario.ID = Id;
+            nuevo.formaPago.ID = 1;
+            nuevo.RetiraSucursal = false;
+            nuevo.PagoConfirmado = false;
+            nuevo.FechaPago = DateTime.Now; 
+            nuevo.EnvioPedido.ID = Id;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-            /*
-            public int ultimoNumVenta()
+            foreach (dominio.Models.Articulo item in listaArtCarrito)
             {
-                AccesoDatos datos = new AccesoDatos();
-                try
-                {
-                    datos.setearConsulta("SELECT NUM_VENTA FROM VENTAS WHERE NUM_VENTA = (SELECT max(NUM_VENTA) FROM VENTAS)");
-                    datos.ejecutarLectura();
-
-                    int num = 1;
-                    while (datos.Lector.Read())
-                    {
-
-                        num = (int)datos.Lector["NUM_VENTA"];
-                    }
-
-                    return num;
-                }
-
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-                finally
-                {
-                    datos.cerrarConexion();
-                }
+               //AgregarArtXPed(num, item, cantArt);
             }
 
-            */
+               
+
+            
 
 
         }
