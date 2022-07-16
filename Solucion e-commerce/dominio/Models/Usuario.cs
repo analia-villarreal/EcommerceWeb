@@ -23,6 +23,10 @@ namespace dominio.Models
         public Rol Rol { get; set; }
         public Direccion IdDireccion { get; set; }
 
+        public Usuario()
+        {
+
+        }
         public Usuario(string user, string pass, bool admin)
         {
             UserName = user;

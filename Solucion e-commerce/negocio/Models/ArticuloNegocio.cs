@@ -17,10 +17,10 @@ namespace negocio.Models
             {
                 datos.setearConsulta("SELECT a.ID, a.nombreArticulo, a.codigo, a.descripcion, a.URLImagen, a.idTipo, ti.nombreTipo, a.idColor, co.nombreColor, a.idTalle, t.nombreTalle, a.idCategoria, c.nombreCategoria, a.idMarca, m.nombreMarca, a.idTemporada, te.nombreTemporada, a.descuento, a.precio, a.idEstadoComercial, ec.nombreEC, a.estadoActivo FROM Articulo a, Tipo ti, Color co, Talle t, Categoria c, Marca m, Temporada te, EstadoComercial ec WHERE a.idTipo = ti.ID AND a.idColor = co.ID AND a.idTalle = t.ID AND a.idCategoria = c.ID AND a.idMarca = m.ID AND a.idTemporada = te.ID AND a.idEstadoComercial = ec.ID");
                 datos.ejecutarLectura();
-                
+
                 while (datos.Lector.Read())
                 {
-                   
+
                     Articulo aux = new Articulo();
 
                     aux.ID = (int)datos.Lector["ID"];
@@ -160,7 +160,7 @@ namespace negocio.Models
             AccesoDatos datos = new AccesoDatos();
 
             try
-            {   
+            {
                 datos.setearConsulta(Diccionario.BAJA_ARTICULO);
                 datos.setearParametros("@ID", id);
                 datos.ejecutarAccion();
@@ -174,10 +174,31 @@ namespace negocio.Models
             finally
             {
                 datos.cerrarConexion();
-            }   
+            }
 
         }
-      
+        public void AgregarArtXPed(int num, Articulo art, cantArticulo cant)
+        {
+
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("INSERT INTO ARTICULOXPEDIDO VALUES ('" + num + "','" + art.ID + "','" + art.Precio + "','" + cant.cant + "' )");
+
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
     }
 }
    

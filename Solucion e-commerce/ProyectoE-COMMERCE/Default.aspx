@@ -151,7 +151,7 @@
                             <h5 class="card-title"><%= item.Nombre %></h5>
                             <p class="card-text"><%= item.Descripcion %></p>
                             <p class="card-text precio">$<%= item.Precio %></p>
-                            <a class="btn btn-danger" style="display: block" href="miCarrito?id=<%= item.ID %>">Comprar</a>
+                            <a class="btn btn-danger" style="display: block" href="miCarrito?id=<%= item.ID%>">Comprar</a>
                         </div>
                     </div>
                 </div>

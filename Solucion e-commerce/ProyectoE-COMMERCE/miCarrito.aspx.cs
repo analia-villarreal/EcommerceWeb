@@ -178,9 +178,6 @@ namespace ProyectoE_COMMERCE
             }
             return pTotal;
         }
-
-
-
         protected void dgvCarro_RowEditing(object sender, GridViewEditEventArgs e)
         {
 
@@ -219,12 +216,10 @@ namespace ProyectoE_COMMERCE
         }
         protected void GenerarPedido_Click(object sender, EventArgs e)
         {
-    
-
             if (Session["usuario"] == null)
             {
                 Session.Add("error", "Debes Loguearte");
-                Response.Redirect("ErrorLogin.aspx", false);
+                Response.Redirect("LoginForm.aspx", false);
             }
 
             PedidoNegocio negocio = new PedidoNegocio();
@@ -240,24 +235,38 @@ namespace ProyectoE_COMMERCE
             Pedido nuevo = new Pedido();
                         
             nuevo.Fecha = DateTime.Now;
-            int Id = int.Parse(Request.QueryString["ID"].ToString());
-            nuevo.IdUsuario.ID = Id;
+
+            nuevo.IdUsuario = new Usuario(); 
+
+            nuevo.IdUsuario = (Usuario)Session["usuario"];
+
+            nuevo.IdUsuario.ID = nuevo.IdUsuario.ID;
+
+            nuevo.formaPago = new FormaPago();
             nuevo.formaPago.ID = 1;
+
             nuevo.RetiraSucursal = false;
             nuevo.PagoConfirmado = false;
-            nuevo.FechaPago = DateTime.Now; 
-            nuevo.EnvioPedido.ID = Id;
+            nuevo.FechaPago = DateTime.Now;
 
+            nuevo.EnvioPedido = new Envio();
+            nuevo.EnvioPedido.ID = nuevo.IdUsuario.ID;
+
+            ArticuloNegocio artPed = new ArticuloNegocio(); 
+
+            int contador = 0;
+
+            negocio.AgregarPedido(nuevo);
+    
             foreach (dominio.Models.Articulo item in listaArtCarrito)
             {
-               //AgregarArtXPed(num, item, cantArt);
+
+                artPed.AgregarArtXPed(num, item, cantArt[contador]);
+
+                contador++;
             }
-
-               
-
-            
-
-
+           
+         
         }
     }
 }
