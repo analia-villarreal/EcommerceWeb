@@ -1,8 +1,8 @@
 ﻿use master
 GO
-Create Database eCOMMERCE_DB
+Create Database eCOMMERCE_DB1
 go
-use eCOMMERCE_DB
+use eCOMMERCE_DB1
 go
 Create Table Usuario(
     ID int not null primary key identity (1, 1),
@@ -94,7 +94,6 @@ CREATE TABLE ArticuloXPedido
         [idArticulo] int FOREIGN KEY REFERENCES Articulo,
         precio money not null,
 	    cantidad int not null,
-
         PRIMARY key(idPedido, idArticulo)
        
     )
@@ -102,24 +101,30 @@ go
 Create table Pedido(
 	ID int not null primary key identity (1,1),
 	idUsuario int not null foreign key references Usuario(ID),
-	idFormaPago int not null foreign key references FormaPago(ID),
-	retiraPorSucursal bit not null,
-	pagoConfirmado bit not null,
-	fechaInicioPedido datetime not null,
-	fechaPago datetime null,
-	idEnvio int not null foreign key references Envios(ID),
-	estado bit not null
+	fechaPedido datetime not null,
+	importeTotal money not null,
+	estadoPedido bit not null 
 )
 go
 create table Envios(
 	ID int not null primary key identity (1,1),
 	idUsuario int not null foreign key references Usuario(ID),
+    idPedido int not null foreign key references Pedido(ID),
     idDireccion int not null foreign key references Direccion(ID),
 	idFormaEnvio int not null foreign key references FormaEnvio(ID),
+    retiraPorSucursal bit not null,
 	envioConfirmado bit not null,
 	estado bit not null,
-	fechaEnvioVendedor datetime not null,
+	fechaEnvio datetime not null,
 	fechaEntrega datetime null
+)
+go
+create table Pago(
+	ID int not null primary key identity (1,1),
+	idPedido int not null foreign key references Pedido(ID),
+    idFormaPago int not null foreign key references FormaPago(ID),
+    fechaPago datetime null,
+    pagoConfirmado bit not null,
 )
 go
 create table FormaEnvio(

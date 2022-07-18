@@ -15,14 +15,12 @@ namespace negocio.Models
 
             try
             {
-                datos.setearConsulta("INSERT INTO Pedido VALUES (@idUsuario,@idFormaPago,@retiraPorSucursal,@pagoConfirmado,@fechaInicioPedido,@fechaPago,@idEnvio,1)");
+                datos.setearConsulta("INSERT INTO Pedido VALUES (@idUsuario,@fechaPedido,1)");
                 datos.setearParametros("@idUsuario", nuevo.IdUsuario.ID);
-                datos.setearParametros("@idFormaPago", nuevo.formaPago.ID);
-                datos.setearParametros("@retiraPorSucursal", nuevo.RetiraSucursal);
-                datos.setearParametros("@pagoConfirmado", nuevo.PagoConfirmado);
-                datos.setearParametros("@fechaInicioPedido", nuevo.Fecha);
-                datos.setearParametros("@fechaPago", nuevo.FechaPago);
-                datos.setearParametros("@idEnvio", nuevo.EnvioPedido.ID);
+                datos.setearParametros("@fechaPedido", nuevo.Fecha);
+                datos.setearParametros("@EstadoPedido", nuevo.EstadoPedido);
+
+
 
                 datos.ejecutarAccion();
             }
@@ -37,5 +35,45 @@ namespace negocio.Models
 
             }
         }
+        public List<Pedido> Listar()
+        {
+            List<Pedido> lista = new List<Pedido>();
+            AccesoDatos datos = new AccesoDatos();
+
+
+            try
+            {
+                datos.setearConsulta("");
+
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+
+                    Pedido aux = new Pedido();
+                    Articulo aux1=new Articulo();
+
+                    aux.ID = (int)datos.Lector["ID"];
+                    aux.Fecha=(DateTime)datos.Lector["fechaPedido"];
+                    aux.IdUsuario.ID = (int) datos.Lector["idUsuario"];
+                    aux.TotalPedido = (decimal)datos.Lector["importeTotal"];
+                    aux.EstadoPedido=(bool)datos.Lector["estadoPedido"];
+                    lista.Add(aux);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+
+            }
+        }
+
+
     }
 }

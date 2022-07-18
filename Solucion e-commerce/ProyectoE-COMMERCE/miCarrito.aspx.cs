@@ -178,6 +178,8 @@ namespace ProyectoE_COMMERCE
             }
             return pTotal;
         }
+
+
         protected void dgvCarro_RowEditing(object sender, GridViewEditEventArgs e)
         {
 
@@ -222,51 +224,52 @@ namespace ProyectoE_COMMERCE
                 Response.Redirect("LoginForm.aspx", false);
             }
 
-            PedidoNegocio negocio = new PedidoNegocio();
+            try
+            {
+                PedidoNegocio negocio = new PedidoNegocio();
 
-            List<Articulo>listaArtCarrito = (List<Articulo>)Session["carrito"];
+                List<Articulo> listaArtCarrito = (List<Articulo>)Session["carrito"];
 
-            List<cantArticulo> cantArt = new List<cantArticulo>();
+                List<cantArticulo> cantArt = new List<cantArticulo>();
 
-            cantArt = (List<cantArticulo>)Session["cantArt"];
+                cantArt = (List<cantArticulo>)Session["cantArt"];
 
-            int num = ultimoNumPedido();
+                int num = ultimoNumPedido();
 
-            Pedido nuevo = new Pedido();
-                        
-            nuevo.Fecha = DateTime.Now;
+                Pedido nuevo = new Pedido();
 
-            nuevo.IdUsuario = new Usuario(); 
+                nuevo.Fecha = DateTime.Now;
 
-            nuevo.IdUsuario = (Usuario)Session["usuario"];
+                nuevo.IdUsuario = new Usuario();
 
-            nuevo.IdUsuario.ID = nuevo.IdUsuario.ID;
+                nuevo.IdUsuario = (Usuario)Session["usuario"];
 
-            nuevo.formaPago = new FormaPago();
-            nuevo.formaPago.ID = 1;
+                nuevo.IdUsuario.ID = nuevo.IdUsuario.ID;
 
-            nuevo.RetiraSucursal = false;
-            nuevo.PagoConfirmado = false;
-            nuevo.FechaPago = DateTime.Now;
+                nuevo.TotalPedido = obtenerPrecioTotal();
 
-            nuevo.EnvioPedido = new Envio();
-            nuevo.EnvioPedido.ID = nuevo.IdUsuario.ID;
+                ArticuloNegocio artPed = new ArticuloNegocio();
 
-            ArticuloNegocio artPed = new ArticuloNegocio(); 
+                int contador = 0;
 
-            int contador = 0;
+                negocio.AgregarPedido(nuevo);
 
-            negocio.AgregarPedido(nuevo);
-    
-            foreach (dominio.Models.Articulo item in listaArtCarrito)
+                foreach (dominio.Models.Articulo item in listaArtCarrito)
+                {
+
+                    artPed.AgregarArtXPed(num, item, cantArt[contador]);
+
+                    contador++;
+                }
+
+                Response.Redirect("PedidoEnvioForm.aspx?ID=" + num, false);
+            }
+            catch (Exception ex)
             {
 
-                artPed.AgregarArtXPed(num, item, cantArt[contador]);
-
-                contador++;
+                Session.Add("error", ex);
             }
-           
-         
+
         }
     }
 }
