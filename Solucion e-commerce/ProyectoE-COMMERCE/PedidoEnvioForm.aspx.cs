@@ -13,6 +13,13 @@ namespace ProyectoE_COMMERCE
         {
             if (Request.QueryString["num"] != null)
             {
+                int Id = int.Parse(Request.QueryString["num"].ToString());
+
+                //PedidoNegocio negocio = new PedidoNegocio();
+
+                //List<Pedido> listaPedido = negocio.Listar();
+
+                //Session.Add("Pedido", listaPedido);
 
 
             }

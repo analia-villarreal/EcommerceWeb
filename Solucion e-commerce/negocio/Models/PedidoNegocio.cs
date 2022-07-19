@@ -51,13 +51,14 @@ namespace negocio.Models
                 {
 
                     Pedido aux = new Pedido();
-                    Articulo aux1=new Articulo();
+                    ArticuloxPedido aux1=new ArticuloxPedido();
 
                     aux.ID = (int)datos.Lector["ID"];
                     aux.Fecha=(DateTime)datos.Lector["fechaPedido"];
                     aux.IdUsuario.ID = (int) datos.Lector["idUsuario"];
                     aux.TotalPedido = (decimal)datos.Lector["importeTotal"];
                     aux.EstadoPedido=(bool)datos.Lector["estadoPedido"];
+                    
                     lista.Add(aux);
                 }
                 return lista;
