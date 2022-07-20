@@ -69,9 +69,9 @@
     <Compile Include="Models\CategoriaNegocio.cs" />
     <Compile Include="Models\ColorNegocio.cs" />
     <Compile Include="Models\Diccionario.cs" />
-    <Compile Include="Models\Direccion.cs" />
     <Compile Include="Models\DireccionNegocio.cs" />
     <Compile Include="Models\EmailService.cs" />
+    <Compile Include="Models\EnvioNegocio.cs" />
     <Compile Include="Models\EstadoComercialNegocio.cs" />
     <Compile Include="Models\ItemChicoNegocio.cs" />
     <Compile Include="Models\MarcaNegocio.cs" />

@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using dominio.Models;
+using negocio.Models;
+
 
 namespace ProyectoE_COMMERCE
 {
@@ -13,13 +16,18 @@ namespace ProyectoE_COMMERCE
         {
             if (Request.QueryString["num"] != null)
             {
-                int Id = int.Parse(Request.QueryString["num"].ToString());
+                int IdPedido = int.Parse(Request.QueryString["num"].ToString());
 
-                //PedidoNegocio negocio = new PedidoNegocio();
+                ArticuloNegocio negocio = new ArticuloNegocio();
 
-                //List<Pedido> listaPedido = negocio.Listar();
+                List<Articulo> listaPedido = negocio.Listar();
 
-                //Session.Add("Pedido", listaPedido);
+                Session.Add("Pedido", listaPedido);
+
+                DireccionNegocio negocioD = new DireccionNegocio();
+
+               
+
 
 
             }

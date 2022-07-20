@@ -5,17 +5,22 @@
     <div class="container">
         <div class="row">
             <div class="col-6-md">
-                <asp:Label Text="Detalle Pedido" runat="server" />            
+                <asp:Label Text="Detalle Pedido" runat="server" />
             </div>
             <div class="col-6-md">
-                 <asp:Label Text="Elija forma de envio" runat="server" />
-                <% foreach (dominio.Direccion item in collection)
-                    {
+                <div>
+                    <asp:Label Text="Elija forma de envio" runat="server" />
+                    <%//foreach (dominio.Direccion item in collection)
+                    //{
 
-                    }%>
+                    //}%>
+                </div>
+                <asp:CheckBox ID="cbxRetiraPorSucursal" runat="server" />
+                <asp:Label Text="Forma de envio" runat="server" />
+                <asp:CheckBoxList ID="CheckBoxList1" runat="server"></asp:CheckBoxList>
 
 
             </div>
         </div>
-
+    </div>
 </asp:Content>

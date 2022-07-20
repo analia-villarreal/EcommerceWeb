@@ -8,19 +8,17 @@ namespace negocio.Models
 {
     public class PedidoNegocio
     {
-
         public void AgregarPedido(Pedido nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                datos.setearConsulta("INSERT INTO Pedido VALUES (@idUsuario,@fechaPedido,1)");
+                datos.setearConsulta("INSERT INTO Pedido VALUES (@idUsuario,@fechaPedido,@importeTotal,1)");
                 datos.setearParametros("@idUsuario", nuevo.IdUsuario.ID);
                 datos.setearParametros("@fechaPedido", nuevo.Fecha);
+                datos.setearParametros("@importeTotal", nuevo.TotalPedido);
                 datos.setearParametros("@EstadoPedido", nuevo.EstadoPedido);
-
-
 
                 datos.ejecutarAccion();
             }

@@ -8,7 +8,7 @@ namespace negocio.Models
 {
     public class DireccionNegocio
     {
-        public List<Direccion> Listar()
+        public List<Direccion> Listar(int id)
         {
             List<Direccion> lista = new List<Direccion>();
             AccesoDatos datos = new AccesoDatos();
@@ -16,7 +16,7 @@ namespace negocio.Models
 
             try
             {
-                datos.setearConsulta("");
+                datos.setearConsulta("SELECT ID, nombreCalle, numeroCalle, piso, localidad, provincia, codigoPostal, estadoDir=1 FROM Direccion");
 
                 datos.ejecutarLectura();
 
@@ -24,7 +24,6 @@ namespace negocio.Models
                 {
 
                     Direccion aux = new Direccion();
-                    ArticuloxPedido aux1 = new ArticuloxPedido();
 
                     aux.ID = (int)datos.Lector["ID"];
                     aux.NombreCalle = (string)datos.Lector["nombreCalle"];

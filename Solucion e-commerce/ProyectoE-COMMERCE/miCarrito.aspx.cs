@@ -221,7 +221,7 @@ namespace ProyectoE_COMMERCE
             if (Session["usuario"] == null)
             {
                 Session.Add("error", "Debes Loguearte");
-                Response.Redirect("LoginForm.aspx", false);
+                Response.Redirect("LoginForm.aspx",false);
             }
 
             try
