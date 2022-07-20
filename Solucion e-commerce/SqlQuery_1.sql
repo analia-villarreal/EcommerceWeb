@@ -167,3 +167,10 @@ INSERT INTO Articulo VALUES('Zueco','FEM04','https://drive.google.com/file/d/12m
 INSERT INTO Articulo VALUES('Zueco','FEM05','https://drive.google.com/file/d/1f56c96nfauGRA1zImPLFY2eA2FSE0Qr7/view?usp=sharing','Zueco Bali',1,7,4,1,1,1,0,2500,7,1)
 INSERT INTO Articulo VALUES('Zueco','FEM06','https://drive.google.com/file/d/18UDH96BHak-APAhPnmCw9UUk8JLKmXno/view?usp=sharing','Zueco Bali',1,7,5,1,1,1,0,2500,7,1)
 INSERT INTO Articulo VALUES('Zueco','FEM07','https://drive.google.com/file/d/1j1wELBhSkDpITynlOwslT3u5QniA4pwn/view?usp=sharing','Bota Brisa',1,1,1,1,1,1,0,4500,7,1)
+
+GO
+SELECT p.ID, art.ID, art.nombreArticulo, art.precio,axp.cantidad, p.importeTotal FROM Pedido p
+INNER JOIN ArticuloxPedido axp ON p.ID = axp.idPedido
+INNER JOIN Articulo art ON axp.idArticulo = art.ID
+WHERE p.estadoPedido = 1
+GO

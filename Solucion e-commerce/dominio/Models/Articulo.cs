@@ -35,6 +35,14 @@ namespace dominio.Models
         }
     }
 
+    public class ArticuloXPedido
+    {
+        public Pedido IDPedido { get; set; }
+        public Articulo IDArticulo { get; set; }
+        public Articulo PrecioArt { get; set; }
+        public int Cantidad { get; set; }
+    }
+
    
 
 
