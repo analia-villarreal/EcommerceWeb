@@ -18,12 +18,12 @@ namespace dominio.Models
 
     public class DetallePedido
     {
-        public Pedido IDPedido { get; set; }
-        public Articulo IDArticulo { get; set; }
-        public Articulo NombreArt { get; set; }
-        public Articulo Precio { get; set; }
-        public ArticuloXPedido Cant { get; set; }
-        public Pedido ImporteTotal { get; set; }
+        public int IDPedido { get; set; }
+        public int IDArticulo { get; set; }
+        public string NombreArt { get; set; }
+        public decimal Precio { get; set; }
+        public int Cantidad { get; set; }
+        public decimal ImporteTotal { get; set; }
        
     }
 }

@@ -41,7 +41,7 @@ namespace negocio.Models
 
             try
             {
-                datos.setearConsulta("SELECT p.ID, art.ID, art.nombreArticulo, art.precio,axp.cantidad, p.importeTotal FROM Pedido p INNER JOIN ArticuloxPedido axp ON p.ID = axp.idPedido INNER JOIN Articulo art ON axp.idArticulo = art.ID WHERE p.estadoPedido = 1 AND p.ID=="+id);
+                datos.setearConsulta("SELECT p.ID as idPedido, art.ID, art.nombreArticulo, art.precio,axp.cantidad, p.importeTotal FROM Pedido p INNER JOIN ArticuloxPedido axp ON p.ID = axp.idPedido INNER JOIN Articulo art ON axp.idArticulo = art.ID WHERE p.estadoPedido = 1 AND p.ID=="+id);
 
                 datos.ejecutarLectura();
 
@@ -50,23 +50,12 @@ namespace negocio.Models
 
                     DetallePedido aux = new DetallePedido();
 
-                    aux.IDPedido = new Pedido();
-                    aux.IDPedido.ID= (int)datos.Lector["idPedido"];
-
-                    aux.IDArticulo = new Articulo();
-                    aux.IDArticulo.ID=(int)datos.Lector["idArticulo"];
-
-                    aux.NombreArt = new Articulo();
-                    aux.NombreArt.Nombre = (string)datos.Lector["nombreArticulo"];
-
-                    aux.Precio = new Articulo();
-                    aux.Precio.Precio = (decimal)datos.Lector["precio"];
-
-                    aux.Cant = new ArticuloXPedido();
-                    aux.Cant.Cantidad = (int)datos.Lector["cantidad"];
-
-                    aux.ImporteTotal = new Pedido();
-                    aux.ImporteTotal.TotalPedido = (decimal)datos.Lector["totalPedido"];
+                    aux.IDPedido=(int)datos.Lector["idPedido"];
+                    aux.IDArticulo=(int)datos.Lector["ID"];
+                    aux.NombreArt = (string)datos.Lector["nombreArticulo"];
+                    aux.Precio = (decimal)datos.Lector["precio"];
+                    aux.Cantidad = (int)datos.Lector["cantidad"];
+                    aux.ImporteTotal = (decimal)datos.Lector["importeTotal"];
 
                     lista.Add(aux);
                 }

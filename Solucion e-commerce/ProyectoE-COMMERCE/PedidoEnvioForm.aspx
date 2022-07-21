@@ -14,7 +14,7 @@
                             <p><%= item.IDPedido %></p>
                             <p><%= item.IDArticulo %></p>
                             <p><%= item.Precio %></p>
-                            <p><%= item.Cant %></p>
+                            <p><%= item.Cantidad %></p>
                              <p><%= item.ImporteTotal %></p>
                         </div>
                     <% }%>

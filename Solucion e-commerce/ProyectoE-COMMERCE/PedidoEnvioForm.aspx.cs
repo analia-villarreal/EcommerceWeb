@@ -12,25 +12,20 @@ namespace ProyectoE_COMMERCE
 {
     public partial class PedidoEnvioForm : System.Web.UI.Page
     {
-        public List<DetallePedido> listaPedido { get; set; }
-
+        public List<dominio.Models.DetallePedido> listaPedido { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.QueryString["num"] != null)
             {
-                int IdPedido = int.Parse(Request.QueryString["num"].ToString());
+                List<DetallePedido> listaPedido = new List<DetallePedido>();
+
+               int IdPedido = int.Parse(Request.QueryString["num"].ToString());
 
                 PedidoNegocio negocio = new PedidoNegocio();
 
-                List<DetallePedido> listaPedido = negocio.Listar(IdPedido);
+                listaPedido = negocio.Listar(IdPedido);
 
                 Session.Add("Pedido",listaPedido);
-
-      
-
-               
-
-
 
             }
         }
