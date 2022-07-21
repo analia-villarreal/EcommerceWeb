@@ -218,51 +218,56 @@ namespace ProyectoE_COMMERCE
         }
         protected void GenerarPedido_Click(object sender, EventArgs e)
         {
-            if (Session["usuario"] == null)
-            {
-                Session.Add("error", "Debes Loguearte");
-                Response.Redirect("LoginForm.aspx",false);
-            }
-
+       
             try
             {
-                PedidoNegocio negocio = new PedidoNegocio();
 
-                List<Articulo> listaArtCarrito = (List<Articulo>)Session["carrito"];
-
-                List<cantArticulo> cantArt = new List<cantArticulo>();
-
-                cantArt = (List<cantArticulo>)Session["cantArt"];
-
-                int num = ultimoNumPedido();
-
-                Pedido nuevo = new Pedido();
-
-                nuevo.Fecha = DateTime.Now;
-
-                nuevo.IdUsuario = new Usuario();
-
-                nuevo.IdUsuario = (Usuario)Session["usuario"];
-
-                nuevo.IdUsuario.ID = nuevo.IdUsuario.ID;
-
-                nuevo.TotalPedido = obtenerPrecioTotal();
-
-                ArticuloNegocio artPed = new ArticuloNegocio();
-
-                int contador = 0;
-
-                negocio.AgregarPedido(nuevo);
-
-                foreach (dominio.Models.Articulo item in listaArtCarrito)
+                if (Session["usuario"] == null)
+                {
+                    Session.Add("error", "Debes Loguearte");
+                    Response.Redirect("LoginForm.aspx", false);
+                }
+                else
                 {
 
-                    artPed.AgregarArtXPed(num, item, cantArt[contador]);
+                    PedidoNegocio negocio = new PedidoNegocio();
 
-                    contador++;
+                    List<Articulo> listaArtCarrito = (List<Articulo>)Session["carrito"];
+
+                    List<cantArticulo> cantArt = new List<cantArticulo>();
+
+                    cantArt = (List<cantArticulo>)Session["cantArt"];
+
+                    int num = ultimoNumPedido();
+
+                    Pedido nuevo = new Pedido();
+
+                    nuevo.Fecha = DateTime.Now;
+
+                    nuevo.IdUsuario = new Usuario();
+
+                    nuevo.IdUsuario = (Usuario)Session["usuario"];
+
+                    nuevo.IdUsuario.ID = nuevo.IdUsuario.ID;
+
+                    nuevo.TotalPedido = obtenerPrecioTotal();
+
+                    ArticuloNegocio artPed = new ArticuloNegocio();
+
+                    int contador = 0;
+
+                    negocio.AgregarPedido(nuevo);
+
+                    foreach (dominio.Models.Articulo item in listaArtCarrito)
+                    {
+
+                        artPed.AgregarArtXPed(num, item, cantArt[contador]);
+
+                        contador++;
+                    }
+
+                    Response.Redirect("PedidoEnvioForm.aspx?ID=" + num, false);
                 }
-
-                Response.Redirect("PedidoEnvioForm.aspx?ID=" + num, false);
             }
             catch (Exception ex)
             {

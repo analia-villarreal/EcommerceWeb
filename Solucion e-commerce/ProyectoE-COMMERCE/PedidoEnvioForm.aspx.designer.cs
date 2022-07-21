@@ -15,21 +15,21 @@ namespace ProyectoE_COMMERCE
     {
 
         /// <summary>
-        /// cbxRetiraPorSucursal control.
+        /// rbDireccion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbxRetiraPorSucursal;
+        protected global::System.Web.UI.WebControls.RadioButton rbDireccion;
 
         /// <summary>
-        /// CheckBoxList1 control.
+        /// rbSucursal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList1;
+        protected global::System.Web.UI.WebControls.RadioButton rbSucursal;
     }
 }

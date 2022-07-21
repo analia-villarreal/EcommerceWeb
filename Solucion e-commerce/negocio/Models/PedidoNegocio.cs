@@ -41,7 +41,7 @@ namespace negocio.Models
 
             try
             {
-                datos.setearConsulta("SELECT p.ID as idPedido, art.ID, art.nombreArticulo, art.precio,axp.cantidad, p.importeTotal FROM Pedido p INNER JOIN ArticuloxPedido axp ON p.ID = axp.idPedido INNER JOIN Articulo art ON axp.idArticulo = art.ID WHERE p.estadoPedido = 1 AND p.ID=="+id);
+                datos.setearConsulta("SELECT p.ID, art.ID, art.nombreArticulo, art.precio,axp.cantidad, p.importeTotal FROM Pedido p INNER JOIN ArticuloxPedido axp ON p.ID = axp.idPedido INNER JOIN Articulo art ON axp.idArticulo = art.ID WHERE p.estadoPedido = 1 AND p.ID="+id);
 
                 datos.ejecutarLectura();
 
@@ -50,8 +50,8 @@ namespace negocio.Models
 
                     DetallePedido aux = new DetallePedido();
 
-                    aux.IDPedido=(int)datos.Lector["idPedido"];
-                    aux.IDArticulo=(int)datos.Lector["ID"];
+                    aux.IDPedido = 1;
+                    aux.IDArticulo = 3;
                     aux.NombreArt = (string)datos.Lector["nombreArticulo"];
                     aux.Precio = (decimal)datos.Lector["precio"];
                     aux.Cantidad = (int)datos.Lector["cantidad"];
