@@ -38,12 +38,17 @@ namespace ProyectoE_COMMERCE
 
                     rbDireccion.Text = negocioD.ListarDireccion(user.ID);
 
+                    FormaPagoNegocio negocioFP = new FormaPagoNegocio();
 
-
-
+                    rbPago.Text = negocioFP.FormaPago();
 
                 }
             }
+
+        }
+
+        protected void Confirmar_Click(object sender, EventArgs e)
+        {
 
         }
     }

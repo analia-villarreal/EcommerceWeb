@@ -73,6 +73,7 @@
     <Compile Include="Models\EmailService.cs" />
     <Compile Include="Models\EnvioNegocio.cs" />
     <Compile Include="Models\EstadoComercialNegocio.cs" />
+    <Compile Include="Models\FormaPagoNegocio.cs" />
     <Compile Include="Models\ItemChicoNegocio.cs" />
     <Compile Include="Models\MarcaNegocio.cs" />
     <Compile Include="Models\PedidoNegocio.cs" />
