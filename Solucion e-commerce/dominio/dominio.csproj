@@ -75,6 +75,7 @@
     <Compile Include="Models\Marca.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Articulo.cs" />
+    <Compile Include="Models\Pago.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Pedido.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

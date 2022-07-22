@@ -76,6 +76,7 @@
     <Compile Include="Models\FormaPagoNegocio.cs" />
     <Compile Include="Models\ItemChicoNegocio.cs" />
     <Compile Include="Models\MarcaNegocio.cs" />
+    <Compile Include="Models\PagoNegocio.cs" />
     <Compile Include="Models\PedidoNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\UsuarioNegocio.cs" />

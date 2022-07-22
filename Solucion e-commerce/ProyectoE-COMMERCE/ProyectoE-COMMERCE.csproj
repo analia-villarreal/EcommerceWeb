@@ -122,6 +122,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="LoginForm.aspx" />
+    <Content Include="MensajeExito.aspx" />
     <Content Include="miCarrito.aspx" />
     <Content Include="ABMs\MensajeModificar.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -242,6 +243,13 @@
     </Compile>
     <Compile Include="LoginForm.aspx.designer.cs">
       <DependentUpon>LoginForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MensajeExito.aspx.cs">
+      <DependentUpon>MensajeExito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MensajeExito.aspx.designer.cs">
+      <DependentUpon>MensajeExito.aspx</DependentUpon>
     </Compile>
     <Compile Include="PedidoEnvioForm.aspx.cs">
       <DependentUpon>PedidoEnvioForm.aspx</DependentUpon>
