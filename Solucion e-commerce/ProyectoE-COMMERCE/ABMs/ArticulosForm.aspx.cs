@@ -156,7 +156,7 @@ namespace ProyectoE_COMMERCE.ABMs
                 art.EstadoActivo = chkActivo.Checked;
 
                 negocio.Agregar(art);
-                //Response.Redirect("", false);
+                //Response.Redirect("/ABMs/MensajeExito.aspx", false);
 
             }
             catch (Exception ex)
