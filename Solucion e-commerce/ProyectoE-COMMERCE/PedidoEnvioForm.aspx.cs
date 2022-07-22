@@ -76,99 +76,79 @@ namespace ProyectoE_COMMERCE
         protected void Confirmar_Click(object sender, EventArgs e)
         {
 
+
+            PagoNegocio negocio = new PagoNegocio();
+
+            EnvioNegocio negocioE = new EnvioNegocio();
+
             try
             {
-                PagoNegocio negocio = new PagoNegocio();
+                Pago nuevo = new Pago();
 
-                try
+                nuevo.idPed = new Pedido();
+                int num = ultimoNumPedido1();
+                nuevo.idPed.ID = num;
+                nuevo.FormaDePago = new FormaPago();
+                int var;
+
+                if (rbPago.Checked)
                 {
-
-                    Pago nuevo = new Pago();
-
-                    nuevo.idPed = new Pedido();
-                    int num = ultimoNumPedido1();
-                    nuevo.idPed.ID = num;
-                    nuevo.FormaDePago = new FormaPago();
-                    int var;
-
-                    if (rbPago.Checked)
-                    {
-                        var = 1;
-                        nuevo.FormaDePago.ID = var;
-
-                    }
-
-                    nuevo.FechaPago = DateTime.Today;
-
-                    nuevo.PagoConfirmado = false;
-
-                    negocio.Agregar(nuevo);
+                    var = 1;
+                    nuevo.FormaDePago.ID = var;
 
                 }
-                catch (Exception ex)
-                {
 
-                    Session.Add("error", ex);
+                nuevo.FechaPago = DateTime.Today;
+
+                nuevo.PagoConfirmado = false;
+
+               /////////////////////////////////////////
+
+                Usuario user = new Usuario();
+
+                user = (Usuario)Session["Usuario"];
+
+                Envio envio = new Envio();
+                Usuario user1 = new Usuario();
+
+                user1 = (Usuario)Session["Usuario"];
+
+                envio.IdUsuario = user1;
+
+                int num1 = ultimoNumPedido1();
+                envio.IdPedido = new Pedido();
+                envio.IdPedido.ID = num1;
+
+                envio.FormaEnvio = new FormaEnvio();
+                envio.FormaEnvio.ID = 1;
+
+                if (rbSucursal.Checked)
+                {
+                    envio.RetiraSucursal = true;
+                }
+                else
+                {
+                    envio.RetiraSucursal = false;
                 }
 
-                EnvioNegocio negocioE = new EnvioNegocio();
-
-                try
+                envio.IdDireccion = new Direccion();
+                if (rbDireccion.Checked)
                 {
-
-                    Usuario user = new Usuario();
-
-                    user = (Usuario)Session["Usuario"];
-
-                    Envio envio = new Envio();
-                    Usuario user1 = new Usuario();
-
-                    user1 = (Usuario)Session["Usuario"];
-
-                    envio.IdUsuario = user1;
-
-                    int num = ultimoNumPedido1();
-                    envio.IdPedido = new Pedido();
-                    envio.IdPedido.ID = num;
-
-                    envio.FormaEnvio = new FormaEnvio();
-                    envio.FormaEnvio.ID = 1;
-
-                    if (rbSucursal.Checked)
-                    {
-                        envio.RetiraSucursal = true;
-                    }
-                    else
-                    {
-                        envio.RetiraSucursal = false;
-                    }
-
-                    envio.IdDireccion = new Direccion();
-                    if (rbDireccion.Checked)
-                    {
-                        envio.IdDireccion.ID = 3;
-                    }
-                    envio.EnvioRecibidoOK = false;
-                    envio.FechaEnvio = DateTime.Now;
-                    envio.EstadoEnvio = false;
-                    envio.FechaRecepcion = DateTime.Today;
-
-                    negocioE.Agregar(envio);
-
-                    Response.Redirect("MensajeExito.aspx",false);      
-
+                    envio.IdDireccion.ID = 3;
                 }
-                catch (Exception ex)
-                {
+                envio.EnvioRecibidoOK = false;
+                envio.FechaEnvio = DateTime.Now;
+                envio.EstadoEnvio = false;
+                envio.FechaRecepcion = DateTime.Today;
 
-                    Session.Add("error", ex);
-                }
+                negocioE.Agregar(envio);
+                negocio.Agregar(nuevo);
+                Response.Redirect("MensajeExito.aspx", false);
+
             }
             catch (Exception ex)
             {
-
                 Session.Add("error", ex);
-                //Response.Redirect("", false);
             }
 
 

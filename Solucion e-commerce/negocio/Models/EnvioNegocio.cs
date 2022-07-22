@@ -14,7 +14,7 @@ namespace negocio.Models
 
             try
             {
-                datos.setearConsulta("INSERT INTO Envios VALUES (@idUsuario,@idPedido,idDireccion,@idFormaEnvio,@retiraPorSucursal,0,1,@fechaEnvio,@fechaEntrega)");
+                datos.setearConsulta("INSERT INTO Envios VALUES (@idUsuario,@idPedido,@idDireccion,@idFormaEnvio,@retiraPorSucursal,@envioConfirmado,@estado,@fechaEnvio,@fechaEntrega)");
 
                 datos.setearParametros("@idUsuario", nuevo.IdUsuario.ID);
                 datos.setearParametros("@idPedido", nuevo.IdPedido.ID);

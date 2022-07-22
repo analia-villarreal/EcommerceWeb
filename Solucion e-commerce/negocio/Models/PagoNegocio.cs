@@ -14,13 +14,13 @@ namespace negocio.Models
 
             try
             {
-                datos.setearConsulta("INSERT INTO Pago VALUES(@idPedido, @idFormaPago, @fechaPago, 0)");
+                datos.setearConsulta("INSERT INTO Pago VALUES(@idPedido, @idFormaPago, @fechaPago,@pagoConfirmado)");
 
 
                 datos.setearParametros("@idPedido", nuevo.idPed.ID);
                 datos.setearParametros("@idFormaPago", nuevo.FormaDePago.ID);
-                datos.setearParametros("@fechaEnvio", nuevo.FechaPago);
-
+                datos.setearParametros("@fechaPago", nuevo.FechaPago);
+                datos.setearParametros("@pagoConfirmado", nuevo.PagoConfirmado);
 
                 datos.ejecutarAccion();
             }
